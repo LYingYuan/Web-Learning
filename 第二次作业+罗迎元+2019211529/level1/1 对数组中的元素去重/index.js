@@ -3,7 +3,7 @@ var arr=[1,2,3,3,4,'a','a','b','c'];
 function reduce(arr){
     var res=[];
 
-    for(var i=0; i<arr.length; i++){
+    for(var i=0, len=arr.length; i<len; i++){
         if(i == 0){
             res[0] = arr[0];
         }
