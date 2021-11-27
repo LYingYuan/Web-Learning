@@ -1,0 +1,21 @@
+body {
+    color: white;
+    background-color: black;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    font-size: 30px;
+    color: black;
+    background-color: white;
+}
+
+.txt {
+    font-size: 30px;
+}
