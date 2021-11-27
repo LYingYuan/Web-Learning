@@ -1,0 +1,31 @@
+.input_text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.text {
+    width: 300px;
+    height: 40px;
+    border: #a1c4fd 1px solid;
+    border-radius: 3px;
+    background-color: #c2e9fb;
+}
+.btn1 {
+    height: 40px;
+}
+
+.btn2 {
+    background-color: transparent;
+    border: none;
+    color: red;
+}
+
+.text2 {
+    width: 400px;
+    display: flex;
+    border: #a1c4fd 1px solid;
+    background-color: #c2e9fb;
+    justify-content: space-between;
+    align-items: flex-start;
+}
