@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.ntc {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.list>li {
+    width: 17%;
+    /* background-color: saddlebrown; */
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+.list>li>img {
+    border-radius: 15px;
+    padding-bottom: 8px;
+}
