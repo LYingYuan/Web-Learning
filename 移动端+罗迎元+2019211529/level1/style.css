@@ -1,0 +1,23 @@
+:root {
+    font-size: 1.5em;
+}
+
+* {
+    padding: none;
+    border: none;
+}
+
+.head {
+    background-color: #307cfb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .8rem;
+    color: white;
+    height: 2.5em;
+    padding: 0 .6em;
+}
+
+.icon {
+    max-height: 1rem;
+}
