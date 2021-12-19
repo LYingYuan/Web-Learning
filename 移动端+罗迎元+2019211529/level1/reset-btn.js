@@ -7,7 +7,7 @@ function scrollHandler(e) {
     var distance_Y =
         document.documentElement.scrollTop || document.body.scrollTop;
     if (distance_Y > 50) {
-        reset_btn.style.display = "block";
+        reset_btn.style.display = "flex";
     } else {
         reset_btn.style.display = "none";
     }
@@ -21,7 +21,7 @@ function clickHandler(e) {
             document.documentElement.scrollTop || document.body.scrollTop;
         if (distanceY == 0) {
             clearInterval(time);
-            return;
+            return;//当回到初识距离时
         }
         let speed = Math.ceil(distanceY / 16);
         document.documentElement.scrollTop = distanceY - speed;
