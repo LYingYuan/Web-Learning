@@ -72,6 +72,17 @@
     padding-left: 0.7em;
 }
 
-.up {
-    position: relative;
+.reset {
+    width: 2.5em;
+    height: 2.5em;
+    border: 1px solid #ecf5ff;
+    border-radius: 2.5em;
+    box-shadow: 0 0 0.5ch 0.5ch #ecf5ff;
+    background-color: white;
+    position: fixed;
+    top: 80%;
+    left: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
