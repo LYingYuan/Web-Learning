@@ -38,3 +38,19 @@ a:active {
     max-width: 631.5px;
     margin: 0 auto;
 }
+
+.icon-1 img {
+    border-radius: 1em;
+}
+
+.icon-yellow img {
+    background-color: #fcc713;
+}
+
+.icon-blue img {
+    background-color: #51a6f2;
+}
+
+.icon-green img {
+    background-color: #8fc31f;
+}

@@ -27,16 +27,6 @@ body {
     max-width: 1.5rem;
 }
 
-.icon-yellow > img {
-    background-color: #fcc713;
-    border-radius: 1em;
-}
-
-.icon-blue > img {
-    background-color: #51a6f2;
-    border-radius: 1em;
-}
-
 .city-now {
     display: flex;
     justify-content: center;
@@ -91,7 +81,7 @@ body {
     text-align: center;
 }
 
-.air-quality {
+.now-air-quality {
     display: flex;
     align-items: center;
     position: absolute;
@@ -108,8 +98,8 @@ body {
     grid-gap: 1px;
 }
 
-.todaily-wearther,
-.tomarrow-wearther {
+.today-weather,
+.tomorrow-weather {
     background-color: #0d5aa5;
     padding: 0.5rem;
     display: flex;
