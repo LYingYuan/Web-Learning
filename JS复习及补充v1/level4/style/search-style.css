@@ -1,6 +1,6 @@
 :root {
     box-sizing: border-box;
-    font-size: 2em;
+    font-size: 1em;
 }
 
 *,
@@ -25,7 +25,7 @@
     clear: both;
 }
 
-.container {
+.container-search {
     display: flex;
     flex-direction: column;
     max-width: 631.5px;
@@ -34,28 +34,28 @@
 }
 
 .icon-large {
-    max-height: 0.8rem;
-    max-width: 0.8rem;
+    max-height: 1.6rem;
+    max-width: 1.6rem;
 }
 
 .search {
-    height: 2rem;
+    height: 4rem;
     width: 100%;
     display: flex;
     align-items: center;
 }
 
 .search > img {
-    margin-left: 0.4rem;
-    margin-right: 0.1rem;
+    margin-left: 0.8rem;
+    margin-right: 0.2rem;
 }
 
 .search > input {
-    height: 1.5rem;
+    height: 3rem;
     width: 90%;
     border: 1px solid #e5e4e7;
     border-radius: 5px;
-    padding-left: 0.4rem;
+    padding-left: 0.8rem;
     color: #757575;
 }
 
@@ -63,7 +63,7 @@
     width: 100%;
     list-style-type: none;
     color: #a3a3a6;
-    font-size: 0.4rem;
+    font-size: 0.8rem;
     display: flex;
     justify-content: space-between;
 }
@@ -75,24 +75,24 @@
 .current-city,
 .append-record,
 .hot-city {
-    margin: 0 0.3rem;
+    margin: 0 0.6rem;
 }
 
 .city-list {
-    margin: 0.8rem 0;
+    margin: 1.6rem 0;
     width: 100%;
     list-style-type: none;
     color: #a3a3a6;
-    font-size: 0.4rem;
+    font-size: 0.8rem;
     display: flex;
     flex-wrap: wrap;
 }
 
 .city-list > li {
     color: #555555;
-    width: 5.3rem;
-    height: 1.2rem;
-    margin: 0.2rem calc((100% / 3 - 5.3rem) / 2);
+    width: 10.6rem;
+    height: 2.4rem;
+    margin: 0.4rem calc((100% / 3 - 10.6rem) / 2);
     background-color: #ffffff;
     border: 1px solid #e5e5e7;
     border-radius: 5px;

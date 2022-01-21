@@ -1,0 +1,40 @@
+:root {
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: white;
+    text-decoration: none;
+}
+
+.clearflex::before,
+.clearflex::after {
+    display: table;
+    content: " ";
+}
+
+.clearflex::after {
+    clear: both;
+}
+
+.container {
+    max-width: 631.5px;
+    margin: 0 auto;
+}

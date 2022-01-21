@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/index-stayle.css">
+    <link rel="stylesheet" href="../style/search-style.css">
+    <title>CSA天气</title>
+</head>
+
+<body>
+    <!-- 主页面 start -->
+    <div class="container index-container clearflex">
+        <!-- 头部 head start -->
+        <div class="head">
+            <!-- 设置默认城市为重庆 101040100 -->
+            <div class="city-now"><img src="../icons/加.svg" alt="" class="icon btn-1"><span value="101040100">重庆市</span>
+            </div>
+            <div class="epidemic">
+                <a href="https://html5.moji.com/tpd/gzbd/index.html" class="btn-1 icon-yellow"><img
+                        src="../icons/病毒.svg" alt="" class="icon">疫情咨询</a>
+                <a href="https://html5.moji.com/tpd/safetravel/safetravel.html?t=1580984067263"
+                    class="btn-1 icon-blue"><img src="../icons/口罩.svg" alt="" class="icon">安全出行</a>
+            </div>
+            <div class="city-weather clearflex">
+                <span class="now-text">多云</span>
+                <span class="now-temp">16</span><span>°</span>
+                <span class="now-wind">西南0级</span>
+                <span class="now-humidity">湿度47%</span>
+            </div>
+            <span class="now-notice">略微偏凉，还是蛮舒适的。</span>
+            <a href="#" class="air-quality  icon-yellow btn-1"><img src="../icons/树叶.svg" alt="" class="icon">89 良</a>
+        </div>
+        <!-- 头部 head end -->
+        <!-- 今日明日详细天气情况 detail start -->
+        <div class="detail">
+            <div class="todaily-wearther">
+                <div class="this-daily">
+                    今天
+                    <span class="daily-category">良</span>
+                </div>
+                <div class="daily-temp">10 / 12°</div>
+                <div class="daily-text">小雨</div>
+                <img src="../icons/天气-小雨.svg" alt="" class="daily-icon weather-icon">
+            </div>
+            <div class="tomarrow-wearther">
+                <div class="this-daily">
+                    明天
+                    <span class="daily-category">良</span>
+                </div>
+                <div class="daily-temp">10 / 12°</div>
+                <div class="daily-text">小雨</div>
+                <img src="../icons/天气-小雨.svg" alt="" class="weather-icon">
+            </div>
+            <div class="daily-info">
+                <div class="daily-sunset">日落18:30</div>
+                <div class="daily-menu">24小时<img src="../icons/收起-线性圆框.svg" alt="" class="weather-icon"
+                        style="margin-left: 0.2rem;"></div>
+                <!-- style="display:none;" -->
+                <div class="hour-temp">heelo</div>
+                <div class="hour-wind" style="display:none;">fdsgfdssg</div>
+            </div>
+        </div>
+        <!-- 今日明日详细天气情况 detail end -->
+        <!-- 一周天气简报 weak-wearther start -->
+        <div class="weak-wearther">
+
+        </div>
+        <!-- 一周天气简报 weak-wearther end -->
+        <!-- 出行建议 tips start -->
+        <div class="tips">
+
+        </div>
+        <!-- 出行建议 tips end -->
+    </div>
+    <!-- 主页面 end -->
+    <!-- 搜索页面 start -->
+    <div class="container search-container clearflex">
+        <!-- 返回键以及搜索框 start -->
+        <div class="search clearflex">
+            <img src="../icons/返回.svg" alt="" class="icon icon-large">
+            <input type="text" placeholder="请输入城市名">
+        </div>
+        <!-- 返回键以及搜索框 end -->
+        <!-- 当前城市 start -->
+        <div class="current-city">
+            <ul>
+                <li>当前城市</li>
+            </ul>
+            <ul class="city-list">
+                <li>重庆市(mine)</li>
+            </ul>
+        </div>
+        <!-- 当前城市 end -->
+        <!-- 添加记录 start -->
+        <div class="append-record">
+            <ul>
+                <li>添加记录</li>
+                <li class="del-city">删除</li>
+            </ul>
+            <ul class="city-list">
+                <li>重庆市(mine)</li>
+                <li>重庆市(mine)</li>
+                <li>重庆市(mine)</li>
+                <li>重庆市(mine)</li>
+            </ul>
+        </div>
+        <!-- 添加记录 end -->
+        <!-- 热搜城市 start -->
+        <div class="hot-city">
+            <ul>
+                <li>热搜城市</li>
+            </ul>
+            <ul class="city-list">
+                <li>重庆市(mine)</li>
+                <li>重庆市(mine)</li>
+                <li>重庆市(mine)</li>
+                <li>重庆市(mine)</li>
+            </ul>
+        </div>
+        <!-- 热搜城市 end -->
+    </div>
+    <!-- 搜索页面 end -->
+    <script type="text/javascript" src="../script/data.js"></script>
+    <script type="text/javascript" src="../script/script-index.js"></script>
+    <script type="text/javascript" src="../script/change-pages.js"></script>
+    <script type="text/javascript" src="../script/script-search.js"></script>
+</body>
+
+</html>

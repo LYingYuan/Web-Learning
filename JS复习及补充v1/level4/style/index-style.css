@@ -58,6 +58,11 @@ body {
     max-width: 1.5rem;
     max-height: 1.5rem;
     margin: 0.1rem 0.4rem;
+    margin-left: 0;
+}
+
+.weather-icon {
+    max-width: 1.5rem;
 }
 
 .icon-yellow > img {
@@ -65,7 +70,7 @@ body {
     border-radius: 1em;
 }
 
-.icon-blue > img{
+.icon-blue > img {
     background-color: #51a6f2;
     border-radius: 1em;
 }
@@ -96,42 +101,99 @@ body {
 }
 
 .city-weather {
+    width: 10rem;
     position: absolute;
-    top: 10rem;
+    top: 9rem;
     left: 50%;
     transform: translateX(-50%);
-}
-
-/* 当前气象 */
-.now_qixiang {
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /* 当前度数 */
-.now_temp {
-    font-size: 5rem;
+.now-temp {
+    font-size: 6rem;
 }
 
-/* 当前风力 */
-.now_wind {
-    
-}
-
-/* 当前湿度 */
-.now_humidity {
-    
+.city-weather span:nth-child(3) {
+    font-size: 2rem;
 }
 
 /* 当前提示 */
-.now_notice {
-    
+.now-notice {
+    width: 100%;
+    position: absolute;
+    top: 18.4rem;
+    text-align: center;
 }
 
 .air-quality {
-    width: 7rem;
     display: flex;
     align-items: center;
     position: absolute;
     top: 17rem;
     right: 0.4rem;
+}
+
+.detail {
+    margin-top: 15rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #266bae;
+    background-color: #266bae;
+    grid-gap: 1px;
+}
+
+.todaily-wearther,
+.tomarrow-wearther {
+    background-color: #0d5aa5;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.this-daily,
+.daily-temp,
+.daily-text,
+.daily-icon {
+    width: 50%;
+}
+
+.daily-temp {
+    text-align: right;
+}
+
+.daily-text,
+.daily-icon {
+    padding-top: 0.2rem;
+}
+
+.daily-info {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.daily-sunset,
+.daily-menu{
+    width: 50%;
+    padding: 0.3rem 0.5rem 0.2rem;
+    border-bottom: 1px solid #4f88bf;
+}
+
+.daily-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hour-temp,
+.hour-wind {
+    width: 100%;
+    height: 6rem;
+    padding: 0.2rem 0.5rem;
 }
