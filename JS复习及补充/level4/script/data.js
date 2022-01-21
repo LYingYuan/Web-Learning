@@ -12,24 +12,24 @@ function Main() {
 }
 
 // 图标
-const bao_yu = "../icons/天气-暴雨.svg";
-const bing_bao = "../icons/天气-冰雹.svg";
-const da_xue = "../icons/天气-大雪.svg";
-const da_yu = "../icons/天气-大雨.svg";
-const duo_yun = "../icons/天气-多云.svg";
-const lei_yu = "../icons/天气-雷雨.svg";
-const qing = "../icons/天气-晴.svg";
-const sha_chen = "../icons/天气-沙尘.svg";
-const shuang = "../icons/天气-霜.svg";
-const wu_mai = "../icons/天气-雾霾.svg";
-const xiao_xue = "../icons/天气-小雪.svg";
-const xiao_yu = "../icons/天气-小雨.svg";
-const xiao_yu_2_qing = "../icons/天气-小雨转晴.svg";
-const xue_2_qing = "../icons/天气-雪转晴.svg";
-const yin_tian = "../icons/天气-阴天.svg";
-const yu_and_xue = "../icons/天气-雨加雪.svg";
-const zhong_xue = "../icons/天气-中雪.svg";
-const zhong_yu = "../icons/天气-中雨.svg";
+const icon_bao_yu = "../icons/天气-暴雨.svg";
+const icon_bing_bao = "../icons/天气-冰雹.svg";
+const icon_da_xue = "../icons/天气-大雪.svg";
+const icon_da_yu = "../icons/天气-大雨.svg";
+const icon_duo_yun = "../icons/天气-多云.svg";
+const icon_lei_yu = "../icons/天气-雷雨.svg";
+const icon_qing = "../icons/天气-晴.svg";
+const icon_sha_chen = "../icons/天气-沙尘.svg";
+const icon_shuang = "../icons/天气-霜.svg";
+const icon_wu_mai = "../icons/天气-雾霾.svg";
+const icon_xiao_xue = "../icons/天气-小雪.svg";
+const icon_xiao_yu = "../icons/天气-小雨.svg";
+const icon_xiao_yu_2_qing = "../icons/天气-小雨转晴.svg";
+const icon_xue_2_qing = "../icons/天气-雪转晴.svg";
+const icon_yin_tian = "../icons/天气-阴天.svg";
+const icon_yu_and_xue = "../icons/天气-雨加雪.svg";
+const icon_zhong_xue = "../icons/天气-中雪.svg";
+const icon_zhong_yu = "../icons/天气-中雨.svg";
 
 const url_local_city = "https://geoapi.qweather.com/v2/city/lookup?location=";
 const url_now_weather = "https://devapi.qweather.com/v7/weather/now?location=";
@@ -196,9 +196,11 @@ class DailyWeatherAjax extends Ajax {
         today_temp.innerHTML =
             weather_data[0].tempMin + " / " + weather_data[0].tempMax + "°";
         today_text.innerHTML = weather_data[0].textDay;
+        changeWeatherIcon(today_icon, weather_data[0].iconDay);
         tomorrow_temp.innerHTML =
             weather_data[1].tempMin + " / " + weather_data[1].tempMax + "°";
         tomorrow_text.innerHTML = weather_data[1].textDay;
+        changeWeatherIcon(tomorrow_icon, weather_data[1].iconDay);
     }
 }
 
@@ -208,8 +210,53 @@ function dailyCityWeather() {
     ajax.request(url);
 }
 
-function changeWeatherIcon(){
-
+function changeWeatherIcon(img, icon_id) {
+    switch (icon_id) {
+        case "100":
+            img.setAttribute("src", icon_qing);
+        case "101":
+            img.setAttribute("src", icon_duo_yun);
+        case "310":
+            img.setAttribute("src", icon_bao_yu);
+        case "306":
+            img.setAttribute("src", icon_zhong_yu);
+        case "401":
+            img.setAttribute("src", icon_zhong_xue);
+        case "404":
+            img.setAttribute("src", icon_yu_and_xue);
+        case "104":
+            img.setAttribute("src", icon_yin_tian);
+        case "154":
+            img.setAttribute("src", icon_yin_tian);
+        case "305":
+            img.setAttribute("src", icon_xiao_yu);
+        case "400":
+            img.setAttribute("src", icon_xiao_xue);
+        case "501":
+            img.setAttribute("src", icon_shuang);
+        case "502":
+            img.setAttribute("src", icon_wu_mai);
+        case "503":
+            img.setAttribute("src", icon_sha_chen);
+        case "504":
+            img.setAttribute("src", icon_sha_chen);
+        case "301":
+            img.setAttribute("src", icon_lei_yu);
+        case "302":
+            img.setAttribute("src", icon_lei_yu);
+        case "303":
+            img.setAttribute("src", icon_lei_yu);
+        case "306":
+            img.setAttribute("src", icon_zhong_yu);
+        case "307":
+            img.setAttribute("src", icon_da_yu);
+        case "402":
+            img.setAttribute("src", icon_da_xue);
+        case "304":
+            img.setAttribute("src", icon_bing_bao);
+        default:
+            img.setAttribute("src", icon_qing);
+    }
 }
 // 4.逐天天气 end
 Main();
