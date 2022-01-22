@@ -1,5 +1,6 @@
 // 实现功能：1.清除添加记录
 
+
 // 1.清除添加记录 start
 const del_history_btn = document.querySelector(".del-city");
 var city_list_history = document
