@@ -147,6 +147,7 @@ body {
 
 .hour-temp,
 .hour-wind {
+    display: none;
     width: 100%;
     height: 6rem;
     padding: 0.2rem 0.5rem;

@@ -6,6 +6,7 @@
 //          6.热门城市前5
 //          7.搜索框搜索城市
 //          8.点击搜索结果跳转
+//          9.添加至搜索历史
 
 function Main() {
     nowCityName(); // 主页顶部城市名/搜索页当前城市名
@@ -13,7 +14,6 @@ function Main() {
     nowCityAir(); // 实时空气质量
     dailyCityWeather(); // 逐天天气
     // 逐天空气质量/日落时间
-    hotCity(); // 热门城市前5
 }
 
 const my_key = "6c54aec206e142069a9d30b14fba16a5";
@@ -52,6 +52,7 @@ var city_id_now = document
     .querySelector(".city-now")
     .querySelector("span")
     .getAttribute("value");
+var city_name_now = "重庆";
 
 // 实时天气【】notice没有获取到
 const now = {
@@ -133,7 +134,7 @@ class Ajax {
 class CityAjax extends Ajax {
     success(result) {
         // 主页顶部城市名/搜索页当前城市名
-        console.log(result.location);
+        // console.log(result.location);
         var city_name = result.location[0].name;
         var city_id = result.location[0].id;
         const city_index = document
@@ -145,6 +146,7 @@ class CityAjax extends Ajax {
             .querySelector("li");
         city_index.innerHTML = city_name;
         city_search.innerHTML = city_name;
+        city_name_now = city_name;
         city_search.setAttribute("value", city_id);
     }
 }
@@ -350,13 +352,29 @@ const search_list = document.querySelector(".search-list");
 var searched_list = search_list.childNodes;
 class SearchCityAjax extends Ajax {
     success(result) {
-        console.log(result);
+        // console.log(result);
         const search_city_data = result.location;
-        const search_city_num = result.location.length;
+        const search_city_num = search_city_data.length;
         for (let i = 0; i < search_city_num; i++) {
             const list = document.createElement("li");
             list.innerHTML = search_city_data[i].name;
             list.setAttribute("value", search_city_data[i].id);
+            list.onclick = function () {
+                // 9.添加至搜索历史 start
+                const history_city = document.createElement("li");
+                history_city.innerHTML = city_name_now;
+                history_city.setAttribute("value", city_id_now);
+                city_list_history.appendChild(history_city);
+                // 9.添加至搜索历史 end
+
+                city_id_now = list.value;
+                // console.log(city_id_now);
+                // 8.点击搜索结果跳转 start
+                Main();
+                page_index.style.display = "flex";
+                page_search.style.display = "none";
+                // 8.点击搜索结果跳转 end
+            };
             search_list.appendChild(list);
         }
     }
@@ -364,17 +382,20 @@ class SearchCityAjax extends Ajax {
 const search_input = document.querySelector(".search").querySelector("input");
 search_input.oninput = function citySearch() {
     let search_text = search_input.value;
-    if(search_text == ''){
+    if (search_text == "") {
         for (var i = searched_list.length - 1; i >= 0; i--) {
             search_list.removeChild(searched_list[i]);
         }
     }
     const url =
         api_url.url_local_city + search_text + "&key=" + my_key + "&range=cn";
-    console.log(url);
+    // console.log(url);
     const ajax = new SearchCityAjax();
     ajax.request(url);
 };
 // 7.搜索框搜索城市 end
 
 // Main();
+
+// 热门城市前5
+// hotCity();
