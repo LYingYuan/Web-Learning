@@ -20,8 +20,8 @@ function Main() {
     dailyLifeTips(); // 生活指数
 }
 
-const my_key = "6c54aec206e142069a9d30b14fba16a5";
-// const my_key = "7f5f4451e1ed4668a28ef825fe18a676";
+// const my_key = "6c54aec206e142069a9d30b14fba16a5";
+const my_key = "7f5f4451e1ed4668a28ef825fe18a676";
 const api_url = {
     url_local_city: "https://geoapi.qweather.com/v2/city/lookup?location=",
     url_now_weather: "https://devapi.qweather.com/v7/weather/now?location=",
