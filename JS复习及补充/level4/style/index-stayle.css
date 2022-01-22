@@ -133,7 +133,8 @@ body {
 }
 
 .daily-sunset,
-.daily-menu {
+.daily-menu,
+.menu-select {
     width: 50%;
     padding: 0.3rem 0.5rem 0.2rem;
     border-bottom: 1px solid #4f88bf;
@@ -143,6 +144,20 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+.menu-select{
+    padding-left: 0;
+    padding-bottom: 0;
+    display: none;
+}
+
+.menu-select > span{
+    padding: 0 0.5rem;
+}
+
+.menu-select-selecting {
+    border-bottom: 1px solid #fff;
 }
 
 .hour-temp,
