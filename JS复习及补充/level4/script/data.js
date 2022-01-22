@@ -8,6 +8,7 @@
 //          8.点击搜索结果跳转
 //          9.添加至搜索历史
 //          10.生活指数
+//          11.清除生活指数
 
 function Main() {
     nowCityName(); // 主页顶部城市名/搜索页当前城市名
@@ -15,6 +16,7 @@ function Main() {
     nowCityAir(); // 实时空气质量
     dailyCityWeather(); // 逐天天气
     // 逐天空气质量/日落时间
+    clearLifeTips(); //1.清除生活指数
     dailyLifeTips(); // 生活指数
 }
 
@@ -373,9 +375,9 @@ class SearchCityAjax extends Ajax {
                 city_list_history.appendChild(history_city);
                 // 9.添加至搜索历史 end
 
-                city_id_now = list.value;
                 // console.log(city_id_now);
                 // 8.点击搜索结果跳转 start
+                city_id_now = list.value;
                 Main();
                 page_index.style.display = "flex";
                 page_search.style.display = "none";
@@ -408,6 +410,8 @@ class LifeTipsAjax extends Ajax {
         const daily_life_tips = result.daily;
         const daily_life_tips_num = daily_life_tips.length;
         const tips = document.querySelector(".tips");
+        // notice
+        // now.notice.innerHTML = daily_life_tips[8].text;
         for (let i = 0; i <= daily_life_tips_num; i++) {
             if (i == daily_life_tips_num) {
                 const li = document.createElement("li");
@@ -447,6 +451,16 @@ function dailyLifeIcon(img, type) {
 }
 
 // 10.生活指数 end
+
+// 11.清除生活指数 start
+function clearLifeTips() {
+    const tips = document.querySelector(".tips");
+    let tips_list = tips.childNodes;
+    for (var i = tips_list.length - 1; i >= 0; i--) {
+        tips.removeChild(tips_list[i]);
+    }
+}
+// 11.清除生活指数 end
 
 Main();
 // 热门城市前5

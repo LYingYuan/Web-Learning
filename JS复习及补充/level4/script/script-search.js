@@ -1,4 +1,5 @@
 // 实现功能：1.清除添加记录
+//          2.点击城市跳转界面
 
 // 1.清除添加记录 start
 const del_history_btn = document.querySelector(".del-city");
