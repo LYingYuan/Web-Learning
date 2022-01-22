@@ -2,13 +2,17 @@
 //          2.实时天气
 //          3.实时空气质量
 //          4.逐天天气
-//          5.逐天空气质量/日落时间
+//          5.逐天空气质量/日落时间【】
+//          6.热门城市前5
+//          7.
 
 function Main() {
     nowCityName(); // 主页顶部城市名/搜索页当前城市名
     nowCityWeather(); // 实时天气
     nowCityAir(); // 实时空气质量
     dailyCityWeather(); // 逐天天气
+    // 逐天空气质量/日落时间
+    hotCity(); // 热门城市前5
 }
 
 const my_key = "6c54aec206e142069a9d30b14fba16a5";
@@ -17,7 +21,8 @@ const api_url = {
     url_now_weather: "https://devapi.qweather.com/v7/weather/now?location=",
     url_daily_weather: "https://devapi.qweather.com/v7/weather/3d?location=",
     url_now_air: "https://devapi.qweather.com/v7/air/now?location=",
-    url_daily_air: "",
+    url_daily_air: "https://mytest/air", // 使用mook.js
+    url_hot_city: "https://geoapi.qweather.com/v2/city/top?number=5&range=cn",
 };
 
 // 图标
@@ -47,7 +52,7 @@ var city_id_now = document
     .querySelector("span")
     .getAttribute("value");
 
-// 实时天气【】记得修改树叶的颜色,notice没有获取到
+// 实时天气【】notice没有获取到
 const now = {
     text: document.querySelector(".now-text"),
     temp: document.querySelector(".now-temp"),
@@ -72,6 +77,7 @@ const daily = {
     today_icon: document
         .querySelector(".today-weather")
         .querySelector(".weather-icon"),
+    today_sunset: document.querySelector(".daily-sunset"),
     // 明天
     tomorrow_temp: document
         .querySelector(".tomorrow-weather")
@@ -126,8 +132,9 @@ class Ajax {
 class CityAjax extends Ajax {
     success(result) {
         // 主页顶部城市名/搜索页当前城市名
-        // console.log(result.location[0].name);
+        console.log(result.location);
         var city_name = result.location[0].name;
+        var city_id = result.location[0].id;
         const city_index = document
             .querySelector(".city-now")
             .querySelector("span");
@@ -137,6 +144,7 @@ class CityAjax extends Ajax {
             .querySelector("li");
         city_index.innerHTML = city_name;
         city_search.innerHTML = city_name;
+        city_search.setAttribute("value", city_id);
     }
 }
 
@@ -203,12 +211,16 @@ function changeIconColor(div, level) {
 // 4.逐天天气 start
 class DailyWeatherAjax extends Ajax {
     success(result) {
-        console.log(result.daily);
+        // console.log(result.daily);
         const weather_data = result.daily;
+        // 今天
         daily.today_temp.innerHTML =
             weather_data[0].tempMin + " / " + weather_data[0].tempMax + "°";
         daily.today_text.innerHTML = weather_data[0].textDay;
         changeWeatherIcon(daily.today_icon, weather_data[0].iconDay);
+        // 今天日落时间
+        daily.today_sunset.innerHTML = "日落" + weather_data[0].sunset;
+        // 明天
         daily.tomorrow_temp.innerHTML =
             weather_data[1].tempMin + " / " + weather_data[1].tempMax + "°";
         daily.tomorrow_text.innerHTML = weather_data[1].textDay;
@@ -298,9 +310,6 @@ function changeWeatherIcon(img, icon_id) {
 class DailyAirAjax extends Ajax {
     success(result) {
         console.log(result);
-        // 日落时间
-
-        // 逐天空气质量
     }
 }
 
@@ -310,4 +319,29 @@ function dailyCityAir() {
     ajax.request(url);
 }
 // 5.逐天空气质量/日落时间 end
-// Main();
+// 6.热门城市前5 start
+class HotCityAjax extends Ajax {
+    success(result) {
+        // console.log(result.topCityList);
+        const hot_city_num = result.topCityList.length;
+        const hot_city_data = result.topCityList;
+        // 热门城市
+        const hot_city = document
+            .querySelector(".hot-city")
+            .querySelector(".city-list");
+        for (let i = 0; i < hot_city_num; i++) {
+            const list = document.createElement("li");
+            list.innerHTML = hot_city_data[i].name;
+            list.setAttribute("value", hot_city_data[i].id);
+            hot_city.appendChild(list);
+        }
+    }
+}
+function hotCity() {
+    const url = api_url.url_hot_city + "&key=" + my_key;
+    const ajax = new HotCityAjax();
+    ajax.request(url);
+}
+// 6.热门城市前5 end
+
+Main();
