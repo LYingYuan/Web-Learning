@@ -153,6 +153,12 @@ class CityAjax extends Ajax {
             .querySelector(".current-city")
             .querySelector(".city-list")
             .querySelector("li");
+        city_search.addEventListener("click", function click() {
+            city_id_now = this.value;
+            Main();
+            page_index.style.display = "flex";
+            page_search.style.display = "none";
+        });
         city_index.innerHTML = city_name;
         city_search.innerHTML = city_name;
         city_name_now = city_name;
@@ -345,6 +351,22 @@ class HotCityAjax extends Ajax {
             const list = document.createElement("li");
             list.innerHTML = hot_city_data[i].name;
             list.setAttribute("value", hot_city_data[i].id);
+            list.addEventListener("click", function click() {
+                const history_city = document.createElement("li");
+                history_city.innerHTML = city_name_now;
+                history_city.setAttribute("value", city_id_now);
+                history_city.addEventListener("click", function click() {
+                    city_id_now = this.value;
+                    Main();
+                    page_index.style.display = "flex";
+                    page_search.style.display = "none";
+                });
+                city_list_history.appendChild(history_city);
+                city_id_now = this.value;
+                Main();
+                page_index.style.display = "flex";
+                page_search.style.display = "none";
+            });
             hot_city.appendChild(list);
         }
     }
@@ -373,6 +395,12 @@ class SearchCityAjax extends Ajax {
                 const history_city = document.createElement("li");
                 history_city.innerHTML = city_name_now;
                 history_city.setAttribute("value", city_id_now);
+                history_city.addEventListener("click", function click() {
+                    city_id_now = this.value;
+                    Main();
+                    page_index.style.display = "flex";
+                    page_search.style.display = "none";
+                });
                 city_list_history.appendChild(history_city);
                 // 9.添加至搜索历史 end
 

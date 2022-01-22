@@ -1,8 +1,8 @@
 // 实现功能：1.切换至搜索页
 //          2.点击返回图标返回主页面
 
-const page_index = document.querySelector(".index-container");
-const page_search = document.querySelector(".search-container");
+var page_index = document.querySelector(".index-container");
+var page_search = document.querySelector(".search-container");
 // 默认显示主页面
 page_search.style.display = "none";
 
