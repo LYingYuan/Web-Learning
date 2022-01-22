@@ -71,3 +71,24 @@
     align-items: center;
     justify-content: center;
 }
+
+.search-list {
+    /* display: none; */
+    width: 90%;
+    max-height: 15rem;
+    overflow-y:scroll;
+    color: #555555;
+    background-color: #fff;
+    border: 1px #0ca2eb solid;
+    border-top: none;
+    list-style-type: none;
+    position: relative;
+    left: 2.6rem;
+    bottom: 0.5rem;
+}
+
+.search-list > li {
+    border-bottom: 1px solid #dddbe1;
+    padding: 0.5rem;
+}
+

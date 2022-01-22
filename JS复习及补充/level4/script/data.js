@@ -2,9 +2,10 @@
 //          2.实时天气
 //          3.实时空气质量
 //          4.逐天天气
-//          5.逐天空气质量/日落时间【】
+//          5.逐天空气质量/日落时间【】mock未完成
 //          6.热门城市前5
-//          7.
+//          7.搜索框搜索城市
+//          8.点击搜索结果跳转
 
 function Main() {
     nowCityName(); // 主页顶部城市名/搜索页当前城市名
@@ -344,4 +345,36 @@ function hotCity() {
 }
 // 6.热门城市前5 end
 
-Main();
+// 7.搜索框搜索城市 start
+const search_list = document.querySelector(".search-list");
+var searched_list = search_list.childNodes;
+class SearchCityAjax extends Ajax {
+    success(result) {
+        console.log(result);
+        const search_city_data = result.location;
+        const search_city_num = result.location.length;
+        for (let i = 0; i < search_city_num; i++) {
+            const list = document.createElement("li");
+            list.innerHTML = search_city_data[i].name;
+            list.setAttribute("value", search_city_data[i].id);
+            search_list.appendChild(list);
+        }
+    }
+}
+const search_input = document.querySelector(".search").querySelector("input");
+search_input.oninput = function citySearch() {
+    let search_text = search_input.value;
+    if(search_text == ''){
+        for (var i = searched_list.length - 1; i >= 0; i--) {
+            search_list.removeChild(searched_list[i]);
+        }
+    }
+    const url =
+        api_url.url_local_city + search_text + "&key=" + my_key + "&range=cn";
+    console.log(url);
+    const ajax = new SearchCityAjax();
+    ajax.request(url);
+};
+// 7.搜索框搜索城市 end
+
+// Main();
