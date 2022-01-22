@@ -67,6 +67,8 @@ body {
 /* 当前度数 */
 .now-temp {
     font-size: 6rem;
+    text-align: center;
+    width: 65%;
 }
 
 .city-weather span:nth-child(3) {
