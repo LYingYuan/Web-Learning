@@ -7,6 +7,7 @@
 //          7.搜索框搜索城市
 //          8.点击搜索结果跳转
 //          9.添加至搜索历史
+//          10.生活指数
 
 function Main() {
     nowCityName(); // 主页顶部城市名/搜索页当前城市名
@@ -14,6 +15,7 @@ function Main() {
     nowCityAir(); // 实时空气质量
     dailyCityWeather(); // 逐天天气
     // 逐天空气质量/日落时间
+    dailyLifeTips(); // 生活指数
 }
 
 const my_key = "6c54aec206e142069a9d30b14fba16a5";
@@ -24,6 +26,8 @@ const api_url = {
     url_now_air: "https://devapi.qweather.com/v7/air/now?location=",
     url_daily_air: "https://mytest/air", // 使用mook.js
     url_hot_city: "https://geoapi.qweather.com/v2/city/top?number=5&range=cn",
+    url_daily_life_tips:
+        "https://devapi.qweather.com/v7/indices/1d?type=0&location=",
 };
 
 // 图标
@@ -46,6 +50,8 @@ const icon_url = {
     icon_yu_and_xue: "../icons/天气-雨加雪.svg",
     icon_zhong_xue: "../icons/天气-中雪.svg",
     icon_zhong_yu: "../icons/天气-中雨.svg",
+
+    icon_xing_xing: "../icons/星星.svg",
 };
 
 var city_id_now = document
@@ -395,7 +401,53 @@ search_input.oninput = function citySearch() {
 };
 // 7.搜索框搜索城市 end
 
-// Main();
+// 10.生活指数 start
+class LifeTipsAjax extends Ajax {
+    success(result) {
+        // console.log(result.daily)
+        const daily_life_tips = result.daily;
+        const daily_life_tips_num = daily_life_tips.length;
+        const tips = document.querySelector(".tips");
+        for (let i = 0; i <= daily_life_tips_num; i++) {
+            if (i == daily_life_tips_num) {
+                const li = document.createElement("li");
+                tips.appendChild(li);
+                i++;
+            }
+            const li = document.createElement("li");
+            const img = document.createElement("img");
+            img.classList.add("icon-tips");
+            const span = document.createElement("span");
+            span.innerHTML =
+                daily_life_tips[i].name + " " + daily_life_tips[i].category;
+            dailyLifeIcon(img, daily_life_tips[i].type);
+            li.appendChild(img);
+            li.appendChild(span);
+            tips.appendChild(li);
+        }
+    }
+}
 
+function dailyLifeTips() {
+    const url = api_url.url_daily_life_tips + city_id_now + "&key=" + my_key;
+    // console.log(url);
+    const ajax = new LifeTipsAjax();
+    ajax.request(url);
+}
+
+function dailyLifeIcon(img, type) {
+    switch (type) {
+        case "1":
+            img.setAttribute("src", icon_url.icon_xing_xing);
+            break;
+        default:
+            img.setAttribute("src", icon_url.icon_xing_xing);
+            break;
+    }
+}
+
+// 10.生活指数 end
+
+Main();
 // 热门城市前5
-// hotCity();
+hotCity();

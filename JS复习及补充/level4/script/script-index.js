@@ -6,7 +6,7 @@ const hour_temp = document.querySelector(".hour-temp");
 const hour_wind = document.querySelector(".hour-wind");
 const menu_select_btn = document.querySelector(".menu-select");
 const hour_btn = menu_select_btn.querySelectorAll("span");
-console.log(hour_btn);
+// console.log(hour_btn);
 const hour_temp_btn = hour_btn[0];
 const hour_wind_btn = hour_btn[1];
 const daily_sunset = document.querySelector(".daily-sunset");
