@@ -169,37 +169,93 @@ require(["mock"], function (Mock) {
         const hour_y_temp_axis = [];
         for (let i = 0; i < 24; i++) {
             hour_x_axis.push(hour_air.hour[i].hour);
-            hour_y_wind_axis.push(hour_air.hour[i].Temp);
-            hour_y_temp_axis.push(hour_air.hour[i].Wind);
+            hour_y_wind_axis.push(hour_air.hour[i].Wind);
+            hour_y_temp_axis.push(hour_air.hour[i].Temp);
         }
         // console.log(hour_x_axis);
         // console.log(hour_y_wind_axis);
         // console.log(hour_y_temp_axis);
-        var myChart_hour_wind = echarts.init(document.getElementById('wind'));
-        var myChart_hour_temp = echarts.init(document.getElementById('temp'));
+        var myChart_hour_wind = echarts.init(document.getElementById("wind"));
+        var myChart_hour_temp = echarts.init(document.getElementById("temp"));
         var option_hour_wind = {
             tooltip: {},
             xAxis: {
-                data: hour_x_axis
+                data: hour_x_axis,
+                axisLine: {
+                    lineStyle: {
+                        color: "#7ca7cf",
+                    },
+                    show: true,
+                },
+                axisTick: {
+                    show: false,
+                },
             },
-            yAxis: {},
-            series: [{
-                name: 'wind',
-                type: 'line',
-                data: hour_y_wind_axis
-            }]
+            yAxis: {
+                show: false,
+            },
+            grid: {
+                tooltip: {},
+                show: false,
+                top: "30%",
+                left: "0",
+                bottom: "20%",
+                right: "0",
+            },
+            series: [
+                {
+                    color: "#fafcfd",
+                    name: "temp",
+                    type: "line",
+                    data: hour_y_wind_axis,
+                    symbol: "circle",
+                    smooth: 0.3,
+                    lineStyle: {
+                        color: "#6999c8",
+                        width: 0.8,
+                    },
+                },
+            ],
         };
         var option_hour_temp = {
             tooltip: {},
             xAxis: {
-                data: hour_x_axis
+                data: hour_x_axis,
+                axisLine: {
+                    lineStyle: {
+                        color: "#7ca7cf",
+                    },
+                    show: true,
+                },
+                axisTick: {
+                    show: false,
+                },
             },
-            yAxis: {},
-            series: [{
-                name: 'temp',
-                type: 'line',
-                data: hour_y_temp_axis
-            }]
+            yAxis: {
+                show: false,
+            },
+            grid: {
+                tooltip: {},
+                show: false,
+                top: "30%",
+                left: "0",
+                bottom: "20%",
+                right: "0",
+            },
+            series: [
+                {
+                    color: "#fafcfd",
+                    name: "temp",
+                    type: "line",
+                    data: hour_y_temp_axis,
+                    symbol: "circle",
+                    smooth: 0.3,
+                    lineStyle: {
+                        color: "#6999c8",
+                        width: 0.8,
+                    },
+                },
+            ],
         };
         // 使用刚指定的配置项和数据显示图表。
         myChart_hour_wind.setOption(option_hour_wind);
