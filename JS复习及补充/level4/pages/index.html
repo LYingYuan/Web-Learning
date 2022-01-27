@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/index-stayle.css">
     <link rel="stylesheet" href="../style/search-style.css">
+    <script type="text/javascript" src="../script/echarts.js"></script>
     <title>CSA天气</title>
 </head>
 
@@ -65,8 +66,12 @@
                 <div class="daily-menu">24小时<img src="../icons/收起-线性圆框.svg" alt="" class="weather-icon"
                         style="margin-left: 0.2rem;"></div>
                 <!-- style="display:none;" -->
-                <div class="hour-temp">hello</div>
-                <div class="hour-wind">world</div>
+                <div class="hour-temp">
+                    <div id="temp" style="width: 615px;height: 89px;"></div>
+                </div>
+                <div class="hour-wind">
+                    <div id="wind" style="width: 615px;height: 89px;"></div>
+                </div>
             </div>
         </div>
         <!-- 今日明日详细天气情况 detail end -->
@@ -118,10 +123,13 @@
         <!-- 热搜城市 end -->
     </div>
     <!-- 搜索页面 end -->
+    <script data-main="../script/data.js" src="../script/require.js"></script>
     <script type="text/javascript" src="../script/data.js"></script>
     <script type="text/javascript" src="../script/change-pages.js"></script>
     <script type="text/javascript" src="../script/script-index.js"></script>
     <script type="text/javascript" src="../script/script-search.js"></script>
+    <script type="text/javascript" src="../script/mock.js"></script>
+    <!-- <script type="text/javascript" src="../script/mychart.js"></script> -->
 </body>
 
 </html>

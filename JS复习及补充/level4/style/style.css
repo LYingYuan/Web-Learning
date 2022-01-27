@@ -57,7 +57,8 @@ a:active {
 
 .air-quality {
     display: inline-block;
-    width: 2.5rem;
+    padding: 0 0.5rem;
+    padding-bottom: 0.2rem;
     text-align: center;
     border-radius: 1rem;
     background-color: #8fc31f;

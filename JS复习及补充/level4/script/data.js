@@ -15,7 +15,7 @@ function Main() {
     nowCityWeather(); // 实时天气
     nowCityAir(); // 实时空气质量
     dailyCityWeather(); // 逐天天气
-    // 逐天空气质量/日落时间
+    // dailyCityAir(); // 逐天空气质量/日落时间
     clearLifeTips(); //1.清除生活指数
     dailyLifeTips(); // 生活指数
 }
