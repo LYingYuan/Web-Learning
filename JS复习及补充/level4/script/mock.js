@@ -346,8 +346,68 @@ require(["mock"], function (Mock) {
         // 画图
         var mychart_week = echarts.init(document.getElementById("week"));
         var option_week = {
-            
-        }
+            color: ["#3398DB"],
+            tooltip: {
+                trigger: "axis",
+                axisPointer: {
+                    type: "shadow",
+                },
+            },
+            grid: {
+                tooltip: {},
+                show: false,
+                top: "30%",
+                left: "0",
+                bottom: "20%",
+                right: "0",
+            },
+            xAxis: [
+                {
+                    type: "category",
+                    show: false,
+                },
+            ],
+            yAxis: [
+                {
+                    show: false,
+                },
+            ],
+            series: [
+                {
+                    color: "#fafcfd",
+                    name: "max-temp",
+                    type: "line",
+                    data: max_temp,
+                    symbol: "circle",
+                    smooth: 0.3,
+                    lineStyle: {
+                        color: "#6999c8",
+                        width: 0.8,
+                    },
+                    label: {
+                        show: true,
+                        color: "#fff",
+                    },
+                },
+                {
+                    color: "#fafcfd",
+                    name: "min-temp",
+                    type: "line",
+                    data: min_temp,
+                    symbol: "circle",
+                    smooth: 0.3,
+                    lineStyle: {
+                        color: "#6999c8",
+                        width: 0.8,
+                    },
+                    label: {
+                        show: true,
+                        color: "#fff",
+                        position: "bottom",
+                    },
+                },
+            ],
+        };
         mychart_week.setOption(option_week);
     }
 

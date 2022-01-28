@@ -55,6 +55,10 @@ a:active {
     background-color: #8fc31f;
 }
 
+.icon-blue img {
+    background-color: #6999c8;
+}
+
 .air-quality {
     display: inline-block;
     padding: 0 0.5rem;

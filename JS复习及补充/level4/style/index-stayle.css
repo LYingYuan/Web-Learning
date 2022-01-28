@@ -65,6 +65,10 @@ body {
 }
 
 /* 当前度数 */
+.now-text {
+    width: 2rem;
+}
+
 .now-temp {
     font-size: 6rem;
     text-align: center;
