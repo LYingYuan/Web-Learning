@@ -191,3 +191,45 @@ body {
 .icon-tips {
     max-width: 3rem;
 }
+
+.week-weather {
+    margin-top: 1rem;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #5189be;
+}
+
+.week-day * + * {
+    margin-bottom: 0.5rem;
+}
+
+.week-day {
+    width: calc(100%/7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weekday {
+    margin-bottom: 0.5rem;
+}
+
+.max-temp-icon {
+    margin-bottom: 9rem;
+}
+
+.week-charts {
+    position: absolute;
+    top: 5.5rem;
+    width: 100%;
+    height: 8rem;
+    /* background-color: black; */
+}
+
+.air {
+    padding: 0 0.5rem;
+    padding-bottom: 0.2rem;
+    text-align: center;
+    border-radius: 1em;
+}

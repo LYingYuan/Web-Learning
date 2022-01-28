@@ -220,7 +220,7 @@ function changeIconColor(div, level) {
             div.className += " icon-yellow";
             break;
         default:
-            div.className += " icon-blue";
+            div.className += " icon-orange";
             break;
     }
 }
