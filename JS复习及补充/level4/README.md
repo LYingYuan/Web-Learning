@@ -8,6 +8,7 @@
 # 二、使用的技术
 
 - 三件套基础
+- require.js调用库
 - Mock.js模拟数据
 - Echarts.js绘画折线图
 
