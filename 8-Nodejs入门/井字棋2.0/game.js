@@ -2,6 +2,10 @@
 // 井字棋游戏逻辑
 
 const select_btn = document.querySelectorAll(".cell");
+const game_btn = {
+    start: document.querySelector(".connect-btn"),
+    end: document.querySelector(".disconnect-btn"),
+};
 let flag = [
     [0, 0, 0],
     [0, 0, 0],
@@ -10,6 +14,7 @@ let flag = [
 let player_id = 1;
 const player_flag = ["X", "O"];
 
+// 为九宫格添加事件监听器 start
 for (let i = 0, length = select_btn.length; i < length; i++) {
     select_btn[i].addEventListener("click", () => {
         // console.log(select_btn[i]);
@@ -17,8 +22,18 @@ for (let i = 0, length = select_btn.length; i < length; i++) {
         gameBtnClick(btn);
     });
 }
+// 为九宫格添加事件监听器 end
 
-// 玩家点击方格下棋
+// 为游戏设置按钮添加事件监听器 start
+game_btn.start.addEventListener("click", () => {
+    gameStart();
+});
+game_btn.end.addEventListener("click", () => {
+    gameOver();
+});
+// 为游戏设置按钮添加事件监听器 end
+
+// 玩家点击方格下棋 start
 function gameBtnClick(btn) {
     const local = btn.getAttribute("value");
     let local_value = getFlagValue(local);
@@ -28,7 +43,7 @@ function gameBtnClick(btn) {
         } else {
             setFlagValue(local, -1);
         }
-        console.log(flag);
+        // console.log(flag);
         btn.innerHTML = player_flag[player_id - 1];
         if (!gameRule()) {
             gameOver();
@@ -39,8 +54,10 @@ function gameBtnClick(btn) {
         alert("该处已被下子");
     }
 }
+// 玩家点击方格下棋 end
 
-// 获取当前方格标志，0表示空，1表示玩家1，-1表示玩家2
+// 获取当前方格标志 start
+// 0表示空，1表示被玩家1标记，-1表示被玩家2标记
 function getFlagValue(local) {
     switch (local) {
         case "[0][0]":
@@ -63,8 +80,10 @@ function getFlagValue(local) {
             return flag[2][2];
     }
 }
+// 获取当前方格标志 end
 
-// 设置当前方格标志，0表示空，1表示玩家1，-1表示玩家2
+// 设置当前方格标志 start
+// 0表示空，1表示被玩家1标记，-1表示被玩家2标记
 function setFlagValue(local, value) {
     switch (local) {
         case "[0][0]":
@@ -96,7 +115,10 @@ function setFlagValue(local, value) {
             break;
     }
 }
+// 设置当前方格标志 end
 
+// 判断游戏是否继续进行 start
+// 返回false表示游戏结束（分出胜负或平局）
 function gameRule() {
     // 判断游戏是否结束
     {
@@ -153,25 +175,37 @@ function gameRule() {
         }
     }
 }
+// 判断游戏是否继续进行 end
 
-// 游戏开始 重置游戏
+// 游戏开始 start
+// 重置游戏
 function gameStart() {
+    game_btn.start.style.display = "none";
+    game_btn.end.style.display = "flex";
     // 重置游戏
     flag = [
         [0, 0, 0],
         [0, 0, 0],
         [0, 0, 0],
     ];
+    for (let i = 0; i < 9; i++) {
+        select_btn[i].innerHTML = "";
+    }
 }
+// 游戏开始 end
 
-// 游戏结束 弹出游戏结束提示
+// 游戏结束 start
+// 弹出游戏结束提示
 function gameOver() {
     setTimeout(() => {
         alert("Game Over!");
     }, 300);
+    game_btn.start.style.display = "flex";
+    game_btn.end.style.display = "none";
 }
+// 游戏结束 end
 
-// 更换游戏玩家
+// 更换游戏玩家 start
 function changePlayer() {
     if (player_id == 1) {
         player_id = 2;
@@ -179,3 +213,4 @@ function changePlayer() {
         player_id = 1;
     }
 }
+// 更换游戏玩家 end
