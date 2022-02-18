@@ -1,10 +1,8 @@
 const WebSocket = require("ws");
 
-const server = new WebSocket.Server({ port: 30000 });
+const server = new WebSocket.Server({ port: 58901 });
 
-main();
-
-function main() {
+(() => {
     let game = null;
     server.on("connection", (ws, req) => {
         if (game === null) {
@@ -16,7 +14,7 @@ function main() {
         }
     });
     console.log("井字棋服务器已经开始运行");
-}
+})();
 
 class Game {
     // 游戏具有一个9宫格棋盘，将其看作一个整体使用数组存储各个格子状态
@@ -46,11 +44,12 @@ class Game {
         ];
         // 利用迭代函数some()判断是否出现赢家
         // some()函数：对数组中的每一项运行给定函数,如果该函数对任一项返回 true，则返回 true。
-        return win_cases.some(([x, y, z]) => {
-            now_board[x] != null &&
-                now_board[x] == now_board[y] &&
-                now_board[y] == now_board[z];
-        });
+        return win_cases.some(
+            ([x, y, z]) =>
+                now_board[x] != null &&
+                now_board[x] === now_board[y] &&
+                now_board[y] === now_board[z]
+        );
     }
 
     // 检查当前局面是否为平局
@@ -67,10 +66,10 @@ class Game {
             throw new Error("暂未匹配到对手！");
         } else if (this.board[location] != null) {
             throw new Error("已被落子！");
-        } else {
-            this.board[location] = this.current_player;
-            this.current_player = this.current_player.opponent;
         }
+        this.board[location] = this.current_player.mark;
+        this.current_player = this.current_player.opponent;
+        console.log(this.board);
     }
 }
 
@@ -94,12 +93,13 @@ class Player {
         // 监听message事件
         socket.on("message", (buffer) => {
             const command = buffer.toString("utf-8").trim();
+            console.log(`Received ${command}`);
             if (command == "QUIT") {
                 socket.close();
             } else if (/^MOVE \d$/.test(command)) {
                 const location = Number(command.substring(5));
                 try {
-                    game.move(location, this);
+                    game.playChess(location, this);
                     this.send(`VALID_MOVE ${location}`);
                     this.opponent.send(`OPPONENT_MOVE ${location}`);
                     if (this.game.isWinner()) {

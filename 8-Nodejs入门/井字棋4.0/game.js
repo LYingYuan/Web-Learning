@@ -37,7 +37,7 @@ function joinGame() {
 }
 
 function leaveGame(message) {
-    text_content.textContent = message || "Game over";
+    text_content.textContent = message || "游戏结束";
     socket.send("QUIT");
     gameOver = true;
     game_btn.start.style.display = "flex";
@@ -49,13 +49,13 @@ function processCommand(command) {
     if (command.startsWith("WELCOME")) {
         // "WELCOME ${mark}"
         mark = command[8];
-        opponentMark = mark == "X" ? "O" : "X";
+        opponent_mark = mark == "X" ? "O" : "X";
     } else if (command.startsWith("VALID_MOVE")) {
         // `VALID_MOVE ${location}`
         playChess(command.substring(11)).textContent = mark;
         text_content.textContent = "对方正在思考";
-    } else if (command.startsWith("OPPONENT_MOVED")) {
-        playChess(command.substring(11)).textContent = opponentMark;
+    } else if (command.startsWith("OPPONENT_MOVE")) {
+        playChess(command.substring(14)).textContent = opponent_mark;
         text_content.textContent = "你的回合";
     } else if (command.startsWith("MESSAGE")) {
         text_content.textContent = command.substring(8);
