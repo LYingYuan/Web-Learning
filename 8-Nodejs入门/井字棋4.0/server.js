@@ -1,3 +1,19 @@
+// 井字棋4.0服务端
+
+// 客户端->服务端
+// MOVE <n> 当前客户端点击的方格
+// QUIT     离开游戏
+
+// 服务端->客户端
+// WELCOME <char>       玩家加入
+// VALID_MOVE <n>       当前客户端申请落子
+// OPPONENT_MOVE <n>    当前客户端的对手申请落子
+// OTHER_PLAYER_LEFT    当前客户端的对手已离开游戏
+// VICTORY              胜利
+// DEFEAT               失败
+// TIE                  平局
+// MESSAGE <text>       将服务端的提示发送至客户端并显示
+
 const WebSocket = require("ws");
 
 const server = new WebSocket.Server({ port: 58901 });
