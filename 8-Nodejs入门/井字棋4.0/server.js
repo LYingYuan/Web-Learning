@@ -69,7 +69,6 @@ class Game {
         }
         this.board[location] = this.current_player.mark;
         this.current_player = this.current_player.opponent;
-        console.log(this.board);
     }
 }
 
