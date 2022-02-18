@@ -1,0 +1,27 @@
+section {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    height: 300px;
+    width: 300px;
+    background-color: black;
+}
+
+section div {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+    color: blue;
+    font: bold 60px Arial;
+}
+
+#leave {
+    display: none;
+}
+
+footer {
+    margin-top: 20px;
+}
