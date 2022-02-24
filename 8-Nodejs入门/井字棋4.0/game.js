@@ -26,7 +26,7 @@ for (let i = 0, length = game_squares.length; i < length; i++) {
 function joinGame() {
     const host = "localhost";
     gameOver = false;
-    socket = new WebSocket(`ws://${host}:58901`);
+    socket = new WebSocket(`ws://${host}:30001`);
     socket.addEventListener("message", (event) => {
         processCommand(event.data);
     });

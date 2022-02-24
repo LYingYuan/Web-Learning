@@ -16,21 +16,21 @@
 
 const WebSocket = require("ws");
 
-const server = new WebSocket.Server({ port: 58901 });
+const server = new WebSocket.Server({ port: 30001 });
 
-(() => {
-    let game = null;
-    server.on("connection", (ws, req) => {
-        if (game === null) {
-            game = new Game();
-            game.playerX = new Player(game, ws, "X");
-        } else {
-            game.playerO = new Player(game, ws, "O");
-            game = null;
-        }
-    });
-    console.log("井字棋服务器已经开始运行");
-})();
+// (() => {
+let game = null;
+server.on("connection", (ws, req) => {
+    if (game === null) {
+        game = new Game();
+        game.playerX = new Player(game, ws, "X");
+    } else {
+        game.playerO = new Player(game, ws, "O");
+        game = null;
+    }
+});
+console.log("井字棋服务器已经开始运行");
+// })();
 
 class Game {
     // 游戏具有一个9宫格棋盘，将其看作一个整体使用数组存储各个格子状态
