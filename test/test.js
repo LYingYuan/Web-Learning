@@ -1,13 +1,16 @@
-var obj = {
-    foo: function () {
-        console.log("hello");
-    },
+var maxDepth = function (root) {
+    let max = 1;
+    const hasChild = (root) => {
+        if (root.left) {
+            max += 1;
+            hasChild(root.left);
+        } else if (root.right) {
+            max += 1;
+            hasChild(root.right);
+        }
+        return;
+    };
+    hasChild(root);
+    return max;
 };
-
-var foo = obj.foo;
-
-// 写法一
-obj.foo();
-
-// 写法二
-foo();
+console.log(maxDepth([3, 9, 20, null, null, 15, 7]));

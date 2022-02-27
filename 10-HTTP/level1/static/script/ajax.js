@@ -1,16 +1,18 @@
 const server_url = "http://127.0.0.1";
 class Ajax {
-    constructor() {
-        data: JSON.stringify({
-            // 数据
-        });
-        header: {
+    constructor(data) {
+        // this.data = JSON.stringify({
+        //     // 数据
+        //     data,
+        // });
+        this.data = data;
+        this.header = {
             // 设置请求头
-        }
+        };
     }
-    request(method, url) {
+    request(method) {
         const xhr = new XMLHttpRequest();
-        xhr.open(method, `${server_url}${url}`);
+        xhr.open(method, `${server_url}`);
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4) {
                 const status = xhr.status;
@@ -22,7 +24,7 @@ class Ajax {
                 }
             }
         };
-        xhr.send();
+        xhr.send(this.data);
     }
     success() {
         console.log("请求成功");

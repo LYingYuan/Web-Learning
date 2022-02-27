@@ -34,6 +34,8 @@ const server = http.createServer((req, res) => {
                     res.end(data);
                 }
             );
+        } else if (url === "/favicon.ico") {
+            res.end();
         } else {
             fs.readFile(
                 path.join(__dirname, "static", url),
@@ -47,6 +49,21 @@ const server = http.createServer((req, res) => {
             );
         }
     } else if (method === "POST") {
+        let data = "";
+        // 获取数据是一点一点获取的，需要拼接在一起
+        req.on("data", (chunk) => {
+            // console.log(chunk);
+            data += chunk;
+        });
+        req.on("end", () => {
+            //接收完成后的操作
+            // data = querystring.parse(data);
+            console.log("收到数据：", data);
+            data = JSON.stringify(data);
+            console.log(data);
+            console.log(data.user)
+            res.end();
+        });
     }
 });
 
