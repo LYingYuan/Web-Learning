@@ -1,0 +1,8 @@
+{
+    "name": "lyypackage",
+    "version": "1.0.0",
+    "main": "index.js",
+    "description": "提供了格式化时间、HtmlEscape的功能",
+    "keywords": ["lyy"],
+    "license": "ISC"
+}
