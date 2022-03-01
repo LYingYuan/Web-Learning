@@ -1,11 +1,12 @@
 const server_url = "http://127.0.0.1";
 class Ajax {
-    constructor(data) {
-        // this.data = JSON.stringify({
-        //     // 数据
-        //     data,
-        // });
-        this.data = data;
+    constructor(user, psw) {
+        this.data = JSON.stringify({
+            // 数据
+            user: user,
+            password: psw,
+        });
+        // this.data = data;
         this.header = {
             // 设置请求头
         };

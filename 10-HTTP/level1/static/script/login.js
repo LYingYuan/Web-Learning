@@ -14,7 +14,7 @@ btn.login.addEventListener("click", () => {
         user: text.user.value,
         password: text.password.value,
     };
-    const post = new AjaxPOST(data);
+    const post = new AjaxPOST(data.user,data.password);
     // console.log(data);
     post.request("post");
 });
