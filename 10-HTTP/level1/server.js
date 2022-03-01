@@ -59,9 +59,8 @@ const server = http.createServer((req, res) => {
             //接收完成后的操作
             // data = querystring.parse(data);
             console.log("收到数据：", data);
-            data = JSON.stringify(data);
-            console.log(data);
-            console.log(data.user)
+            // data = JSON.stringify(data);
+            console.log(typeof data);
             res.end();
         });
     }
