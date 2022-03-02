@@ -1,12 +1,15 @@
 const btn = {
     login: document.querySelector(".login"),
+    sign: document.querySelector(".sign"),
 };
 const text = {
     user: document.querySelector(".user"),
     password: document.querySelector(".psw"),
 };
 
-const get = new AjaxGET();
+btn.sign.addEventListener("click", () => {
+    window.location.href = "http://127.0.0.1/sign";
+});
 
 btn.login.addEventListener("click", () => {
     // POST
@@ -14,7 +17,7 @@ btn.login.addEventListener("click", () => {
         user: text.user.value,
         password: text.password.value,
     };
-    const post = new AjaxPOST(data.user,data.password);
+    const post = new AjaxLoginPOST(data.user, data.password);
     // console.log(data);
-    post.request("post");
+    post.request("post", "login");
 });

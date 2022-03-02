@@ -3,7 +3,8 @@ const path = require("path");
 const http = require("http");
 // const url = require("url");
 const querystring = require("querystring");
-const { deepStrictEqual } = require("assert");
+
+let users = {};
 
 const server = http.createServer((req, res) => {
     const url = req.url;
@@ -36,6 +37,18 @@ const server = http.createServer((req, res) => {
             );
         } else if (url === "/favicon.ico") {
             res.end();
+        } else if (url === "/index") {
+            res.writeHead(200, { "Content-Type": "text/html" });
+            fs.readFile(
+                path.join(__dirname, "static", "pages", "index.html"),
+                "utf-8",
+                (err, data) => {
+                    if (err) {
+                        throw err;
+                    }
+                    res.end(data);
+                }
+            );
         } else {
             fs.readFile(
                 path.join(__dirname, "static", url),
@@ -60,9 +73,43 @@ const server = http.createServer((req, res) => {
             // data = querystring.parse(data);
             // data = JSON.stringify(data);
             data = JSON.parse(data);
+            // console.log(typeof data);
             console.log("收到数据：", data);
-            console.log(typeof data);
-            // data = JSON.stringify(data);
+            switch (url) {
+                case "/":
+                    if (!users[data.user]) {
+                        res.write('{"OK":false,"msg":"此用户不存在！"}');
+                    } else {
+                        if (users[data.user] === data.password) {
+                            res.write('{"OK":true,"msg":"登陆成功！"}');
+                        } else {
+                            res.write('{"OK":false,"msg":"账户或密码错误！"}');
+                        }
+                    }
+                    break;
+                case "/login":
+                    if (!users[data.user]) {
+                        res.write('{"OK":false,"msg":"此用户不存在！"}');
+                    } else {
+                        if (users[data.user] === data.password) {
+                            res.write('{"OK":true,"msg":"登陆成功！"}');
+                        } else {
+                            res.write('{"OK":false,"msg":"账户或密码错误！"}');
+                        }
+                    }
+                    break;
+                case "/sign":
+                    if (users[data.user]) {
+                        res.write('{"OK":false,"msg":"此用户已存在！"}');
+                    } else {
+                        users[data.user] = data.password;
+                        res.write('{"OK":true,"msg":"注册成功！"}');
+                    }
+                    break;
+                default:
+                    break;
+            }
+            console.log(users);
             res.end();
         });
     }

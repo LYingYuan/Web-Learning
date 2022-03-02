@@ -11,9 +11,9 @@ class Ajax {
             // 设置请求头
         };
     }
-    request(method) {
+    request(method, usr) {
         const xhr = new XMLHttpRequest();
-        xhr.open(method, `${server_url}`);
+        xhr.open(method, `${server_url}/${usr}`);
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4) {
                 const status = xhr.status;
@@ -44,9 +44,38 @@ class AjaxGET extends Ajax {
     }
 }
 
-class AjaxPOST extends Ajax {
-    success() {
+class AjaxLoginPOST extends Ajax {
+    success(str) {
+        // const msg = JSON.parse(str);
+        // console.log(msg.user);
+        // alert("登录成功");
+        // window.location.href = `${server_url}/index`;
+        const msg = JSON.parse(str);
         console.log("POST请求成功");
+        if (msg.OK) {
+            window.location.href = `${server_url}/index`;
+        } else {
+            alert(msg.msg);
+        }
+    }
+    error() {
+        console.log("POST请求失败");
+    }
+}
+
+class AjaxSignPOST extends Ajax {
+    success(str) {
+        // const msg = JSON.parse(str);
+        // console.log(msg.user);
+        // window.location.href = `${server_url}/index`;
+        const msg = JSON.parse(str);
+        console.log("POST请求成功");
+        console.log(str);
+        if (msg.OK) {
+            alert(msg.msg);
+        } else {
+            alert(msg.msg);
+        }
     }
     error() {
         console.log("POST请求失败");
