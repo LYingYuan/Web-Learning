@@ -21,7 +21,7 @@ function classifyText(data) {
 
     for (let i = 0; i < index_val; i++) {
         arr.push(data[3 * i]);
-        arr.push(data[3 * i + 2] + `\n`);
+        arr.push(data[3 * i + 2]);
     }
     const str = arr.join(`\n`);
     // console.log(
@@ -43,11 +43,14 @@ function microBlogText(data) {
     const index_val = Math.floor(data.length / 3);
     console.log(`============================`);
     for (let i = 0; i < index_val; i++) {
-        arr.push(`【` + data[3 * i] + `】` + data[3 * i + 1] + data[3 * i + 2]);
-        if (arr[i].length > 150) {
-            console.log(`第${i + 1}条超出字数限制`);
-        }
+        arr.push(
+            `【` + data[3 * i] + `】` + data[3 * i + 1] + data[3 * i + 2] + `\n`
+        );
+        // if (arr[i].length > 150) {
+        //     console.log(`第${i + 1}条超出字数限制` + arr[i].length);
+        // }
     }
+    console.log(arr[0] + `\n` + arr[0].length);
     console.log(`============================`);
     const str = arr.join(`\n`);
     // console.log(
