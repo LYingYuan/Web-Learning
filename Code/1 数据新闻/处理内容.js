@@ -50,8 +50,8 @@ function microBlogText(data) {
         //     console.log(`第${i + 1}条超出字数限制` + arr[i].length);
         // }
     }
-    console.log(arr[0] + `\n` + arr[0].length);
-    console.log(`============================`);
+    // console.log(arr[0] + `\n` + arr[0].length);
+    // console.log(`============================`);
     const str = arr.join(`\n`);
     // console.log(
     //     `============================\n3、微博内容（无缩进）：\n============================\n` +

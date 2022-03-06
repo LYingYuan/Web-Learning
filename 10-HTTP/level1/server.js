@@ -2,7 +2,6 @@ const fs = require("fs");
 const path = require("path");
 const http = require("http");
 // const url = require("url");
-const querystring = require("querystring");
 
 let users = {};
 // 解析cookie start
