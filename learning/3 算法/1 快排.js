@@ -18,5 +18,4 @@ function quickSort(arr) {
 }
 
 const arr = [85, 40, 51, 64, 55, 63, 45];
-const arr2 = [2, 6, 4, 10, 9, 15];
-console.log(quickSort(arr2));
+console.log(quickSort(arr));

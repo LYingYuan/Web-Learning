@@ -1,6 +1,8 @@
 {
   "devDependencies": {
     "express": "^4.17.3",
-    "koa": "^2.13.4"
+    "koa": "^2.13.4",
+    "koa-route": "^3.2.0",
+    "koa-static": "^5.0.0"
   }
 }

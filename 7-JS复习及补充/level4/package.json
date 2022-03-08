@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "require": "npm:Require@^1.1.2"
+  }
+}
