@@ -70,7 +70,11 @@ function microBlogText(data) {
 function disposeUrl(data) {
     const str1 = /&preview=true/g; // 替换为.html
     const str2 = /\?p=/g; // 替换为archives/
-    data = data.replace(str1, `.html`).replace(str2, `archives/`);
+    const str3 = /https/g; // 替换为http
+    data = data
+        .replace(str1, `.html`)
+        .replace(str2, `archives/`)
+        .replace(str3, `http`);
     // console.log(
     //     `============================\n1、处理链接后的结果：\n============================\n` +
     //         data
