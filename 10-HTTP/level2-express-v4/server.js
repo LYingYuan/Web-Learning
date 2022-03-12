@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 
 // 路由
 app.use(login_router);
-// app.use(auth.verifyToken); // token验证
+app.use(auth.verifyToken); // token验证
 app.use(user_router);
 
 app.listen(80, () => {

@@ -15,21 +15,18 @@ btn.sign.addEventListener("click", () => {
 
 btn.login.addEventListener("click", () => {
     // POST
-    let headers = new Headers({
-        "Content-Type": "application/json",
-        Accept: "application/json",
-    });
     const payload = JSON.stringify({
         user: text.user.value,
         password: text.password.value,
     });
-    if (localStorage.getItem("token")) {
-        headers = new Headers({
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-        });
-    }
+    const headers = {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization:
+            localStorage.getItem("token") &&
+            `Bearer ${localStorage.getItem("token")}`,
+    };
+    console.log(headers);
     fetch("/login", {
         method: "POST",
         body: payload,
@@ -44,7 +41,7 @@ btn.login.addEventListener("click", () => {
         })
         .then((data) => {
             if (data.OK) {
-                // localStorage.setItem("token", JSON.stringify(str.data.token));
+                localStorage.setItem("token", data.data.token);
                 window.location.href = `${server_url}/index`;
             } else {
                 alert(data.message);
