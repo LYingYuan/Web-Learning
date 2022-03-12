@@ -6,6 +6,10 @@ class Ajax {
             user: user,
             password: psw,
         });
+        // this.data = {
+        //     user: user,
+        //     password: psw,
+        // };
         // this.data = data;
         this.header = {
             // 设置请求头

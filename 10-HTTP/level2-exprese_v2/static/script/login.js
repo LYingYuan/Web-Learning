@@ -13,11 +13,29 @@ btn.sign.addEventListener("click", () => {
 
 btn.login.addEventListener("click", () => {
     // POST
-    const data = {
-        user: text.user.value,
-        password: text.password.value,
-    };
-    const post = new AjaxLoginPOST(data.user, data.password);
-    // console.log(data);
+    const post = new AjaxLoginPOST(text.user.value, text.password.value);
     post.request("post", "login");
+
+    // const post_ajax = {
+    //     url: "/login",
+    //     method: "post",
+    //     data: {
+    //         user: data.user,
+    //         password: data.password,
+    //     },
+    //     success:loginSuccess(),
+    //     error:()=>{
+    //         console.log("login default");
+    //     }
+    // };
+    // Ajax(post_ajax);
 });
+
+// function loginSuccess(data) {
+//     console.log("POST success");
+//     if (data.ok) {
+//         console.log("login success");
+//     } else {
+//         console.log(data.msg);
+//     }
+// }

@@ -5,7 +5,9 @@ const path = require("path");
 router.get("/", loginRouter);
 router.get("/login", loginRouter);
 router.get("/sign", signRouter);
+router.post("/", loginPost);
 router.post("/login", loginPost);
+router.post("/sign", signPost);
 
 function loginRouter(req, res) {
     // 验证token
@@ -17,12 +19,15 @@ function signRouter(req, res) {
 }
 
 function loginPost(req, res) {
-    console.log(req.user);
-    res.send("hello");
+    req.on("data", function (data) {
+        //利用data事件
+        console.log(data.toString());
+    });
+    res.send("hello1");
 }
 
 function signPost(req, res) {
-    console.log(req.user);
+    console.log(req);
 }
 
 function searchUser() {}
