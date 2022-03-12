@@ -1,0 +1,1 @@
+使用fetch替换ajax
