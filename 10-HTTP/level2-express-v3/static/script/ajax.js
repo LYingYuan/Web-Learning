@@ -14,6 +14,11 @@ class Ajax {
     request(method, usr) {
         const xhr = new XMLHttpRequest();
         xhr.open(method, `${server_url}/${usr}`);
+        if (localStorage.getItem("token")) {
+            const token = localStorage.getItem("token");
+            console.log("have token");
+            xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+        }
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4) {
                 const status = xhr.status;
@@ -49,7 +54,9 @@ class AjaxLoginPOST extends Ajax {
     success(str) {
         console.log("POST请求成功");
         if (str.OK) {
+            localStorage.setItem("token", JSON.stringify(str.data.token));
             window.location.href = `${server_url}/index`;
+            // localStorage.clear();
         } else {
             alert(str.message);
         }

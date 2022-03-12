@@ -1,12 +1,17 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const user_router = require("./router");
+const login_router = require("./router");
+const user_router = require("./userRouter");
+const auth = require("./jwt");
 
 const app = new express();
 
 const logger = (req, res, next) => {
     console.log(`${req.method} ${req.url}`);
+    console.log(
+        `请求头中Authorization:${JSON.stringify(req.headers.Authorization)}`
+    );
     next();
 };
 app.use(logger);
@@ -15,6 +20,8 @@ app.use(logger);
 app.use(express.static(path.join(__dirname, "static")));
 
 // 路由
+app.use(login_router);
+app.use(auth.verifyToken); // token验证
 app.use(user_router);
 
 // 解析请求内容
@@ -26,4 +33,3 @@ app.use(bodyParser.json());
 app.listen(80, () => {
     console.log("Server is running at http://127.0.0.1:80");
 });
-
