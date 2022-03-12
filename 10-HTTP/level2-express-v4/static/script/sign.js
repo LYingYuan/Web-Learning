@@ -27,9 +27,17 @@ btn.sign.addEventListener("click", () => {
         headers: headers,
     })
         .then((response) => {
-            response.json();
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("注册POST返回出错");
+            }
         })
         .then((data) => {
-            console.log(data);
+            if (data.OK) {
+                alert(data.message);
+            } else {
+                alert(data.message);
+            }
         });
 });

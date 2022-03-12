@@ -1,3 +1,5 @@
+const server_url = "http://127.0.0.1";
+
 const btn = {
     login: document.querySelector(".login"),
     sign: document.querySelector(".sign"),
@@ -34,9 +36,18 @@ btn.login.addEventListener("click", () => {
         headers: headers,
     })
         .then((response) => {
-            response.json();
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("登录POST返回出错");
+            }
         })
         .then((data) => {
-            console.log(data);
+            if (data.OK) {
+                // localStorage.setItem("token", JSON.stringify(str.data.token));
+                window.location.href = `${server_url}/index`;
+            } else {
+                alert(data.message);
+            }
         });
 });
