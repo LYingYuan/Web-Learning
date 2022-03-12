@@ -3,17 +3,11 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const login_router = require("./router");
 const user_router = require("./userRouter");
-const auth = require("./jwt");
 
 const app = new express();
 
-const allowCors = (req, res, next) => {
-    res.header("Access-Control-Expose-Headers", "Authorization");
-    next();
-};
-app.use(allowCors);
-
 const logger = (req, res, next) => {
+    
     console.log(`${req.method} ${req.url}`);
     // console.log(`请求头中 :${JSON.stringify(req.headers)}`);
     next();
@@ -31,9 +25,10 @@ app.use(bodyParser.json());
 
 // 路由
 app.use(login_router);
-app.use(auth.verifyToken); // token验证
+// app.use(auth.verifyToken); // token验证
 app.use(user_router);
 
 app.listen(80, () => {
     console.log("Server is running at http://127.0.0.1:80");
 });
+
