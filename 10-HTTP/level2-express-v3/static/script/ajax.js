@@ -18,14 +18,14 @@ class Ajax {
             if (xhr.readyState === 4) {
                 const status = xhr.status;
                 if ((status >= 200 && status < 300) || status === 304) {
-                    // const result = JSON.parse(xhr.responseText);
-                    this.success(xhr.responseText);
+                    const result = JSON.parse(xhr.responseText);
+                    this.success(result);
                 } else {
                     this.error();
                 }
             }
         };
-        console.log(this.data);
+        // console.log(this.data);
         xhr.send(this.data);
     }
     success() {
@@ -53,12 +53,12 @@ class AjaxLoginPOST extends Ajax {
         // window.location.href = `${server_url}/index`;
         const msg = str;
         // const msg = JSON.parse(str);
-
+        console.log(str);
         console.log("POST请求成功");
         if (msg.OK) {
             window.location.href = `${server_url}/index`;
         } else {
-            alert(msg.msg);
+            alert(msg.message);
         }
     }
     error() {
@@ -72,13 +72,12 @@ class AjaxSignPOST extends Ajax {
         // console.log(msg.user);
         // window.location.href = `${server_url}/index`;
         const msg = str;
-        // const msg = JSON.parse(str);
         console.log("POST请求成功");
         console.log(str);
         if (msg.OK) {
-            alert(msg.msg);
+            alert(msg.message);
         } else {
-            alert(msg.msg);
+            alert(msg.message);
         }
     }
     error() {
