@@ -2,6 +2,7 @@ const { json } = require("body-parser");
 const express = require("express");
 const router = express.Router();
 const path = require("path");
+const auth = require("./jwt");
 
 router.get("/", loginRouter);
 router.get("/login", loginRouter);
@@ -32,12 +33,12 @@ function login(req, res) {
         // console.log(post_data["user"]);
         // console.log(`用户登陆数据：${data.toString()}`);
         if (!user_data[post_data.user]) {
-            res.send(`{"OK":false,"message":"用户不存在"}`);
+            res.send({ OK: false, message: "用户不存在" });
         } else {
             if (user_data[post_data.user] === post_data.password) {
-                res.send(`{"OK":true,"message":"登陆成功"}`);
+                res.send({ OK: true, message: "登陆成功" });
             } else {
-                res.send(`{"OK":false,"message":"登陆失败"}`);
+                res.send({ OK: false, message: "登陆失败" });
             }
         }
     });
@@ -47,10 +48,10 @@ function sign(req, res) {
     req.on("data", (data) => {
         const post_data = JSON.parse(data.toString());
         if (user_data[post_data.user]) {
-            res.send(`{"OK":false,"message":"该用户已注册"}`);
+            res.send({ OK: false, message: "该用户已注册" });
         } else {
             user_data[post_data.user] = post_data.password;
-            res.send(`{"OK":true,"message":"注册成功"}`);
+            res.send({ OK: true, message: "注册成功" });
         }
     });
 }

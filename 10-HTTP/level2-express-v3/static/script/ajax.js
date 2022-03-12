@@ -47,18 +47,11 @@ class AjaxGET extends Ajax {
 
 class AjaxLoginPOST extends Ajax {
     success(str) {
-        // const msg = JSON.parse(str);
-        // console.log(msg.user);
-        // alert("登录成功");
-        // window.location.href = `${server_url}/index`;
-        const msg = str;
-        // const msg = JSON.parse(str);
-        console.log(str);
         console.log("POST请求成功");
-        if (msg.OK) {
+        if (str.OK) {
             window.location.href = `${server_url}/index`;
         } else {
-            alert(msg.message);
+            alert(str.message);
         }
     }
     error() {
@@ -68,16 +61,11 @@ class AjaxLoginPOST extends Ajax {
 
 class AjaxSignPOST extends Ajax {
     success(str) {
-        // const msg = JSON.parse(str);
-        // console.log(msg.user);
-        // window.location.href = `${server_url}/index`;
-        const msg = str;
         console.log("POST请求成功");
-        console.log(str);
-        if (msg.OK) {
-            alert(msg.message);
+        if (str.OK) {
+            alert(str.message);
         } else {
-            alert(msg.message);
+            alert(str.message);
         }
     }
     error() {
