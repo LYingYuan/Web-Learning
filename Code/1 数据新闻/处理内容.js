@@ -41,7 +41,7 @@ function classifyText(data) {
 function microBlogText(data) {
     const arr = [];
     const index_val = Math.floor(data.length / 3);
-    console.log(`============================`);
+    console.log(`一共${index_val}条\n============================`);
     for (let i = 0; i < index_val; i++) {
         arr.push(
             `【` + data[3 * i] + `】` + data[3 * i + 1] + data[3 * i + 2] + `\n`
