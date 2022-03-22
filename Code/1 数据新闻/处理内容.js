@@ -1,5 +1,5 @@
 // 源格式：     https://www.199it.com/?p=1398256&preview=true
-// 目标格式：   https://www.199it.com/archives/1398256.html
+// 目标格式：   http://www.199it.com/archives/1398256.html
 const fs = require("fs");
 const path = require("path");
 
