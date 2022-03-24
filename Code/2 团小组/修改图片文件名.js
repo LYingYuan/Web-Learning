@@ -31,8 +31,9 @@ fs.readdir(picturePath, (err, fileList) => {
         //首先要保存后缀名
         // 统一格式为 1.png/jpg
         const type = "." + name.split(".")[1];
+        const name_index = name.split(".")[0] - 1;
         const oldName = name;
-        const newName = arr[index] + type;
+        const newName = arr[name_index] + type;
         fs.rename(
             path.join(picturePath, oldName),
             path.join(picturePath, newName),
