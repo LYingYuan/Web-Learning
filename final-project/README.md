@@ -26,3 +26,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 # 简介
 
 仿写[当当网](http://www.dangdang.com/)
+
+# 组件目录
+
