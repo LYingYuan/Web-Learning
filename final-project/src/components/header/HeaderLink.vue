@@ -19,10 +19,10 @@
         </ul>
         <div class="bar" v-show="hover_city"></div>
       </div>
-      <!-- TODO:登录登出 -->
+      <!-- TODO:用户登录登出 -->
       <ul class="link">
         <li>
-          <!-- TODO:购物车 -->
+          <!-- TODO:用户购物车 -->
           <!-- 需要图(已经下载)、需要设置用户当前购物车数量 -->
           <header-link-url url="#">购物车</header-link-url>
         </li>
@@ -195,5 +195,9 @@ img {
 
 .link {
   display: flex;
+}
+
+.link > li {
+  padding-right: 5px;
 }
 </style>

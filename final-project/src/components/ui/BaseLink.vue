@@ -8,9 +8,11 @@
 export default {
   props: {
     // 链接的样式
-    // red：  当hover时显示为红色
-    // black：当hover时显示为红色
-    // gray-back:  字体颜色不变
+    // 初始颜色为 #646464;
+    // red：        当hover时显示为红色 #ff2838
+    // black：      当hover时显示为红色 #ff2838
+    // gray-back:   字体颜色不变
+    // red-line:    当hover时由 #949494 显示为红色且有下划线 #ff2838
     mode: {
       type: String,
       required: false,
@@ -44,5 +46,12 @@ a {
   color: #646464;
 }
 
+.red-line {
+  color: #949494;
+}
 
+.red-line:hover {
+  color: #ff2838;
+  text-decoration-line: underline;
+}
 </style>

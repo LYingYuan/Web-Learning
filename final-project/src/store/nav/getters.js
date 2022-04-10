@@ -14,4 +14,10 @@ export default {
   getCustomerServiceLinks(state) {
     return state.customer_service_links;
   },
+  getSearchText(state) {
+    return state.search_text;
+  },
+  getHotSearchWords(state) {
+    return state.hot_search_words;
+  },
 };
