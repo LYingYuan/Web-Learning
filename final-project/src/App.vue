@@ -24,6 +24,10 @@ export default {};
   border: none;
 }
 
+ul {
+  list-style: none;
+}
+
 a,
 a:link,
 a:visited,
@@ -40,11 +44,11 @@ a:active {
 
 .clearflex::before,
 .clearflex::after {
-    display: table;
-    content: " ";
+  display: table;
+  content: " ";
 }
 
 .clearflex::after {
-    clear: both;
+  clear: both;
 }
 </style>

@@ -10,6 +10,7 @@ export default {
     // 链接的样式
     // red：  当hover时显示为红色
     // black：当hover时显示为红色
+    // gray-back:  字体颜色不变
     mode: {
       type: String,
       required: false,
@@ -38,4 +39,10 @@ a {
 .red:hover {
   color: #ff2838;
 }
+
+.gray-back {
+  color: #646464;
+}
+
+
 </style>

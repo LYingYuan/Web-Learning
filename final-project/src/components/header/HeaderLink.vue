@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="link-start"></div>
-    <div class="container clearflex">
+    <div class="container">
       <div class="address" @mouseover="mouseOver" @mouseleave="mouseLeaveCity">
         <div class="selected-city" :class="{ hover: hover_city }">
           送至：<span>{{ selected_city }}</span>
@@ -19,14 +19,64 @@
         </ul>
         <div class="bar" v-show="hover_city"></div>
       </div>
-      <div class="link"></div>
+      <!-- TODO:登录登出 -->
+      <ul class="link">
+        <li>
+          <!-- TODO:购物车 -->
+          <!-- 需要图(已经下载)、需要设置用户当前购物车数量 -->
+          <header-link-url url="#">购物车</header-link-url>
+        </li>
+        <li>
+          <header-link-url url="#">我的订单</header-link-url>
+        </li>
+        <li>
+          <header-link-url url="#">我的云书房</header-link-url>
+        </li>
+        <li>
+          <header-link-item
+            title="我的当当"
+            :links="user_nav_links"
+          ></header-link-item>
+        </li>
+        <li>
+          <header-link-item
+            title="当当拼团"
+            :links="group_booking_links"
+          ></header-link-item>
+        </li>
+        <li>
+          <header-link-url url="#">小说投稿</header-link-url>
+        </li>
+        <li>
+          <header-link-item
+            title="企业采购"
+            :links="enterprise_links"
+          ></header-link-item>
+        </li>
+        <li>
+          <header-link-item
+            title="客户服务"
+            :links="customer_service_links"
+          ></header-link-item>
+        </li>
+        <li>
+          <header-link-url url="#">切换无障碍</header-link-url>
+        </li>
+      </ul>
     </div>
     <div class="link-end"></div>
   </section>
 </template>
 
 <script>
+import HeaderLinkItem from "./HeaderLinkItem.vue";
+import HeaderLinkUrl from "./HeaderLinkUrl.vue";
+
 export default {
+  components: {
+    HeaderLinkItem,
+    HeaderLinkUrl,
+  },
   data() {
     return {
       selected_city: "北京",
@@ -52,8 +102,25 @@ export default {
     },
   },
   computed: {
+    // 城市
     cities() {
-      return this.$store.getters["nav/addresses"];
+      return this.$store.getters["nav/getAddresses"];
+    },
+    // 我的当当
+    user_nav_links() {
+      return this.$store.getters["nav/getUserNavLinks"];
+    },
+    // 当当拼团
+    group_booking_links() {
+      return this.$store.getters["nav/getGroupBookingLinks"];
+    },
+    // 企业采购
+    enterprise_links() {
+      return this.$store.getters["nav/getEnterpriseLinks"];
+    },
+    // 客户服务
+    customer_service_links() {
+      return this.$store.getters["nav/getCustomerServiceLinks"];
     },
   },
 };
@@ -94,12 +161,10 @@ img {
 
 .container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .cities {
-  list-style: none;
   display: grid;
   grid-template-rows: repeat(7, 1fr);
   grid-template-columns: repeat(5, 1fr);
@@ -126,5 +191,9 @@ img {
   background-color: #fff;
   border: 1px solid #e6e6e6;
   border-bottom: 1px solid #fff;
+}
+
+.link {
+  display: flex;
 }
 </style>
