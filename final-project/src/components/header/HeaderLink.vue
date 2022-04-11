@@ -82,7 +82,7 @@ export default {
       selected_city: "北京",
       hover_city: false,
       cities_showing: false,
-      img_src: require("../../assets/icon/310向下、展开.svg"),
+      img_src: require("../../assets/icon/展开.svg"),
     };
   },
   methods: {
@@ -90,12 +90,12 @@ export default {
     mouseOver() {
       this.cities_showing = true;
       this.hover_city = true;
-      this.img_src = require("../../assets/icon/311向上、收起.svg");
+      this.img_src = require("../../assets/icon/收起.svg");
     },
     mouseLeaveCity() {
       this.cities_showing = false;
       this.hover_city = false;
-      this.img_src = require("../../assets/icon/310向下、展开.svg");
+      this.img_src = require("../../assets/icon/展开.svg");
     },
     changeCity(city) {
       this.selected_city = city;

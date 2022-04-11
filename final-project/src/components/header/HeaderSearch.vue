@@ -49,7 +49,22 @@
         <base-link to="#" mode="red-line">高级搜索</base-link>
       </div>
     </div>
-    <div class="user"></div>
+    <div class="user">
+      <!-- TODO:购物车 链接 to-->
+      <base-link
+        class="shopping-cart"
+        mode="none"
+        :class="{ hoverCart: hover_cart }"
+        @mouseover="hoverCart"
+        @mouseleave="leaveCart"
+      >
+        <img class="cart-icon" :src="cart_src" />
+        <span class="cart-text">购物车</span>
+        <!-- TODO:购物车-数量 -->
+        <span>1</span>
+      </base-link>
+      <base-link class="customer-oder">我的订单</base-link>
+    </div>
   </div>
 </template>
 
@@ -66,7 +81,9 @@ export default {
       search_text: "",
       // TODO:搜索的分类
       selected_class: "全部分类",
-      img_src: require("../../assets/icon/310向下、展开.svg"),
+      img_src: require("../../assets/icon/展开.svg"),
+      cart_src: require("../../assets/icon/购物车2.svg"),
+      hover_cart: false,
     };
   },
   computed: {
@@ -91,6 +108,14 @@ export default {
         this.search_text = this.recommend_search_text;
       }
     },
+    hoverCart() {
+      this.hover_cart = true;
+      this.cart_src = require("../../assets/icon/购物车2-red.svg");
+    },
+    leaveCart() {
+      this.hover_cart = false;
+      this.cart_src = require("../../assets/icon/购物车2.svg");
+    },
   },
 };
 </script>
@@ -100,6 +125,7 @@ export default {
   /* background-color: aqua; */
   height: 100px;
   display: flex;
+  position: relative;
 }
 
 .search {
@@ -181,6 +207,43 @@ form {
 }
 
 .user {
+  position: absolute;
+  right: 0;
   margin-top: 20px;
+  display: flex;
+  font-size: 14px;
+}
+
+.shopping-cart {
+  padding-right: 8px;
+  height: 40px;
+  border: 2px solid #ff2832;
+  background-color: #ff2832;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon {
+  max-height: 32px;
+}
+
+.cart-text {
+  padding: 0 6px;
+}
+
+.customer-oder {
+  height: 40px;
+  line-height: 36px;
+  padding: 0 10px;
+  border: 2px solid #dcdcdc;
+  border-left: 0;
+  background-color: #f6f6f6;
+}
+
+.hoverCart {
+  background: #f6f6f6;
+  border-color: #dcdcdc;
+  color: #ff2832;
 }
 </style>

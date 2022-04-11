@@ -34,18 +34,18 @@ export default {
   },
   data() {
     return {
-      img_src: require("../../assets/icon/310向下、展开.svg"),
+      img_src: require("../../assets/icon/展开.svg"),
       hover_title: false,
     };
   },
   methods: {
     mouseOver() {
       this.hover_title = true;
-      this.img_src = require("../../assets/icon/311向上、收起.svg");
+      this.img_src = require("../../assets/icon/收起.svg");
     },
     mouseLeave() {
       this.hover_title = false;
-      this.img_src = require("../../assets/icon/310向下、展开.svg");
+      this.img_src = require("../../assets/icon/展开.svg");
     },
   },
 };
