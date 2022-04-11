@@ -1,7 +1,9 @@
 <template>
-  <header-link></header-link>
-  <header-search></header-search>
-  <header-nav></header-nav>
+  <header>
+    <header-link></header-link>
+    <header-search></header-search>
+    <header-nav></header-nav>
+  </header>
 </template>
 
 <script>
@@ -18,4 +20,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+header {
+  border-bottom: 3px solid #ff2832;
+}
+</style>

@@ -9,7 +9,7 @@ export default {};
 <style>
 :root {
   box-sizing: border-box;
-  font-size: 1em;
+  font-size: 14px;
 }
 
 *,
