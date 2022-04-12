@@ -56,4 +56,11 @@ a {
   text-decoration-line: underline;
 }
 
+.black {
+  color: black;
+}
+
+.black:hover {
+  color: #ff2838;
+}
 </style>

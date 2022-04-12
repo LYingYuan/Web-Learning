@@ -7,6 +7,24 @@
           <img src="../../assets/icon/展开-white.svg" />
         </base-link>
       </li>
+      <li>
+        <base-link mode="black">图书</base-link>
+      </li>
+      <li>
+        <base-link mode="black">电子书</base-link>
+      </li>
+      <li>
+        <base-link mode="black">童鞋童装</base-link>
+      </li>
+      <li>
+        <base-link mode="black">女装</base-link>
+      </li>
+      <li>
+        <base-link mode="black">食品</base-link>
+      </li>
+      <li>
+        <base-link mode="black">母婴玩具</base-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -14,8 +32,11 @@
 <style scoped>
 .container {
   height: 40px;
-  background-color: aqua;
   font-weight: bold;
+}
+
+.all-classification {
+  margin-right: 17px;
 }
 
 .all-classification > a {
@@ -31,5 +52,19 @@
 .all-classification img {
   max-height: 20px;
   margin-right: 25px;
+}
+
+ul {
+  display: flex;
+}
+
+ul > li {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 15px;
+}
+
+ul > li:first-child {
+  padding: 0;
 }
 </style>
