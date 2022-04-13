@@ -31,7 +31,7 @@ export default {
   position: absolute;
   left: 200px;
   top: 0px;
-  z-index: 2;
+  z-index: 3;
   width: 1000px;
   height: 480px;
   padding-left: 18px;
