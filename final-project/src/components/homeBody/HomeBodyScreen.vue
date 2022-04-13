@@ -1,17 +1,21 @@
 <template>
   <div class="home-body-screen">
     <home-body-screen-left-sidebar></home-body-screen-left-sidebar>
-    <div class="carousel">轮播图</div>
-    <div class="notice-board">公告栏</div>
+    <home-body-screen-carousel></home-body-screen-carousel>
+    <home-body-screen-notice-board></home-body-screen-notice-board>
   </div>
 </template>
 
 <script>
 import HomeBodyScreenLeftSidebar from "./HomeBodyScreenLeftSidebar.vue";
+import HomeBodyScreenCarousel from "./HomeBodyScreenCarousel.vue";
+import HomeBodyScreenNoticeBoard from "./HomeBodyScreenNoticeBoard.vue";
 
 export default {
   components: {
     HomeBodyScreenLeftSidebar,
+    HomeBodyScreenCarousel,
+    HomeBodyScreenNoticeBoard,
   },
 };
 </script>

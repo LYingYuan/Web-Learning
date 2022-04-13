@@ -74,6 +74,7 @@ ul {
   flex-direction: column;
   border: 1px solid #e6e6e6;
   border-top: 0;
+  z-index: 4;
 }
 
 li {

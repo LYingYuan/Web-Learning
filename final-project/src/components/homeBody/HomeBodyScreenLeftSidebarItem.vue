@@ -36,6 +36,7 @@ export default {
   color: #323232;
   font: 14px/30px "Microsoft Yahei";
   position: relative;
+  z-index: 3;
 }
 
 .title {

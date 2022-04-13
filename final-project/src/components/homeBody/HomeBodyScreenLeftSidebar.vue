@@ -34,6 +34,7 @@
       </home-body-screen-left-sidebar-item>
     </ul>
     <home-body-screen-left-sidebar-detail
+      v-show="false"
     ></home-body-screen-left-sidebar-detail>
   </div>
 </template>
