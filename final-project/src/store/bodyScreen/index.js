@@ -6,7 +6,23 @@ export default {
   namespaced: true,
   state() {
     return {
-      // 首屏左侧链接
+      // 首屏左侧标题:
+      left_sidebar_titles: [
+        [
+          {
+            name: "图书",
+            url: "#",
+          },
+          {
+            name: "童书",
+            url: "#",
+          },
+        ],
+        {
+          name: "童书",
+          url: "#",
+        },
+      ],
       left_sidebar_links: [
         [
           // 标题链接 start
@@ -32,10 +48,12 @@ export default {
                   {
                     name: "图书畅销榜  >>",
                     url: "#",
+                    highlight: false,
                   },
                   {
                     name: "新书热卖榜单  >>",
                     url: "#",
+                    highlight: false,
                   },
                 ],
               ],
@@ -45,10 +63,12 @@ export default {
                   {
                     name: "图书畅销榜  >>",
                     url: "#",
+                    highlight: true,
                   },
                   {
                     name: "新书热卖榜单  >>",
                     url: "#",
+                    highlight: false,
                   },
                 ],
               ],

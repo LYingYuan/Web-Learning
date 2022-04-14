@@ -2,36 +2,10 @@
   <div class="left-sidebar">
     <ul class="classify">
       <home-body-screen-left-sidebar-item
-        title="图书、童书"
+        v-for="link in left_sidebar_titles"
+        :key="link.name"
+        :title="link.name"
       ></home-body-screen-left-sidebar-item>
-      <home-body-screen-left-sidebar-item title="电子书">
-      </home-body-screen-left-sidebar-item>
-      <home-body-screen-left-sidebar-item title="电子书">
-      </home-body-screen-left-sidebar-item>
-      <home-body-screen-left-sidebar-item title="电子书">
-      </home-body-screen-left-sidebar-item>
-      <home-body-screen-left-sidebar-item title="电子书">
-      </home-body-screen-left-sidebar-item>
-      <home-body-screen-left-sidebar-item title="电子书">
-      </home-body-screen-left-sidebar-item>
-      <home-body-screen-left-sidebar-item title="电子书">
-      </home-body-screen-left-sidebar-item>
-      <home-body-screen-left-sidebar-item title="电子书">
-      </home-body-screen-left-sidebar-item>
-      <home-body-screen-left-sidebar-item title="电子书">
-      </home-body-screen-left-sidebar-item>
-      <home-body-screen-left-sidebar-item title="电子书">
-      </home-body-screen-left-sidebar-item>
-      <home-body-screen-left-sidebar-item title="电子书">
-      </home-body-screen-left-sidebar-item>
-      <home-body-screen-left-sidebar-item title="电子书">
-      </home-body-screen-left-sidebar-item>
-      <home-body-screen-left-sidebar-item title="电子书">
-      </home-body-screen-left-sidebar-item>
-      <home-body-screen-left-sidebar-item title="电子书">
-      </home-body-screen-left-sidebar-item>
-      <home-body-screen-left-sidebar-item title="电子书">
-      </home-body-screen-left-sidebar-item>
     </ul>
     <home-body-screen-left-sidebar-detail
       v-show="true"
@@ -47,6 +21,12 @@ export default {
   components: {
     HomeBodyScreenLeftSidebarItem,
     HomeBodyScreenLeftSidebarDetail,
+  },
+  computed: {
+    left_sidebar_titles() {
+      console.log(this.$store.getters["bodyScreen/getLeftSidebarTitle"]);
+      return this.$store.getters["bodyScreen/getLeftSidebarTitle"];
+    },
   },
 };
 </script>
