@@ -7,10 +7,9 @@ const user_router = require("./userRouter");
 const app = new express();
 
 const logger = (req, res, next) => {
-    
-    console.log(`${req.method} ${req.url}`);
-    // console.log(`请求头中 :${JSON.stringify(req.headers)}`);
-    next();
+  console.log(`${req.method} ${req.url}`);
+  // console.log(`请求头中 :${JSON.stringify(req.headers)}`);
+  next();
 };
 app.use(logger);
 
@@ -29,6 +28,5 @@ app.use(login_router);
 app.use(user_router);
 
 app.listen(80, () => {
-    console.log("Server is running at http://127.0.0.1:80");
+  console.log("Server is running at http://127.0.0.1:80");
 });
-
