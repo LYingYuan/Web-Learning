@@ -13,6 +13,7 @@ export default {
     // black：      当hover时显示为红色 #ff2838
     // gray-back:   字体颜色不变
     // red-line:    当hover时由 #949494 显示为红色且有下划线 #ff2838
+    // red-2:       当hover时由 #949494 显示为红色 #ff2838
     // none:        没有样式
     mode: {
       type: String,
@@ -35,12 +36,12 @@ a {
   cursor: pointer;
 }
 
-.red {
-  color: #646464;
+a:hover {
+  color: #ff2838;
 }
 
-.red:hover {
-  color: #ff2838;
+.red {
+  color: #646464;
 }
 
 .gray-back {
@@ -52,7 +53,6 @@ a {
 }
 
 .red-line:hover {
-  color: #ff2838;
   text-decoration-line: underline;
 }
 
@@ -60,7 +60,7 @@ a {
   color: black;
 }
 
-.black:hover {
-  color: #ff2838;
+.red-2 {
+  color: #949494;
 }
 </style>
