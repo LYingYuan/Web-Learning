@@ -6,97 +6,21 @@ export default {
   namespaced: true,
   state() {
     return {
-      // 首屏左侧标题:
-      left_sidebar_titles: [
-        [
-          {
-            name: "图书",
-            url: "#",
-          },
-          {
-            name: "童书",
-            url: "#",
-          },
-        ],
-        {
-          name: "童书",
-          url: "#",
-        },
-      ],
-      left_sidebar_links: [
-        [
-          // 标题链接 start
-          [
-            {
-              name: "图书",
-              url: "#",
-            },
-            {
-              name: "童书",
-              url: "#",
-            },
-          ],
-          // 标题链接 end
-          // 详情链接 start
-          [
-            [
-              [
-                // 标题
-                "排行榜",
-                // 链接
-                [
-                  {
-                    name: "图书畅销榜  >>",
-                    url: "#",
-                    highlight: false,
-                  },
-                  {
-                    name: "新书热卖榜单  >>",
-                    url: "#",
-                    highlight: false,
-                  },
-                ],
-              ],
-              [
-                "童书",
-                [
-                  {
-                    name: "图书畅销榜  >>",
-                    url: "#",
-                    highlight: true,
-                  },
-                  {
-                    name: "新书热卖榜单  >>",
-                    url: "#",
-                    highlight: false,
-                  },
-                ],
-              ],
-            ],
-            // 主要分区（special) start
-            [
-              {
-                name: "图书馆",
-                url: "#",
-              },
-              {
-                name: "童书馆",
-                url: "#",
-              },
-            ],
-            // 主要分区（special) end
-          ],
-          // 详情链接 end
-          // logo start
-          [
-            {
-              img: "",
-              url: "#",
-            },
-          ],
-          // logo end
-        ],
-      ],
+      leftSidebarItem_0: false,
+      leftSidebarItem_1: false,
+      leftSidebarItem_2: false,
+      leftSidebarItem_3: false,
+      leftSidebarItem_4: false,
+      leftSidebarItem_5: false,
+      leftSidebarItem_6: false,
+      leftSidebarItem_7: false,
+      leftSidebarItem_8: false,
+      leftSidebarItem_9: false,
+      leftSidebarItem_10: false,
+      leftSidebarItem_11: false,
+      leftSidebarItem_12: false,
+      leftSidebarItem_13: false,
+      leftSidebarItem_14: false,
     };
   },
   actions,

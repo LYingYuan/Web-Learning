@@ -2,25 +2,20 @@
   <div class="detail">
     <!-- TODO:如果有则显示 -->
     <div class="special-link">
-      <home-body-screen-left-sidebar-detail-link
-        title="图书馆"
-      ></home-body-screen-left-sidebar-detail-link>
+      <slot name="special-link"></slot>
     </div>
     <ul>
-      <home-body-screen-left-sidebar-detail-list></home-body-screen-left-sidebar-detail-list>
-    </ul>
+      <slot name="link"></slot>
+      </ul>
+    <div class="logo">
+      <slot name="logo"></slot>
+    </div>
   </div>
 </template>
 
 <script>
-import HomeBodyScreenLeftSidebarDetailLink from "./HomeBodyScreenLeftSidebarDetailLink.vue";
-import HomeBodyScreenLeftSidebarDetailList from "./HomeBodyScreenLeftSidebarDetailList.vue";
-
 export default {
-  components: {
-    HomeBodyScreenLeftSidebarDetailLink,
-    HomeBodyScreenLeftSidebarDetailList,
-  },
+  
 };
 </script>
 

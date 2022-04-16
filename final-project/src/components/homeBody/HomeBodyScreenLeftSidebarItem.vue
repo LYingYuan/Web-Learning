@@ -1,7 +1,7 @@
 <template>
   <li class="sidebar-item">
-    <div class="title" @mouseover="mouse_over" @mouseleave="mouse_leave">
-      {{ title }}
+    <div class="title" :class="{ titleHover: over_title }">
+      <slot></slot>
     </div>
     <div class="bar" v-show="over_title"></div>
   </li>
@@ -10,22 +10,14 @@
 <script>
 export default {
   props: {
-    title: {
-      type: String,
+    sign: {
+      type: Number,
       require: true,
     },
   },
-  data() {
-    return {
-      over_title: false,
-    };
-  },
-  methods: {
-    mouse_over() {
-      this.over_title = true;
-    },
-    mouse_leave() {
-      this.over_title = false;
+  computed: {
+    over_title() {
+      return this.$store.getters[`bodyScreen/getLeftSidebarItem${this.sign}`];
     },
   },
 };
@@ -45,7 +37,7 @@ export default {
   position: relative;
 }
 
-.title:hover {
+.titleHover {
   /* TODO：设置下划线 */
   background: #fff;
   border: 2px solid #ff2832;

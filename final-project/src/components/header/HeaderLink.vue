@@ -176,7 +176,7 @@ img {
   padding: 10px 0 0 20px;
   width: 300px;
   height: 220px;
-  z-index: 4;
+  z-index: 5;
 }
 
 .bar {
@@ -186,6 +186,7 @@ img {
   background-color: #fff;
   position: relative;
   bottom: 1px;
+  z-index: 5;
 }
 
 .hover {
