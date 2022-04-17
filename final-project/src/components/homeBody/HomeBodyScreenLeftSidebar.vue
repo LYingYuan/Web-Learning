@@ -69,34 +69,538 @@
           >
         </span>
       </home-body-screen-left-sidebar-item>
+      <home-body-screen-left-sidebar-item
+        @mouseover="hoverItem(4)"
+        @mouseleave="leaveItem(4)"
+        sign="4"
+      >
+        <span>
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail4 }"
+            >鞋靴</router-link
+          >、
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail4 }"
+            >箱包</router-link
+          >
+        </span> </home-body-screen-left-sidebar-item
+      ><home-body-screen-left-sidebar-item
+        @mouseover="hoverItem(5)"
+        @mouseleave="leaveItem(5)"
+        sign="5"
+      >
+        <span>
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail5 }"
+            >运动户外</router-link
+          >
+        </span> </home-body-screen-left-sidebar-item
+      ><home-body-screen-left-sidebar-item
+        @mouseover="hoverItem(6)"
+        @mouseleave="leaveItem(6)"
+        sign="6"
+      >
+        <span>
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail6 }"
+            >孕</router-link
+          >、
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail6 }"
+            >婴</router-link
+          >、
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail6 }"
+            >童</router-link
+          >
+        </span> </home-body-screen-left-sidebar-item
+      ><home-body-screen-left-sidebar-item
+        @mouseover="hoverItem(7)"
+        @mouseleave="leaveItem(7)"
+        sign="7"
+      >
+        <span>
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail7 }"
+            >家居</router-link
+          >、
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail7 }"
+            >家纺</router-link
+          >、
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail7 }"
+            >汽车</router-link
+          >
+        </span> </home-body-screen-left-sidebar-item
+      ><home-body-screen-left-sidebar-item
+        @mouseover="hoverItem(8)"
+        @mouseleave="leaveItem(8)"
+        sign="8"
+      >
+        <span>
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail8 }"
+            >家具</router-link
+          >、
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail8 }"
+            >家装</router-link
+          >、
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail8 }"
+            >康体</router-link
+          >
+        </span> </home-body-screen-left-sidebar-item
+      ><home-body-screen-left-sidebar-item
+        @mouseover="hoverItem(9)"
+        @mouseleave="leaveItem(9)"
+        sign="9"
+      >
+        <span>
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail9 }"
+            >个人护理</router-link
+          >、
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail9 }"
+            >清洁</router-link
+          >
+        </span> </home-body-screen-left-sidebar-item
+      ><home-body-screen-left-sidebar-item
+        @mouseover="hoverItem(10)"
+        @mouseleave="leaveItem(10)"
+        sign="10"
+      >
+        <span>
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail10 }"
+            >食品</router-link
+          >、
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail10 }"
+            >茶酒</router-link
+          >
+        </span> </home-body-screen-left-sidebar-item
+      ><home-body-screen-left-sidebar-item
+        @mouseover="hoverItem(11)"
+        @mouseleave="leaveItem(11)"
+        sign="11"
+      >
+        <span>
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail11 }"
+            >珠宝饰品</router-link
+          >
+        </span> </home-body-screen-left-sidebar-item
+      ><home-body-screen-left-sidebar-item
+        @mouseover="hoverItem(12)"
+        @mouseleave="leaveItem(12)"
+        sign="12"
+      >
+        <span>
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail12 }"
+            >手机</router-link
+          >、
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail12 }"
+            >数码</router-link
+          >、
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail12 }"
+            >电脑办公</router-link
+          >
+        </span> </home-body-screen-left-sidebar-item
+      ><home-body-screen-left-sidebar-item
+        @mouseover="hoverItem(13)"
+        @mouseleave="leaveItem(13)"
+        sign="13"
+      >
+        <span>
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail13 }"
+            >家用电器</router-link
+          >
+        </span> </home-body-screen-left-sidebar-item
+      ><home-body-screen-left-sidebar-item
+        @mouseover="hoverItem(14)"
+        @mouseleave="leaveItem(14)"
+        sign="14"
+      >
+        <span>
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail14 }"
+            >当当礼品卡</router-link
+          >、
+          <router-link
+            to="#"
+            class="red-line"
+            :class="{ aHover: displayDetail14 }"
+            >生活服务</router-link
+          >
+        </span>
+      </home-body-screen-left-sidebar-item>
     </ul>
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail0"
       @mouseover="hoverItem(0)"
       @mouseleave="leaveItem(0)"
     >
-      <template v-slot:special-link>
+      <template #special-link>
         <home-body-screen-left-sidebar-detail-link
           title="图书馆"
         ></home-body-screen-left-sidebar-detail-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="童书馆"
+        ></home-body-screen-left-sidebar-detail-link>
       </template>
-      <template v-slot:link>
+      <template #link>
         <home-body-screen-left-sidebar-detail-list
-          >hello</home-body-screen-left-sidebar-detail-list
-        >
+          v-for="line in detail0"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
       </template>
-      <template v-slot:logo> </template>
     </home-body-screen-left-sidebar-detail>
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail1"
       @mouseover="hoverItem(1)"
       @mouseleave="leaveItem(1)"
-    ></home-body-screen-left-sidebar-detail>
+    >
+      <template #special-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="免费书"
+        ></home-body-screen-left-sidebar-detail-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="电子书馆"
+        ></home-body-screen-left-sidebar-detail-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="下载当当阅读"
+        ></home-body-screen-left-sidebar-detail-link>
+      </template>
+      <template #link>
+        <home-body-screen-left-sidebar-detail-list
+          v-for="line in detail1"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
+      </template>
+    </home-body-screen-left-sidebar-detail>
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail2"
       @mouseover="hoverItem(2)"
       @mouseleave="leaveItem(2)"
-    ></home-body-screen-left-sidebar-detail>
+    >
+      <template #special-link
+        ><home-body-screen-left-sidebar-detail-link
+          title="文创馆"
+        ></home-body-screen-left-sidebar-detail-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="艺术拍卖馆"
+        ></home-body-screen-left-sidebar-detail-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="艺术设计/艺术衍生品馆"
+        ></home-body-screen-left-sidebar-detail-link>
+      </template>
+      <template #link>
+        <home-body-screen-left-sidebar-detail-list
+          v-for="line in detail2"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
+      </template>
+    </home-body-screen-left-sidebar-detail>
+    <home-body-screen-left-sidebar-detail
+      v-show="displayDetail3"
+      @mouseover="hoverItem(3)"
+      @mouseleave="leaveItem(3)"
+    >
+      <template #special-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="内衣"
+        ></home-body-screen-left-sidebar-detail-link>
+      </template>
+      <template #link>
+        <home-body-screen-left-sidebar-detail-list
+          v-for="line in detail3"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
+      </template>
+    </home-body-screen-left-sidebar-detail>
+    <home-body-screen-left-sidebar-detail
+      v-show="displayDetail4"
+      @mouseover="hoverItem(4)"
+      @mouseleave="leaveItem(4)"
+    >
+      <template #special-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="鞋靴馆"
+        ></home-body-screen-left-sidebar-detail-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="箱包馆"
+        ></home-body-screen-left-sidebar-detail-link>
+      </template>
+      <template #link>
+        <home-body-screen-left-sidebar-detail-list
+          v-for="line in detail4"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
+      </template>
+    </home-body-screen-left-sidebar-detail>
+    <home-body-screen-left-sidebar-detail
+      v-show="displayDetail5"
+      @mouseover="hoverItem(5)"
+      @mouseleave="leaveItem(5)"
+    >
+      <template #special-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="户外运动馆"
+        ></home-body-screen-left-sidebar-detail-link>
+      </template>
+      <template #link>
+        <home-body-screen-left-sidebar-detail-list
+          v-for="line in detail5"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
+      </template>
+    </home-body-screen-left-sidebar-detail>
+    <home-body-screen-left-sidebar-detail
+      v-show="displayDetail6"
+      @mouseover="hoverItem(6)"
+      @mouseleave="leaveItem(6)"
+    >
+      <template #special-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="童装童鞋"
+        ></home-body-screen-left-sidebar-detail-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="母婴馆"
+        ></home-body-screen-left-sidebar-detail-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="玩具馆"
+        ></home-body-screen-left-sidebar-detail-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="童书馆"
+        ></home-body-screen-left-sidebar-detail-link>
+      </template>
+      <template #link>
+        <home-body-screen-left-sidebar-detail-list
+          v-for="line in detail6"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
+      </template>
+    </home-body-screen-left-sidebar-detail>
+    <home-body-screen-left-sidebar-detail
+      v-show="displayDetail7"
+      @mouseover="hoverItem(7)"
+      @mouseleave="leaveItem(7)"
+    >
+      <template #link>
+        <home-body-screen-left-sidebar-detail-list
+          v-for="line in detail7"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
+      </template>
+    </home-body-screen-left-sidebar-detail>
+    <home-body-screen-left-sidebar-detail
+      v-show="displayDetail8"
+      @mouseover="hoverItem(8)"
+      @mouseleave="leaveItem(8)"
+    >
+      <template #link>
+        <home-body-screen-left-sidebar-detail-list
+          v-for="line in detail8"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
+      </template>
+    </home-body-screen-left-sidebar-detail>
+    <home-body-screen-left-sidebar-detail
+      v-show="displayDetail9"
+      @mouseover="hoverItem(9)"
+      @mouseleave="leaveItem(9)"
+    >
+      <template #link>
+        <home-body-screen-left-sidebar-detail-list
+          v-for="line in detail9"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
+      </template>
+    </home-body-screen-left-sidebar-detail>
+    <home-body-screen-left-sidebar-detail
+      v-show="displayDetail10"
+      @mouseover="hoverItem(10)"
+      @mouseleave="leaveItem(10)"
+    >
+      <template #special-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="食品"
+        ></home-body-screen-left-sidebar-detail-link>
+      </template>
+      <template #link>
+        <home-body-screen-left-sidebar-detail-list
+          v-for="line in detail10"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
+      </template>
+    </home-body-screen-left-sidebar-detail>
+    <home-body-screen-left-sidebar-detail
+      v-show="displayDetail11"
+      @mouseover="hoverItem(11)"
+      @mouseleave="leaveItem(11)"
+    >
+      <template #special-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="珠宝馆"
+        ></home-body-screen-left-sidebar-detail-link>
+      </template>
+      <template #link>
+        <home-body-screen-left-sidebar-detail-list
+          v-for="line in detail11"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
+      </template>
+    </home-body-screen-left-sidebar-detail>
+    <home-body-screen-left-sidebar-detail
+      v-show="displayDetail12"
+      @mouseover="hoverItem(12)"
+      @mouseleave="leaveItem(12)"
+    >
+      <template #special-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="手机通讯"
+        ></home-body-screen-left-sidebar-detail-link>
+      </template>
+      <template #link>
+        <home-body-screen-left-sidebar-detail-list
+          v-for="line in detail12"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
+      </template>
+    </home-body-screen-left-sidebar-detail>
+    <home-body-screen-left-sidebar-detail
+      v-show="displayDetail13"
+      @mouseover="hoverItem(13)"
+      @mouseleave="leaveItem(13)"
+    >
+      <template #special-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="家用电器"
+        ></home-body-screen-left-sidebar-detail-link>
+      </template>
+      <template #link>
+        <home-body-screen-left-sidebar-detail-list
+          v-for="line in detail13"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
+      </template>
+    </home-body-screen-left-sidebar-detail>
+    <home-body-screen-left-sidebar-detail
+      v-show="displayDetail14"
+      @mouseover="hoverItem(14)"
+      @mouseleave="leaveItem(14)"
+    >
+      <template #special-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="礼品卡馆"
+        ></home-body-screen-left-sidebar-detail-link>
+        <home-body-screen-left-sidebar-detail-link
+          title="礼品卡优惠专区"
+        ></home-body-screen-left-sidebar-detail-link>
+      </template>
+      <template #link>
+        <home-body-screen-left-sidebar-detail-list
+          v-for="line in detail14"
+          :key="line.title"
+          :title="line.title"
+          :links="line.links"
+          :mode="line.mode"
+        ></home-body-screen-left-sidebar-detail-list>
+      </template>
+    </home-body-screen-left-sidebar-detail>
   </div>
 </template>
 
@@ -114,6 +618,51 @@ export default {
     HomeBodyScreenLeftSidebarDetailList,
   },
   computed: {
+    detail0() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail0"];
+    },
+    detail1() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail1"];
+    },
+    detail2() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail2"];
+    },
+    detail3() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail3"];
+    },
+    detail4() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail4"];
+    },
+    detail5() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail5"];
+    },
+    detail6() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail6"];
+    },
+    detail7() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail7"];
+    },
+    detail8() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail8"];
+    },
+    detail9() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail9"];
+    },
+    detail10() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail10"];
+    },
+    detail11() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail11"];
+    },
+    detail12() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail12"];
+    },
+    detail13() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail13"];
+    },
+    detail14() {
+      return this.$store.getters["bodyScreen/getLeftSidebarItemDetail14"];
+    },
     displayDetail0() {
       return this.$store.getters["bodyScreen/getLeftSidebarItem0"];
     },

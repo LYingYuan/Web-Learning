@@ -1,4 +1,49 @@
 export default {
+  getLeftSidebarItemDetail0(state) {
+    return state.leftSidebarItemDetail.Detail_0;
+  },
+  getLeftSidebarItemDetail1(state) {
+    return state.leftSidebarItemDetail.Detail_1;
+  },
+  getLeftSidebarItemDetail2(state) {
+    return state.leftSidebarItemDetail.Detail_2;
+  },
+  getLeftSidebarItemDetail3(state) {
+    return state.leftSidebarItemDetail.Detail_3;
+  },
+  getLeftSidebarItemDetail4(state) {
+    return state.leftSidebarItemDetail.Detail_4;
+  },
+  getLeftSidebarItemDetail5(state) {
+    return state.leftSidebarItemDetail.Detail_5;
+  },
+  getLeftSidebarItemDetail6(state) {
+    return state.leftSidebarItemDetail.Detail_6;
+  },
+  getLeftSidebarItemDetail7(state) {
+    return state.leftSidebarItemDetail.Detail_7;
+  },
+  getLeftSidebarItemDetail8(state) {
+    return state.leftSidebarItemDetail.Detail_8;
+  },
+  getLeftSidebarItemDetail9(state) {
+    return state.leftSidebarItemDetail.Detail_9;
+  },
+  getLeftSidebarItemDetail10(state) {
+    return state.leftSidebarItemDetail.Detail_10;
+  },
+  getLeftSidebarItemDetail11(state) {
+    return state.leftSidebarItemDetail.Detail_11;
+  },
+  getLeftSidebarItemDetail12(state) {
+    return state.leftSidebarItemDetail.Detail_12;
+  },
+  getLeftSidebarItemDetail13(state) {
+    return state.leftSidebarItemDetail.Detail_13;
+  },
+  getLeftSidebarItemDetail14(state) {
+    return state.leftSidebarItemDetail.Detail_14;
+  },
   getLeftSidebarItem0(state) {
     return state.leftSidebarItem_0;
   },

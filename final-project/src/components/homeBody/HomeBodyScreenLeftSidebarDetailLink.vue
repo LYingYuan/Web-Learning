@@ -42,6 +42,7 @@ export default {
 a {
   font: 12px "Hiragino Sans GB", "Simsun";
   height: 20px;
+  margin: 0 10px 3px 0;
 }
 
 div {

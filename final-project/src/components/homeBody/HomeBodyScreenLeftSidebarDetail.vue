@@ -6,7 +6,7 @@
     </div>
     <ul>
       <slot name="link"></slot>
-      </ul>
+    </ul>
     <div class="logo">
       <slot name="logo"></slot>
     </div>
@@ -14,9 +14,7 @@
 </template>
 
 <script>
-export default {
-  
-};
+export default {};
 </script>
 
 <style scoped>
@@ -30,6 +28,12 @@ export default {
   width: 1000px;
   height: 480px;
   padding-left: 18px;
-  background-color: bisque;
+  font-size: 12px;
+  background-color: #fff;
+}
+
+.special-link {
+  display: flex;
+  padding-top: 10px;
 }
 </style>

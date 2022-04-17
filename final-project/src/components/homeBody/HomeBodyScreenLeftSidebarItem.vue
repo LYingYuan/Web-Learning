@@ -11,7 +11,7 @@
 export default {
   props: {
     sign: {
-      type: Number,
+      type: String,
       require: true,
     },
   },
