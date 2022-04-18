@@ -15,7 +15,7 @@ export default {
     // gray-back:   字体颜色不变
     // red-line:    当hover时由 #949494 显示为红色且有下划线 #ff2838
     // red-2:       当hover时由 #949494 显示为红色 #ff2838
-    // none:        没有样式
+    // none:        所有情况显示为白色且hover没有样式
     mode: {
       type: String,
       required: false,
@@ -59,5 +59,13 @@ a:hover {
 .black,
 .black-line {
   color: black;
+}
+
+.none {
+  color: white;
+}
+
+.none:hover {
+  color: white;
 }
 </style>

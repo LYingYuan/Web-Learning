@@ -1,6 +1,5 @@
 <template>
   <div class="detail">
-    <!-- TODO:如果有则显示 -->
     <div class="special-link">
       <slot name="special-link"></slot>
     </div>

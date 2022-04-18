@@ -68,6 +68,7 @@
       <base-link> <img src="../../assets/icon/footer/4.png" /></base-link>
 
       <base-link> <img src="../../assets/icon/footer/5.jpg" /></base-link>
+      
     </div>
   </footer>
 </template>
