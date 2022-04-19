@@ -1,1 +1,1 @@
-{name: '管理我的书架',url: '#',},{name: '查看我的账户',url: '#', mode: 'no-sep'}
+{name: '拉杆箱',url: '#',},{name: '旅行包',url: '#',},{name: '书包',url: '#', mode: 'no-sep'}

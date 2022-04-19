@@ -286,6 +286,7 @@
         </span>
       </home-body-screen-left-sidebar-item>
     </ul>
+    <!-- 图书、童书 start -->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail0"
       @mouseover="hoverItem(0)"
@@ -309,6 +310,8 @@
         ></home-body-screen-left-sidebar-detail-list>
       </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 图书、童书 end -->
+    <!-- 电子书 start-->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail1"
       @mouseover="hoverItem(1)"
@@ -335,6 +338,8 @@
         ></home-body-screen-left-sidebar-detail-list>
       </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 电子书 end-->
+    <!-- 创意文具 start-->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail2"
       @mouseover="hoverItem(2)"
@@ -361,10 +366,13 @@
         ></home-body-screen-left-sidebar-detail-list>
       </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 创意文具 end-->
+    <!-- 服饰、内衣 start-->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail3"
       @mouseover="hoverItem(3)"
       @mouseleave="leaveItem(3)"
+      hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -380,11 +388,73 @@
           :mode="line.mode"
         ></home-body-screen-left-sidebar-detail-list>
       </template>
+      <template #logo>
+        <ul class="logo-box">
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/3/1-拉夏贝尔.jpg" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/3/3.jpg" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/3/4.png" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/3/5.jpg" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/3/6.jpg" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/3/7.jpg" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/3/8.jpg" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/3/9.jpg" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/3/10.jpg" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/3/11.jpg" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/3/12.png" />
+            </router-link>
+          </li>
+        </ul>
+      </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 服饰、内衣 end-->
+    <!-- 鞋靴、 箱包 start -->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail4"
       @mouseover="hoverItem(4)"
       @mouseleave="leaveItem(4)"
+      hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -403,11 +473,48 @@
           :mode="line.mode"
         ></home-body-screen-left-sidebar-detail-list>
       </template>
+      <template #logo>
+        <ul class="logo-box">
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/4/1.jpg" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/4/1.jpg" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/4/2.jpg" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/4/3.jpg" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/4/4.jpg" />
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#">
+              <img src="../../assets/logo/4/5.jpg" />
+            </router-link>
+          </li>
+        </ul>
+      </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 鞋靴、 箱包 end -->
+    <!-- 运动户外 start -->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail5"
       @mouseover="hoverItem(5)"
       @mouseleave="leaveItem(5)"
+      hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -424,10 +531,13 @@
         ></home-body-screen-left-sidebar-detail-list>
       </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 运动户外 end -->
+    <!-- 孕、 婴、 童 start -->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail6"
       @mouseover="hoverItem(6)"
       @mouseleave="leaveItem(6)"
+      hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -453,6 +563,8 @@
         ></home-body-screen-left-sidebar-detail-list>
       </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 孕、 婴、 童 end -->
+    <!-- 家居、 家纺、 汽车 start -->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail7"
       @mouseover="hoverItem(7)"
@@ -468,6 +580,8 @@
         ></home-body-screen-left-sidebar-detail-list>
       </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 家居、 家纺、 汽车 end -->
+    <!-- 家具、 家装、 康体 start -->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail8"
       @mouseover="hoverItem(8)"
@@ -483,10 +597,13 @@
         ></home-body-screen-left-sidebar-detail-list>
       </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 家具、 家装、 康体 end -->
+    <!-- 个人护理、 清洁 start -->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail9"
       @mouseover="hoverItem(9)"
       @mouseleave="leaveItem(9)"
+      hasLogo="true"
     >
       <template #link>
         <home-body-screen-left-sidebar-detail-list
@@ -498,10 +615,13 @@
         ></home-body-screen-left-sidebar-detail-list>
       </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 个人护理、 清洁 end -->
+    <!-- 食品、 茶酒 start -->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail10"
       @mouseover="hoverItem(10)"
       @mouseleave="leaveItem(10)"
+      hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -518,10 +638,13 @@
         ></home-body-screen-left-sidebar-detail-list>
       </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 食品、 茶酒 end -->
+    <!-- 珠宝饰品 start -->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail11"
       @mouseover="hoverItem(11)"
       @mouseleave="leaveItem(11)"
+      hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -538,10 +661,13 @@
         ></home-body-screen-left-sidebar-detail-list>
       </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 珠宝饰品 end -->
+    <!-- 手机、 数码、 电脑办公 start -->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail12"
       @mouseover="hoverItem(12)"
       @mouseleave="leaveItem(12)"
+      hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -558,10 +684,13 @@
         ></home-body-screen-left-sidebar-detail-list>
       </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 手机、 数码、 电脑办公 end -->
+    <!-- 家用电器 start -->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail13"
       @mouseover="hoverItem(13)"
       @mouseleave="leaveItem(13)"
+      hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -578,6 +707,8 @@
         ></home-body-screen-left-sidebar-detail-list>
       </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 家用电器 end -->
+    <!-- 当当礼品卡、 生活服务 start -->
     <home-body-screen-left-sidebar-detail
       v-show="displayDetail14"
       @mouseover="hoverItem(14)"
@@ -601,6 +732,7 @@
         ></home-body-screen-left-sidebar-detail-list>
       </template>
     </home-body-screen-left-sidebar-detail>
+    <!-- 当当礼品卡、 生活服务 end -->
   </div>
 </template>
 
@@ -609,6 +741,7 @@ import HomeBodyScreenLeftSidebarItem from "./HomeBodyScreenLeftSidebarItem.vue";
 import HomeBodyScreenLeftSidebarDetail from "./HomeBodyScreenLeftSidebarDetail.vue";
 import HomeBodyScreenLeftSidebarDetailLink from "./HomeBodyScreenLeftSidebarDetailLink.vue";
 import HomeBodyScreenLeftSidebarDetailList from "./HomeBodyScreenLeftSidebarDetailList.vue";
+// import HomeBodyScreenLeftSidebarDetailLogo from "./HomeBodyScreenLeftSidebarDetailLogo.vue";
 
 export default {
   components: {
@@ -616,6 +749,7 @@ export default {
     HomeBodyScreenLeftSidebarDetail,
     HomeBodyScreenLeftSidebarDetailLink,
     HomeBodyScreenLeftSidebarDetailList,
+    // HomeBodyScreenLeftSidebarDetailLogo,
   },
   computed: {
     detail0() {
@@ -745,5 +879,31 @@ export default {
 
 .aHover {
   color: #ff2832;
+}
+
+.logo-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 260px;
+}
+
+.logo-box li {
+  margin: 0 22px 11px 0;
+}
+.logo-box a {
+  display: block;
+  width: 88px;
+  height: 58px;
+  padding: 4px;
+  border: 1px solid #fff;
+}
+
+.logo-box a:hover {
+  border-color: #ff2832;
+}
+
+.logo-box img {
+  max-height: 50px;
+  max-width: 80px;
 }
 </style>

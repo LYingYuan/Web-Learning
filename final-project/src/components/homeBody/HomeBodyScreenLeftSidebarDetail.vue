@@ -1,19 +1,30 @@
 <template>
   <div class="detail">
-    <div class="special-link">
-      <slot name="special-link"></slot>
+    <div class="left-box">
+      <div class="special-link">
+        <slot name="special-link"></slot>
+      </div>
+      <ul>
+        <slot name="link"></slot>
+      </ul>
     </div>
-    <ul>
-      <slot name="link"></slot>
-    </ul>
-    <div class="logo">
+    <div class="logo" v-if="hasLogo">
       <slot name="logo"></slot>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    hasLogo: {
+      // 如果有logo会改变布局
+      type: Boolean,
+      require: false,
+      default: false,
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -29,10 +40,21 @@ export default {};
   padding-left: 18px;
   font-size: 12px;
   background-color: #fff;
+
+  display: flex;
 }
 
 .special-link {
   display: flex;
   padding-top: 10px;
+}
+
+.logo {
+  width: 260px;
+  padding: 25px 0 0 29px;
+}
+
+.left-box {
+  width: 100%;
 }
 </style>
