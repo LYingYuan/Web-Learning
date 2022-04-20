@@ -61,7 +61,7 @@
           >
             <img src="../../assets/icon/客服.svg" alt="" />
             <transition name="span">
-              <span v-show="span.showSpan5">咨询小当家</span>
+              <span v-show="span.showSpan5">购物车</span>
             </transition>
           </base-link>
         </li>
@@ -72,16 +72,41 @@
     <div class="nav-bottom">
       <ul class="foot">
         <li>
+          <base-link mode="none">
+            <img
+              src="../../assets/icon/扫描.svg"
+              alt=""
+              @mouseover="mouseOver(7)"
+              @mouseleave="mouseLeave(7)"
+            />
+            <img
+              class="code"
+              v-show="span.showSpan7"
+              src="../../assets/pic/nav/code_three.jpg"
+              alt=""
+            />
+          </base-link>
+        </li>
+        <li>
+          <!-- TODO:定位到顶部 -->
           <base-link
             mode="none"
-            @mouseover="mouseOver(1)"
-            @mouseleave="mouseLeave(1)"
+            @mouseover="mouseOver(6)"
+            @mouseleave="mouseLeave(6)"
           >
-            <img src="../../assets/icon/客服.svg" alt="" />
+            <img src="../../assets/icon/向上.svg" alt="" />
             <transition name="span">
-              <span v-show="span.showSpan1">购物车</span>
+              <span v-show="span.showSpan6">返回顶部</span>
             </transition>
           </base-link>
+        </li>
+        <li>
+          <base-link mode="none">
+            <div class="feedback">意见反馈</div>
+          </base-link>
+        </li>
+        <li>
+          <div class="ad">广告</div>
         </li>
       </ul>
     </div>
@@ -103,6 +128,10 @@ export default {
         showSpan4: false,
         // 显示咨询小当家
         showSpan5: false,
+        // 显示返回顶部
+        showSpan6: false,
+        // 显示二维码
+        showSpan7: false,
       },
     };
   },
@@ -126,6 +155,11 @@ export default {
   margin: 0;
   width: 34px;
   height: 100%;
+}
+
+.nav-top > ul{
+  position: absolute;
+  top: 134px;
 }
 
 .ad {
@@ -169,7 +203,7 @@ li span {
 
 li img {
   max-width: 34px;
-  padding: 0 2px;
+  padding: 4px;
 }
 
 .cart-num {
@@ -205,5 +239,34 @@ li img {
 .span-enter-to,
 .span-leave-from {
   transform: translateX(0);
+}
+
+.feedback {
+  color: white;
+  font-size: 12px;
+  width: 34px;
+  height: 38px;
+  border: 0;
+  padding: 0 5px;
+}
+
+.code {
+  display: block;
+  position: absolute;
+  left: -346px;
+  top: -4px;
+  width: 350px;
+  height: 129px;
+  max-width: 350px;
+}
+
+.ad {
+  margin-top: 2px;
+  font-size: 12px;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #474747;
 }
 </style>
