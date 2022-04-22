@@ -6,6 +6,66 @@ export default {
   namespaced: true,
   state() {
     return {
+      // 轮播图图片
+      slideshowImg: {
+        focusPictures: [
+          {
+            name: "pic1",
+            src: require("../../assets/pic/screen/slideshow/1.jpg"),
+            link: "#",
+          },
+          {
+            name: "pic2",
+            src: require("../../assets/pic/screen/slideshow/2.jpg"),
+            link: "#",
+          },
+          {
+            name: "pic3",
+            src: require("../../assets/pic/screen/slideshow/3.jpg"),
+            link: "#",
+          },
+          {
+            name: "pic4",
+            src: require("../../assets/pic/screen/slideshow/4.jpg"),
+            link: "#",
+          },
+          {
+            name: "pic5",
+            src: require("../../assets/pic/screen/slideshow/5.jpg"),
+            link: "#",
+          },
+          {
+            name: "pic6",
+            src: require("../../assets/pic/screen/slideshow/6.jpg"),
+            link: "#",
+          },
+          {
+            name: "pic7",
+            src: require("../../assets/pic/screen/slideshow/7.jpg"),
+            link: "#",
+          },
+        ],
+        bottom: {
+          bottom1: {
+            pic1: {
+              src: "../../assets/pic/screen/轮播图/1/bottom/1.jpg",
+              link: "#",
+            },
+            pic2: {
+              src: "../../assets/pic/screen/轮播图/1/bottom/2.jpg",
+              link: "#",
+            },
+            pic3: {
+              src: "../../assets/pic/screen/轮播图/1/bottom/3.jpg",
+              link: "#",
+            },
+            pic4: {
+              src: "../../assets/pic/screen/轮播图/1/bottom/4.jpg",
+              link: "#",
+            },
+          },
+        },
+      },
       leftSidebarItem: {
         leftSidebarItem_0: false,
         leftSidebarItem_1: false,

@@ -1,4 +1,7 @@
 export default {
+  getFocusPictures(state) {
+    return state.slideshowImg.focusPictures;
+  },
   getLeftSidebarItemDetail0(state) {
     return state.leftSidebarItemDetail.Detail_0;
   },

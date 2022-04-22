@@ -5,6 +5,24 @@
       @mouseover="mouseOnFocusPictures"
       @mouseleave="mouseLeaveFocusPictures"
     >
+      <ul class="pic">
+        <home-body-screen-carousel-focus
+          v-for="pic in focus_pictures"
+          :key="pic.name"
+          :url="pic.link"
+          :imgSrc="pic.src"
+        >
+        </home-body-screen-carousel-focus>
+      </ul>
+      <ul class="banner-circle">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+      </ul>
       <div>
         <div class="left-div"></div>
         <div class="right-div"></div>
@@ -36,11 +54,18 @@
 </template>
 
 <script>
+import HomeBodyScreenCarouselFocus from "./HomeBodyScreenCarouselFocus.vue";
+
 export default {
+  components: {
+    HomeBodyScreenCarouselFocus,
+  },
   data() {
     return {
       mouse_on_focus_pictures: false,
       mouse_on_discount: false,
+      current_index: 0,
+      timer: null, // 装定时器
     };
   },
   methods: {
@@ -57,6 +82,11 @@ export default {
       this.mouse_on_discount = false;
     },
   },
+  computed: {
+    focus_pictures() {
+      return this.$store.getters["bodyScreen/getFocusPictures"];
+    },
+  },
 };
 </script>
 
@@ -64,12 +94,12 @@ export default {
 .carousel {
   /* TODO:记得删去 */
   background-color: bisque;
-  width: 816px;
+  width: 796px;
 }
 
 .focus-pictures {
   background-color: aquamarine;
-  height: 320px;
+  height: 326px;
   position: relative;
 }
 
@@ -165,5 +195,31 @@ export default {
 .right-btn-leave-from {
   opacity: 0.2;
   transform: translate(0, -50%);
+}
+
+.banner-circle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 4px;
+  display: flex;
+  width: 182px;
+  justify-content: space-between;
+}
+
+.banner-circle > li {
+  color: #fff;
+  background-color: #646464;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+}
+
+.banner-circle > li:hover {
+  background-color: #ff2832;
 }
 </style>

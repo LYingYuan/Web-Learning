@@ -372,7 +372,7 @@
       v-show="displayDetail3"
       @mouseover="hoverItem(3)"
       @mouseleave="leaveItem(3)"
-      hasLogo="true"
+      :hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -454,7 +454,7 @@
       v-show="displayDetail4"
       @mouseover="hoverItem(4)"
       @mouseleave="leaveItem(4)"
-      hasLogo="true"
+      :hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -514,7 +514,7 @@
       v-show="displayDetail5"
       @mouseover="hoverItem(5)"
       @mouseleave="leaveItem(5)"
-      hasLogo="true"
+      :hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -537,7 +537,7 @@
       v-show="displayDetail6"
       @mouseover="hoverItem(6)"
       @mouseleave="leaveItem(6)"
-      hasLogo="true"
+      :hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -603,7 +603,7 @@
       v-show="displayDetail9"
       @mouseover="hoverItem(9)"
       @mouseleave="leaveItem(9)"
-      hasLogo="true"
+      :hasLogo="true"
     >
       <template #link>
         <home-body-screen-left-sidebar-detail-list
@@ -621,7 +621,7 @@
       v-show="displayDetail10"
       @mouseover="hoverItem(10)"
       @mouseleave="leaveItem(10)"
-      hasLogo="true"
+      :hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -644,7 +644,7 @@
       v-show="displayDetail11"
       @mouseover="hoverItem(11)"
       @mouseleave="leaveItem(11)"
-      hasLogo="true"
+      :hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -667,7 +667,7 @@
       v-show="displayDetail12"
       @mouseover="hoverItem(12)"
       @mouseleave="leaveItem(12)"
-      hasLogo="true"
+      :hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
@@ -690,7 +690,7 @@
       v-show="displayDetail13"
       @mouseover="hoverItem(13)"
       @mouseleave="leaveItem(13)"
-      hasLogo="true"
+      :hasLogo="true"
     >
       <template #special-link>
         <home-body-screen-left-sidebar-detail-link
