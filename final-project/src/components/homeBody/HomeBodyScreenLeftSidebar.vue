@@ -863,7 +863,7 @@ export default {
 <style scoped>
 .left-sidebar {
   padding: 4px 0;
-  height: 480px;
+  height: 488px;
   width: 200px;
   background-color: #fafafa;
   position: relative;

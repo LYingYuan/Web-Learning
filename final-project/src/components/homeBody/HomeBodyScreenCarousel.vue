@@ -20,6 +20,7 @@
           v-for="pic in focus_pictures"
           :key="pic.id"
           :class="{ red: pic.id === current_index }"
+          @click="clickBannerCircle(pic.id)"
         >
           {{ pic.id }}
         </li>
@@ -49,15 +50,16 @@
       @mouseleave="mouseLeaveFocusDiscount"
     >
       <!-- TODO:插入图片 -->
-      <ul class="bottom-pic" 
-      v-for="pictures in bottom_pictures"
-      :key="pictures.id"
-      v-show="pictures.id === current_index"
-      >
-        <li 
-        :pic="pictures.pics"
-        ></li>
-      </ul>
+      <home-body-screen-carousel-bottom
+        v-for="pictures in bottom_pictures"
+        :key="pictures.id"
+        :pictures="pictures.pics"
+        v-show="pictures.id === current_index"
+      ></home-body-screen-carousel-bottom>
+      <!-- <home-body-screen-carousel-bottom
+          v-for="pic in pictures.pics"
+          :key="pic.id"
+        ></home-body-screen-carousel-bottom> -->
       <div>
         <div class="left-div"></div>
         <div class="right-div"></div>
@@ -82,10 +84,12 @@
 
 <script>
 import HomeBodyScreenCarouselFocus from "./HomeBodyScreenCarouselFocus.vue";
+import HomeBodyScreenCarouselBottom from "./HomeBodyScreenCarouselBottom";
 
 export default {
   components: {
     HomeBodyScreenCarouselFocus,
+    HomeBodyScreenCarouselBottom,
   },
   data() {
     return {
@@ -97,18 +101,22 @@ export default {
   },
   methods: {
     mouseOnFocusPictures() {
+      clearInterval(this.timer);
       this.mouse_on_focus_pictures = true;
     },
     mouseLeaveFocusPictures() {
+      this.startInterval(this.current_index);
       this.mouse_on_focus_pictures = false;
     },
     mouseOnFocusDiscount() {
+      clearInterval(this.timer);
       this.mouse_on_discount = true;
     },
     mouseLeaveFocusDiscount() {
+      this.startInterval(this.current_index);
       this.mouse_on_discount = false;
     },
-    startInterval() {
+    startInterval(start_index) {
       clearInterval(this.timer);
       this.timer = setInterval(() => {
         this.current_index++;
@@ -116,6 +124,7 @@ export default {
           this.current_index = 1;
         }
       }, 3000);
+      this.current_index = start_index;
     },
     clickBtn(name) {
       if (name === "last") {
@@ -130,26 +139,28 @@ export default {
         }
       }
     },
+    clickBannerCircle(index) {
+      this.current_index = index;
+    },
   },
   computed: {
     focus_pictures() {
       return this.$store.getters["bodyScreen/getFocusPictures"];
     },
-    bottom_pictures(){
-      return this.$store.getters['bodyScreen/getBottomPictures']
-    }
+    bottom_pictures() {
+      return this.$store.getters["bodyScreen/getBottomPictures"];
+    },
   },
   mounted() {
-    this.startInterval();
+    this.startInterval(1);
   },
 };
 </script>
 
 <style scoped>
 .carousel {
-  /* TODO:记得删去 */
-  background-color: bisque;
   width: 796px;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .focus-pictures {
@@ -159,7 +170,6 @@ export default {
 }
 
 .discount {
-  background-color: cadetblue;
   height: 160px;
   position: relative;
 }
@@ -280,9 +290,5 @@ export default {
 
 .banner-circle > .red {
   background-color: #ff2832;
-}
-
-.bottom-pic {
-  display: flex;
 }
 </style>

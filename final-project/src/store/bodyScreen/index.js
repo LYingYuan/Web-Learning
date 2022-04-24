@@ -58,19 +58,48 @@ export default {
             id: 1,
             pics: [
               {
+                id: 1,
                 src: require("../../assets/pic/screen/slideshow/1/bottom/1.jpg"),
                 link: "#",
               },
               {
+                id: 2,
                 src: require("../../assets/pic/screen/slideshow/1/bottom/2.jpg"),
                 link: "#",
               },
               {
+                id: 3,
                 src: require("../../assets/pic/screen/slideshow/1/bottom/3.jpg"),
                 link: "#",
               },
               {
+                id: 4,
                 src: require("../../assets/pic/screen/slideshow/1/bottom/4.jpg"),
+                link: "#",
+              },
+            ],
+          },
+          {
+            id: 2,
+            pics: [
+              {
+                id: 1,
+                src: require("../../assets/pic/screen/slideshow/2/bottom/1.jpg"),
+                link: "#",
+              },
+              {
+                id: 2,
+                src: require("../../assets/pic/screen/slideshow/2/bottom/2.jpeg"),
+                link: "#",
+              },
+              {
+                id: 3,
+                src: require("../../assets/pic/screen/slideshow/2/bottom/3.jpg"),
+                link: "#",
+              },
+              {
+                id: 4,
+                src: require("../../assets/pic/screen/slideshow/2/bottom/4.jpg"),
                 link: "#",
               },
             ],
