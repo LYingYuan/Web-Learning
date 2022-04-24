@@ -8,6 +8,7 @@ export default {
     return {
       // 轮播图图片
       slideshowImg: {
+        // 大屏图片
         focusPictures: [
           {
             name: "pic1",
@@ -52,26 +53,29 @@ export default {
             link: "#",
           },
         ],
-        bottom: {
-          bottom1: {
-            pic1: {
-              src: "../../assets/pic/screen/轮播图/1/bottom/1.jpg",
-              link: "#",
-            },
-            pic2: {
-              src: "../../assets/pic/screen/轮播图/1/bottom/2.jpg",
-              link: "#",
-            },
-            pic3: {
-              src: "../../assets/pic/screen/轮播图/1/bottom/3.jpg",
-              link: "#",
-            },
-            pic4: {
-              src: "../../assets/pic/screen/轮播图/1/bottom/4.jpg",
-              link: "#",
-            },
+        bottomPictures: [
+          {
+            id: 1,
+            pics: [
+              {
+                src: require("../../assets/pic/screen/slideshow/1/bottom/1.jpg"),
+                link: "#",
+              },
+              {
+                src: require("../../assets/pic/screen/slideshow/1/bottom/2.jpg"),
+                link: "#",
+              },
+              {
+                src: require("../../assets/pic/screen/slideshow/1/bottom/3.jpg"),
+                link: "#",
+              },
+              {
+                src: require("../../assets/pic/screen/slideshow/1/bottom/4.jpg"),
+                link: "#",
+              },
+            ],
           },
-        },
+        ],
       },
       leftSidebarItem: {
         leftSidebarItem_0: false,

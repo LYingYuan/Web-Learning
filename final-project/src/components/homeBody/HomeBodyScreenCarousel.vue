@@ -28,10 +28,18 @@
         <div class="left-div"></div>
         <div class="right-div"></div>
         <transition name="left-btn">
-          <div class="left" v-show="mouse_on_focus_pictures"></div>
+          <div
+            class="left"
+            v-show="mouse_on_focus_pictures"
+            @click="clickBtn('last')"
+          ></div>
         </transition>
         <transition name="right-btn">
-          <div class="right" v-show="mouse_on_focus_pictures"></div>
+          <div
+            class="right"
+            v-show="mouse_on_focus_pictures"
+            @click="clickBtn('next')"
+          ></div>
         </transition>
       </div>
     </div>
@@ -40,14 +48,32 @@
       @mouseover="mouseOnFocusDiscount"
       @mouseleave="mouseLeaveFocusDiscount"
     >
+      <!-- TODO:插入图片 -->
+      <ul class="bottom-pic" 
+      v-for="pictures in bottom_pictures"
+      :key="pictures.id"
+      v-show="pictures.id === current_index"
+      >
+        <li 
+        :pic="pictures.pics"
+        ></li>
+      </ul>
       <div>
         <div class="left-div"></div>
         <div class="right-div"></div>
         <transition name="left-btn">
-          <div class="left" v-show="mouse_on_discount"></div>
+          <div
+            class="left"
+            v-show="mouse_on_discount"
+            @click="clickBtn('last')"
+          ></div>
         </transition>
         <transition name="right-btn">
-          <div class="right" v-show="mouse_on_discount"></div>
+          <div
+            class="right"
+            v-show="mouse_on_discount"
+            @click="clickBtn('next')"
+          ></div>
         </transition>
       </div>
     </div>
@@ -91,12 +117,27 @@ export default {
         }
       }, 3000);
     },
-    clickIcon(name, id) {},
+    clickBtn(name) {
+      if (name === "last") {
+        this.current_index--;
+        if (this.current_index === 0) {
+          this.current_index = this.focus_pictures.length;
+        }
+      } else {
+        this.current_index++;
+        if (this.current_index > this.focus_pictures.length) {
+          this.current_index = 1;
+        }
+      }
+    },
   },
   computed: {
     focus_pictures() {
       return this.$store.getters["bodyScreen/getFocusPictures"];
     },
+    bottom_pictures(){
+      return this.$store.getters['bodyScreen/getBottomPictures']
+    }
   },
   mounted() {
     this.startInterval();
@@ -239,5 +280,9 @@ export default {
 
 .banner-circle > .red {
   background-color: #ff2832;
+}
+
+.bottom-pic {
+  display: flex;
 }
 </style>

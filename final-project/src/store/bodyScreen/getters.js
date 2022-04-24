@@ -2,6 +2,9 @@ export default {
   getFocusPictures(state) {
     return state.slideshowImg.focusPictures;
   },
+  getBottomPictures(state) {
+    return state.slideshowImg.bottomPictures;
+  },
   getLeftSidebarItemDetail0(state) {
     return state.leftSidebarItemDetail.Detail_0;
   },
