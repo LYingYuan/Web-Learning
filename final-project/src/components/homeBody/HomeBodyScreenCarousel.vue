@@ -11,17 +11,18 @@
           :key="pic.name"
           :url="pic.link"
           :imgSrc="pic.src"
+          v-show="current_index === pic.id"
         >
         </home-body-screen-carousel-focus>
       </ul>
       <ul class="banner-circle">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
+        <li
+          v-for="pic in focus_pictures"
+          :key="pic.id"
+          :class="{ red: pic.id === current_index }"
+        >
+          {{ pic.id }}
+        </li>
       </ul>
       <div>
         <div class="left-div"></div>
@@ -64,7 +65,7 @@ export default {
     return {
       mouse_on_focus_pictures: false,
       mouse_on_discount: false,
-      current_index: 0,
+      current_index: 1,
       timer: null, // 装定时器
     };
   },
@@ -81,11 +82,24 @@ export default {
     mouseLeaveFocusDiscount() {
       this.mouse_on_discount = false;
     },
+    startInterval() {
+      clearInterval(this.timer);
+      this.timer = setInterval(() => {
+        this.current_index++;
+        if (this.current_index > this.focus_pictures.length) {
+          this.current_index = 1;
+        }
+      }, 3000);
+    },
+    clickIcon(name, id) {},
   },
   computed: {
     focus_pictures() {
       return this.$store.getters["bodyScreen/getFocusPictures"];
     },
+  },
+  mounted() {
+    this.startInterval();
   },
 };
 </script>
@@ -220,6 +234,10 @@ export default {
 }
 
 .banner-circle > li:hover {
+  background-color: #ff2832;
+}
+
+.banner-circle > .red {
   background-color: #ff2832;
 }
 </style>

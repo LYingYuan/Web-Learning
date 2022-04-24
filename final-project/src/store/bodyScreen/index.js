@@ -11,36 +11,43 @@ export default {
         focusPictures: [
           {
             name: "pic1",
+            id: 1,
             src: require("../../assets/pic/screen/slideshow/1.jpg"),
             link: "#",
           },
           {
             name: "pic2",
+            id: 2,
             src: require("../../assets/pic/screen/slideshow/2.jpg"),
             link: "#",
           },
           {
             name: "pic3",
+            id: 3,
             src: require("../../assets/pic/screen/slideshow/3.jpg"),
             link: "#",
           },
           {
             name: "pic4",
+            id: 4,
             src: require("../../assets/pic/screen/slideshow/4.jpg"),
             link: "#",
           },
           {
             name: "pic5",
+            id: 5,
             src: require("../../assets/pic/screen/slideshow/5.jpg"),
             link: "#",
           },
           {
             name: "pic6",
+            id: 6,
             src: require("../../assets/pic/screen/slideshow/6.jpg"),
             link: "#",
           },
           {
             name: "pic7",
+            id: 7,
             src: require("../../assets/pic/screen/slideshow/7.jpg"),
             link: "#",
           },
