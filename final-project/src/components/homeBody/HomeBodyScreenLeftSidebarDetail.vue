@@ -32,11 +32,11 @@ export default {
   border: 2px solid #ff2832;
   border-top: 0;
   position: absolute;
-  left: 200px;
+  left: 199px;
   top: 0px;
-  z-index: 3;
+  z-index: 4;
   width: 1000px;
-  height: 480px;
+  height: 488px;
   padding-left: 18px;
   font-size: 12px;
   background-color: #fff;

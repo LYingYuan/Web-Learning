@@ -123,7 +123,7 @@ export default {
         if (this.current_index > this.focus_pictures.length) {
           this.current_index = 1;
         }
-      }, 3000);
+      }, 4000);
       this.current_index = start_index;
     },
     clickBtn(name) {
@@ -164,7 +164,6 @@ export default {
 }
 
 .focus-pictures {
-  background-color: aquamarine;
   height: 326px;
   position: relative;
 }

@@ -68,7 +68,6 @@
       <base-link> <img src="../../assets/icon/footer/4.png" /></base-link>
 
       <base-link> <img src="../../assets/icon/footer/5.jpg" /></base-link>
-      
     </div>
   </footer>
 </template>
@@ -104,5 +103,9 @@ footer {
 
 .footer-icon img {
   padding: 15px 25px;
+}
+
+.no-border {
+  border-top: 0;
 }
 </style>

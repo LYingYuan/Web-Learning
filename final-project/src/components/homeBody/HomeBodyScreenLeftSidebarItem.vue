@@ -28,7 +28,7 @@ export default {
   color: #323232;
   font: 14px/30px "Microsoft Yahei";
   position: relative;
-  z-index: 4;
+  z-index: 5;
 }
 
 .title {
@@ -52,8 +52,8 @@ export default {
   border-left: 2px solid #fff;
   height: 30px;
   position: absolute;
-  left: 200px;
+  left: 199px;
   top: 2px;
-  z-index: 4;
+  z-index: 5;
 }
 </style>

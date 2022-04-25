@@ -46,6 +46,10 @@ a:hover {
   color: #646464;
 }
 
+.gray-back:hover {
+  color: #646464;
+}
+
 .red-line,
 .red-2 {
   color: #949494;
