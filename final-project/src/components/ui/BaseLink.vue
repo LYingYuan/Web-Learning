@@ -16,6 +16,7 @@ export default {
     // red-line:    当hover时由 #949494 显示为红色且有下划线 #ff2838
     // red-2:       当hover时由 #949494 显示为红色 #ff2838
     // none:        所有情况显示为白色且hover没有样式
+    // black-all        全黑
     mode: {
       type: String,
       required: false,
@@ -61,7 +62,8 @@ a:hover {
 }
 
 .black,
-.black-line {
+.black-line,
+.black-all {
   color: black;
 }
 
@@ -71,5 +73,9 @@ a:hover {
 
 .none:hover {
   color: white;
+}
+
+.black-all:hover {
+  color: black;
 }
 </style>
