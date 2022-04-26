@@ -4,14 +4,13 @@
       <base-link class="left" to="#"></base-link>
       <div class="right">
         <div class="content">
-          <!-- TODO:隐藏 -->
-          <div class="login">
+          <div class="login" v-if="!sign_page">
             <div class="switch-out"></div>
             <div class="pass">
               <h3>
                 <a href="#">密码登录</a>
               </h3>
-              <form @submit.prevent="?">
+              <form @submit.prevent="loginSubmit">
                 <div class="user">
                   <auth-input
                     input_type="email"
@@ -34,19 +33,19 @@
                 <button class="btn">登录</button>
               </form>
               <div class="other">
-                <button class="to-sign">立即注册</button>
+                <button class="to-sign" @click="changeTo('signup')">立即注册</button>
               </div>
             </div>
           </div>
-          <div class="signup">
+          <div class="signup" v-else>
             <h2>
-              <button class="to-login">
+              <button class="to-login" @click="changeTo('login')">
                 <img src="../../assets/icon/返回.svg" alt="" />
               </button>
               <span>立即注册</span>
             </h2>
             <!-- TODO:prevent -->
-            <form @submit.prevent="?">
+            <form @submit.prevent="signupSubmit">
               <div class="signup-user">
                 <auth-input
                   input_type="email"
@@ -93,18 +92,27 @@
 </template>
 
 <script>
-import BaseLink from "../ui/BaseLink.vue";
 import AuthInput from "./AuthInput.vue";
 
 export default {
   components: {
     AuthInput,
-    BaseLink,
   },
   data() {
     return {
       sign_page: false,
     };
+  },
+  methods: {
+    loginSubmit() {},
+    signupSubmit() {},
+    changeTo(page) {
+      if (page === "login") {
+        this.sign_page = false;
+      } else {
+        this.sign_page = true;
+      }
+    },
   },
 };
 </script>
@@ -149,7 +157,6 @@ export default {
 
 .login {
   padding: 0 40px 0 40px;
-  display: none;
 }
 
 .switch-out {

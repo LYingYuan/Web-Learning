@@ -155,6 +155,7 @@ export default {
   margin: 0;
   width: 34px;
   height: 100%;
+  z-index:10;
 }
 
 .nav-top > ul{

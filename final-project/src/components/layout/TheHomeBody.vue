@@ -2,6 +2,7 @@
   <div class="home-body">
     <div class="container">
       <home-body-screen></home-body-screen>
+      <div>hello</div>
     </div>
   </div>
 </template>

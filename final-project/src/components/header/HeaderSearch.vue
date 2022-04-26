@@ -152,6 +152,7 @@ form {
 #searchText {
   width: 410px;
   outline-style: none;
+  /* height: 14px; */
   padding: 12px 0 9px 10px;
 }
 
