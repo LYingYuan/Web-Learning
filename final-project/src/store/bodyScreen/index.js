@@ -1251,6 +1251,8 @@ export default {
           },
         ],
       },
+      // 公告栏图片
+      noticePicture: require("../../assets/pic/screen/notice/pic.jpg"),
     };
   },
   actions,

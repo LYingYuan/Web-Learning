@@ -1,4 +1,7 @@
 export default {
+  getNoticePicture(state) {
+    return state.noticePicture;
+  },
   getFocusPictures(state) {
     return state.slideshowImg.focusPictures;
   },
