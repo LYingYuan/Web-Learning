@@ -3,11 +3,12 @@
     <div class="left">
       <label :for="input_id">{{ label_text }}</label>
       <input
-        type="email"
+        :type="input_type"
         autofocus="autofocus"
         :id="input_id"
         @click="click"
         @blur="leave"
+        v-model.trim="data"
       />
     </div>
     <div class="right" v-if="has_right"></div>
@@ -16,6 +17,7 @@
 
 <script>
 export default {
+  emits: ["saveDate"],
   props: {
     input_type: {
       type: String,
@@ -40,6 +42,7 @@ export default {
   data() {
     return {
       on_click: false,
+      data: "",
     };
   },
   methods: {
@@ -48,6 +51,10 @@ export default {
     },
     leave() {
       this.on_click = false;
+      this.$emit(`saveDate`, {
+        type: this.input_type,
+        data: this.data,
+      });
     },
   },
 };

@@ -1253,6 +1253,58 @@ export default {
       },
       // 公告栏图片
       noticePicture: require("../../assets/pic/screen/notice/pic.jpg"),
+      // 公告栏信息公告
+      noticeMessages: [
+        // TODO:调整数据
+        {
+          text: "图书5折封顶",
+          url: "#",
+          mode: "red-all",
+        },
+        {
+          text: "精选童书5折封顶",
+          url: "#",
+          mode: "red-all",
+        },
+        {
+          text: "图书5折封顶",
+          url: "#",
+          mode: "red-all",
+        },
+        {
+          text: "图书5折封顶",
+          url: "#",
+          mode: "red-all",
+        },
+        {
+          text: "图书5折封顶",
+          url: "#",
+          mode: "red-all",
+        },
+      ],
+      noticeServe: [
+        // TODO:调整数据
+        {
+          text: "关于谨防诈骗的重要提示",
+          url: "#",
+          mode: "red-all",
+        },
+        {
+          text: "图书5折封顶",
+          url: "#",
+          mode: "red",
+        },
+        {
+          text: "图书5折封顶",
+          url: "#",
+          mode: "red",
+        },
+        {
+          text: "图书5折封顶",
+          url: "#",
+          mode: "red",
+        },
+      ],
     };
   },
   actions,

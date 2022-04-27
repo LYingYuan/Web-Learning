@@ -16,6 +16,7 @@
                     input_type="email"
                     input_id="email"
                     label_text="邮箱"
+                    @save-data="saveDate"
                   ></auth-input>
                 </div>
                 <div class="password">
@@ -23,6 +24,7 @@
                     input_type="password"
                     input_id="password"
                     label_text="密码"
+                    @save-data="saveDate"
                   ></auth-input>
                 </div>
                 <div class="agreement">
@@ -33,7 +35,9 @@
                 <button class="btn">登录</button>
               </form>
               <div class="other">
-                <button class="to-sign" @click="changeTo('signup')">立即注册</button>
+                <button class="to-sign" @click="changeTo('signup')">
+                  立即注册
+                </button>
               </div>
             </div>
           </div>
@@ -51,6 +55,7 @@
                   input_type="email"
                   input_id="signup-email"
                   label_text="邮箱"
+                  @save-data="saveDate"
                 ></auth-input>
               </div>
               <div class="signup-psw">
@@ -58,6 +63,7 @@
                   input_type="password"
                   input_id="signup-password"
                   label_text="密码"
+                  @save-data="saveDate"
                 ></auth-input>
               </div>
               <div class="agreement">
@@ -101,16 +107,32 @@ export default {
   data() {
     return {
       sign_page: false,
+      email: "",
+      password: "",
     };
   },
   methods: {
-    loginSubmit() {},
-    signupSubmit() {},
+    loginSubmit() {
+      // TODO:从这里开始
+      console.log(this.email);
+      console.log(this.password);
+    },
+    signupSubmit() {
+      console.log(this.email);
+      console.log(this.password);
+    },
     changeTo(page) {
       if (page === "login") {
         this.sign_page = false;
       } else {
         this.sign_page = true;
+      }
+    },
+    saveDate(data) {
+      if (data.type === "email") {
+        this.email = data.email;
+      } else {
+        this.password = data.data;
       }
     },
   },

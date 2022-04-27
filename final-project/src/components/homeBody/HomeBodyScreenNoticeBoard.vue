@@ -5,9 +5,39 @@
     </div>
     <div class="notice">
       <ul class="head">
-        <li>信息公告</li>
-        <li>服务公告</li>
+        <li
+          class="head-list"
+          :class="{ hoverHead: show_message }"
+          @mouseover="hoverNoticeHead(true)"
+          @mouseleave="leaveNoticeHead"
+        >
+          信息公告
+        </li>
+        <li
+          class="head-list"
+          :class="{ hoverHead: !show_message }"
+          @mouseover="hoverNoticeHead(false)"
+          @mouseleave="leaveNoticeHead"
+        >
+          服务公告
+        </li>
       </ul>
+      <div class="notice-content">
+        <ul class="message" v-show="show_message">
+          <li v-for="message in notice_messages" :key="message.text">
+            <base-link :mode="message.mode" :to="message.url">{{
+              message.text
+            }}</base-link>
+          </li>
+        </ul>
+        <ul class="serve" v-show="!show_message">
+          <li v-for="serve in notice_serve" :key="serve.text">
+            <base-link :mode="serve.mode" :to="serve.url">{{
+              serve.text
+            }}</base-link>
+          </li>
+        </ul>
+      </div>
     </div>
     <div
       class="carousel"
@@ -35,11 +65,19 @@ export default {
   data() {
     return {
       mouse_on_carousel: false,
+      show_message: true,
+      notice_timer: null,
     };
   },
   computed: {
     picture_src() {
       return this.$store.getters["bodyScreen/getNoticePicture"];
+    },
+    notice_messages() {
+      return this.$store.getters["bodyScreen/getNoticeMessages"];
+    },
+    notice_serve() {
+      return this.$store.getters["bodyScreen/getNoticeServe"];
     },
   },
   methods: {
@@ -62,14 +100,34 @@ export default {
     leaveCarousel() {
       this.mouse_on_carousel = false;
     },
+    hoverNotice() {
+      clearInterval(this.notice_timer);
+    },
+    hoverNoticeHead(isMessage) {
+      clearInterval(this.notice_timer);
+      this.show_message = isMessage;
+    },
+    leaveNotice() {
+      this.startNoticeInterval();
+    },
+    leaveNoticeHead() {
+      this.startNoticeInterval();
+    },
+    startNoticeInterval() {
+      clearInterval(this.notice_timer);
+      this.notice_timer = setInterval(() => {
+        this.show_message = !this.show_message;
+      }, 5000);
+    },
+  },
+  mounted() {
+    this.startNoticeInterval();
   },
 };
 </script>
 
 <style scoped>
 .notice-board {
-  /* TODO:delete */
-  background-color: aqua;
   width: 203px;
   border: 1px solid #e6e6e6;
   border-top: 0;
@@ -84,26 +142,59 @@ export default {
 }
 
 .notice {
-  /* TODO:delete */
-  background-color: blue;
   width: 100%;
   height: 173px;
   overflow: hidden;
 }
 
+.head {
+  display: flex;
+  flex-direction: row;
+}
+
 .head li {
-  margin-left: -1px;
-  float: left;
-  width: 101.5px;
-  border: 1px solid #e6e6e6;
-  border-top: 0;
+  width: 101px;
   height: 28px;
-  background-color: #f0f0f0;
   cursor: default;
   font: 14px/29px "Microsoft Yahei";
   text-align: center;
   color: #646464;
   overflow: hidden;
+}
+
+.head-list {
+  background-color: #f0f0f0;
+  border: 1px solid #e6e6e6;
+  border-top: 0;
+}
+
+.hoverHead {
+  background-color: #fff;
+  border-bottom: 0;
+}
+
+.head li:first-child {
+  border-left: 0;
+}
+
+.head li:last-child {
+  border-right: 0;
+}
+
+.message,
+.serve {
+  display: block;
+  margin-left: 10px;
+  margin-top: 5px;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.message > li,
+.serve > li {
+  line-height: 25px;
+  width: 183px;
+  height: 25px;
 }
 
 .carousel {

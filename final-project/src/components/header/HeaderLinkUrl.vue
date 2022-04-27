@@ -1,6 +1,6 @@
 <template>
   <div>
-    <base-link :to="url">
+    <base-link :to="url" :mode="mode">
       <slot></slot>
     </base-link>
   </div>
@@ -10,9 +10,13 @@
 export default {
   props: {
     url: {
-      to: String,
+      style: String,
       require: false,
       default: "#",
+    },
+    mode: {
+      style: String,
+      require: false,
     },
   },
 };

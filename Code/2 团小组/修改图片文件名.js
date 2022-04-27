@@ -10,7 +10,7 @@ const arr = [
   "2019211523-王燚",
 ];
 
-const nowPath = "2022-04-15";
+const nowPath = "2022-04-21";
 const filePath = path.join(
   "G:",
   "OneDrive",

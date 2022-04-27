@@ -1,4 +1,10 @@
 export default {
+  getNoticeServe(state) {
+    return state.noticeServe;
+  },
+  getNoticeMessages(state) {
+    return state.noticeMessages;
+  },
   getNoticePicture(state) {
     return state.noticePicture;
   },

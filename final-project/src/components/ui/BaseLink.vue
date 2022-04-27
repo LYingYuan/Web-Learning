@@ -17,6 +17,7 @@ export default {
     // red-2:       当hover时由 #949494 显示为红色 #ff2838
     // none:        所有情况显示为白色且hover没有样式
     // black-all        全黑
+    // red-all
     mode: {
       type: String,
       required: false,
@@ -77,5 +78,9 @@ a:hover {
 
 .black-all:hover {
   color: black;
+}
+
+.red-all {
+  color: #ff2838;
 }
 </style>
