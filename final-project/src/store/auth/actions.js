@@ -3,19 +3,20 @@ let timer;
 
 export default {
   async login(context, payload) {
-    return context.payload.dispatch("auth", {
+    return context.dispatch("auth", {
       ...payload,
       mode: "login",
     });
   },
   async signup(context, payload) {
-    return context.payload.dispatch("auth", {
+    return context.dispatch("auth", {
       ...payload,
       mode: "signup",
     });
   },
   async auth(context, payload) {
     const mode = payload.mode;
+    console.log(payload);
     // 登录的API接口
     let url =
       "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAj6hZnAALZ6igWTIpXP3hv4C6Y8tnIbUo";
@@ -46,7 +47,7 @@ export default {
       );
       throw error;
     }
-
+    console.log("成功");
     // 设置token过期时间
     const expires_in = +response_data.expiresIn * 1000; // 获取服务器上生成token的有效时间
     const expiration_date = new Date().getTime() + expires_in; // 计算token失效的时间戳
@@ -89,15 +90,15 @@ export default {
     }
   },
   logout(context) {
-    localStorage.removeItem('token');
-    localStorage.removeItem('userId');
-    localStorage.removeItem('tokenExpiration');
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    localStorage.removeItem("tokenExpiration");
 
     clearTimeout(timer);
 
-    context.commit('setUser', {
+    context.commit("setUser", {
       token: null,
-      userId: null
+      userId: null,
     });
   },
   autoLogout(context) {

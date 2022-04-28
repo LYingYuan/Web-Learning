@@ -16,7 +16,7 @@
                     input_type="email"
                     input_id="email"
                     label_text="邮箱"
-                    @save-data="saveDate"
+                    @saveDate="saveDate"
                   ></auth-input>
                 </div>
                 <div class="password">
@@ -24,7 +24,7 @@
                     input_type="password"
                     input_id="password"
                     label_text="密码"
-                    @save-data="saveDate"
+                    @saveDate="saveDate"
                   ></auth-input>
                 </div>
                 <div class="agreement">
@@ -55,7 +55,7 @@
                   input_type="email"
                   input_id="signup-email"
                   label_text="邮箱"
-                  @save-data="saveDate"
+                  @saveDate="saveDate"
                 ></auth-input>
               </div>
               <div class="signup-psw">
@@ -63,7 +63,7 @@
                   input_type="password"
                   input_id="signup-password"
                   label_text="密码"
-                  @save-data="saveDate"
+                  @saveDate="saveDate"
                 ></auth-input>
               </div>
               <div class="agreement">
@@ -112,14 +112,27 @@ export default {
     };
   },
   methods: {
-    loginSubmit() {
-      // TODO:从这里开始
-      console.log(this.email);
-      console.log(this.password);
+    async loginSubmit() {
+      const data = {
+        email: this.email,
+        password: this.password,
+      };
+      try {
+        await this.$store.dispatch("login", data);
+      } catch (err) {
+        this.error = err.message || "Failed to authenticate, try later.";
+      }
     },
-    signupSubmit() {
-      console.log(this.email);
-      console.log(this.password);
+    async signupSubmit() {
+      const data = {
+        email: this.email,
+        password: this.password,
+      };
+      try {
+        await this.$store.dispatch("signup", data);
+      } catch (err) {
+        this.error = err.message || "Failed to authenticate, try later.";
+      }
     },
     changeTo(page) {
       if (page === "login") {
@@ -129,8 +142,8 @@ export default {
       }
     },
     saveDate(data) {
-      if (data.type === "email") {
-        this.email = data.email;
+      if (data.type == "email") {
+        this.email = data.data;
       } else {
         this.password = data.data;
       }

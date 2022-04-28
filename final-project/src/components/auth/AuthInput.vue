@@ -1,5 +1,5 @@
 <template>
-  <div class="input" :class="{ on: on_click }">
+  <div class="input" :class="{ on: on_click || data }">
     <div class="left">
       <label :for="input_id">{{ label_text }}</label>
       <input
@@ -7,7 +7,7 @@
         autofocus="autofocus"
         :id="input_id"
         @click="click"
-        @blur="leave"
+        @keyup="leave"
         v-model.trim="data"
       />
     </div>
@@ -51,10 +51,11 @@ export default {
     },
     leave() {
       this.on_click = false;
-      this.$emit(`saveDate`, {
+      const user_data = {
         type: this.input_type,
         data: this.data,
-      });
+      };
+      this.$emit(`saveDate`, user_data);
     },
   },
 };
