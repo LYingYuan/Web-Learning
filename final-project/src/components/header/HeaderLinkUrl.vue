@@ -1,6 +1,6 @@
 <template>
   <div>
-    <base-link :to="url" :mode="mode">
+    <base-link :to="url" :mode="mode" :isBottom="isBottom">
       <slot></slot>
     </base-link>
   </div>
@@ -11,12 +11,17 @@ export default {
   props: {
     url: {
       style: String,
-      require: false,
+      required: false,
       default: "#",
     },
     mode: {
       style: String,
-      require: false,
+      required: false,
+    },
+    isBottom: {
+      style: Boolean,
+      required: false,
+      default: false,
     },
   },
 };

@@ -59,9 +59,11 @@
         @mouseleave="leaveCart"
       >
         <img class="cart-icon" :src="cart_src" />
-        <span class="cart-text">购物车</span>
+        <span class="cart-text" :class="{ hoverCartRed: hover_cart }"
+          >购物车</span
+        >
         <!-- TODO:购物车-数量 -->
-        <span>1</span>
+        <span :class="{ hoverCartRed: hover_cart }">1</span>
       </base-link>
       <base-link class="customer-oder">我的订单</base-link>
     </div>
@@ -246,6 +248,10 @@ form {
 .hoverCart {
   background: #f6f6f6;
   border-color: #dcdcdc;
+  color: #ff2832;
+}
+
+.hoverCartRed {
   color: #ff2832;
 }
 </style>

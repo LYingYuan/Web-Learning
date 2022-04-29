@@ -2,19 +2,23 @@
   <div class="home-body">
     <div class="container">
       <home-body-screen></home-body-screen>
-      <div>hello</div>
+    </div>
+    <div class="container">
+      <the-recommendation></the-recommendation>
     </div>
   </div>
 </template>
 
 <script>
-import HomeBodyScreen from '../homeBody/HomeBodyScreen.vue';
+import HomeBodyScreen from "../homeBody/HomeBodyScreen.vue";
+import TheRecommendation from "../recommendation/TheRecommendation.vue";
 
 export default {
-  components:{
+  components: {
     HomeBodyScreen,
-  }
-}
+    TheRecommendation,
+  },
+};
 </script>
 
 <style scoped>

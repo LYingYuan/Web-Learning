@@ -48,7 +48,6 @@
               </button>
               <span>立即注册</span>
             </h2>
-            <!-- TODO:prevent -->
             <form @submit.prevent="signupSubmit">
               <div class="signup-user">
                 <auth-input
@@ -119,6 +118,9 @@ export default {
       };
       try {
         await this.$store.dispatch("login", data);
+        // TODO:路由重定向
+        const redirectUrl = '/' + (this.$route.query.redirect || 'dangdang');
+        this.$router.replace(redirectUrl);
       } catch (err) {
         this.error = err.message || "Failed to authenticate, try later.";
       }
@@ -130,6 +132,8 @@ export default {
       };
       try {
         await this.$store.dispatch("signup", data);
+        const redirectUrl = '/' + (this.$route.query.redirect || 'dangdang');
+        this.$router.replace(redirectUrl);
       } catch (err) {
         this.error = err.message || "Failed to authenticate, try later.";
       }

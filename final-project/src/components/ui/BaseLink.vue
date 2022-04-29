@@ -1,7 +1,10 @@
 <template>
-  <router-link :class="mode" :to="to">
+  <router-link :class="mode" :to="to" v-if="!isBottom">
     <slot></slot>
   </router-link>
+  <button v-else :class="mode">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
@@ -16,8 +19,10 @@ export default {
     // red-line:    当hover时由 #949494 显示为红色且有下划线 #ff2838
     // red-2:       当hover时由 #949494 显示为红色 #ff2838
     // none:        所有情况显示为白色且hover没有样式
-    // black-all        全黑
-    // red-all
+    // black-all    全黑
+    // red-all      全红
+    // gray-line    color: #666 -> #ff2838 且有下划线
+    // blue-line    color: #1a66b3 -> #1a66b3 且有下划线
     mode: {
       type: String,
       required: false,
@@ -29,6 +34,11 @@ export default {
       required: false,
       default: "#",
     },
+    isBottom: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
 };
 </script>
@@ -39,8 +49,18 @@ a {
   cursor: pointer;
 }
 
-a:hover {
+button {
+  cursor: pointer;
+  background: none;
+}
+
+a:hover,
+button:hover {
   color: #ff2838;
+}
+
+.gray-line {
+  color: #666;
 }
 
 .red,
@@ -58,7 +78,9 @@ a:hover {
 }
 
 .red-line:hover,
-.black-line:hover {
+.black-line:hover,
+.gray-line:hover,
+.blue-line:hover {
   text-decoration-line: underline;
 }
 
@@ -82,5 +104,10 @@ a:hover {
 
 .red-all {
   color: #ff2838;
+}
+
+.blue-line,
+.blue-line:hover {
+  color: #1a66b3;
 }
 </style>

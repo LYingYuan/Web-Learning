@@ -3,7 +3,25 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    didAutoLogout() {
+      return this.$store.getters.getDidAutoLogout;
+    },
+  },
+  watch: {
+    didAutoLogout(curValue, oldValue) {
+      if (curValue && curValue !== oldValue) {
+        // 当token过期自动登出时，如果还在购物车界面，切换到登陆界面
+        this.$router.replace("/auth");
+      }
+    },
+  },
+  created() {
+    // 尝试自动登录
+    this.$store.dispatch("autoLogin");
+  },
+};
 </script>
 
 <style>

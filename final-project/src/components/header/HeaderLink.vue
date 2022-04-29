@@ -22,7 +22,12 @@
       <!-- TODO:用户登录登出 -->
       <ul class="link">
         <li>
-          <header-link-url url="/auth" mode="red-all">登录</header-link-url>
+          <header-link-url url="/auth" mode="red-all" v-if="!is_authenticated"
+            >登录</header-link-url
+          >
+          <header-link-url :isBottom="true" v-else @click="logout"
+            >退出</header-link-url
+          >
         </li>
         <li>
           <!-- TODO:用户购物车 -->
@@ -103,6 +108,9 @@ export default {
     changeCity(city) {
       this.selected_city = city;
     },
+    logout() {
+      this.$store.dispatch("logout");
+    },
   },
   computed: {
     // 城市
@@ -124,6 +132,10 @@ export default {
     // 客户服务
     customer_service_links() {
       return this.$store.getters["nav/getCustomerServiceLinks"];
+    },
+    // 当前是否登录，切换登录与退出
+    is_authenticated() {
+      return this.$store.getters.isAuthenticated;
     },
   },
 };
