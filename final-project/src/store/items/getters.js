@@ -5,4 +5,7 @@ export default {
   getRecommendedItems(state) {
     return state.recommended_items;
   },
+  getPanicBuyingScenes(state) {
+    return state.panic_buying_scenes;
+  },
 };

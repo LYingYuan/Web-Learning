@@ -88,13 +88,17 @@ export default {
       }
     },
     addToCart() {
-      const data = {
-        id: this.itemId,
-        price: this.item.price,
-        name: this.item.name,
-        count: this.item_num,
-      };
-      this.$store.dispatch("cart/addCartItem", data);
+      if (this.$store.getters.getId) {
+        const data = {
+          id: this.itemId,
+          price: this.item.price,
+          name: this.item.name,
+          count: this.item_num,
+        };
+        this.$store.dispatch("cart/addCartItem", data);
+      } else {
+        this.$router.push("/auth");
+      }
     },
   },
   created() {
