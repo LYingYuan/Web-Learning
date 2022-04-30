@@ -3,26 +3,28 @@
   <div class="container">
     <div class="item">
       <div class="picture">
-        <img src="../../assets/pic/items/recommendations/1.jpg" alt="" />
+        <img :src="item.picture" alt="" />
       </div>
       <div class="information">
-        <div class="detail clearflex">
+        <div class="detail">
           <div class="name">
-            <h1>长短经（又名《反经》，全注全译全三册）中国书店</h1>
+            <h1>{{ item.name }}</h1>
             <h2>
-              职场、官场、商场智慧修炼之经典，*、乾隆、南怀瑾等一致推崇，比《孙子兵法》更实用，比《资治通鉴》更精彩
+              {{ item.introduction }}
             </h2>
           </div>
           <div class="publish">
             <span class="title"
               >作者:
-              <base-link mode="blue-line">（唐）赵蕤</base-link>
+              <base-link mode="blue-line">{{ item.author }}</base-link>
             </span>
             <span class="title"
               >出版社:
-              <base-link mode="blue-line">中国书店出版社</base-link>
+              <base-link mode="blue-line">{{ item.publish }}</base-link>
             </span>
-            <span class="title">出版时间:<span>2013年01月</span></span>
+            <span class="title"
+              >出版时间:<span>{{ item.publish_time }}</span></span
+            >
             <div class="comment">
               <span class="title">
                 <span class="star-box"> <span class="star"></span></span>
@@ -32,6 +34,7 @@
             </div>
             <div class="price">
               <div class="pc">
+                <!-- TODO:写到这儿了 -->
                 <div class="current-price">
                   <span class="title-2">
                     <span>当当价</span>
@@ -39,12 +42,20 @@
                       >降价通知</base-link
                     >
                   </span>
-                  <span><span>￥</span>58.00 </span>
+                  <span><span>￥</span>{{ item.price }}</span>
                 </div>
-                <div class="discount">(5.92折)</div>
+                <div class="discount">({{ item.discount }})</div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="btn">
+          <div class="num">
+            <input type="number" v-model.number="item_num" />
+            <button class="num-add" @click="changeNum('add')">+</button>
+            <button class="num-del" @click="changeNum('del')">-</button>
+          </div>
+          <button class="cart-btn" @click="addToCart">加入购物车</button>
         </div>
       </div>
     </div>
@@ -55,8 +66,41 @@
 import TheHeader from "../layout/TheHeader.vue";
 
 export default {
+  props: ["itemId"],
   components: {
     TheHeader,
+  },
+  data() {
+    return {
+      item: null,
+      item_num: 0,
+    };
+  },
+  methods: {
+    changeNum(method) {
+      if (method === "add") {
+        this.item_num++;
+      } else {
+        this.item_num--;
+      }
+      if (this.item_num < 0) {
+        this.item_num = 0;
+      }
+    },
+    addToCart() {
+      const data = {
+        id: this.itemId,
+        price: this.item.price,
+        name: this.item.name,
+        count: this.item_num,
+      };
+      this.$store.dispatch("cart/addCartItem", data);
+    },
+  },
+  created() {
+    this.item = this.$store.getters["items/getAllItems"].find(
+      (item) => item.id === this.itemId
+    );
   },
 };
 </script>
@@ -141,7 +185,7 @@ export default {
 
 .discount {
   color: #e52222;
-  height: 49px;
+  height: 20px;
   display: flex;
   align-items: flex-end;
   line-height: 1.5;
@@ -156,5 +200,66 @@ export default {
 
 .reduce {
   margin-left: 10px;
+}
+
+.pc {
+  float: left;
+  overflow: hidden;
+  padding: 9px 5px 0 0;
+  width: 100px;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-btn {
+  height: 36px;
+  font: 16px/36px "Microsoft Yahei";
+  overflow: hidden;
+  margin: 0 0 3px 10px;
+  float: left;
+  padding: 0 15px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff2832;
+  cursor: pointer;
+}
+
+.cart-btn:hover {
+  background-color: #f00000;
+}
+
+.num {
+  float: left;
+  height: 34px;
+  border: 1px solid #e9e9e9;
+  width: 38px;
+  padding-right: 23px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.num-add {
+  background-position: -37px 0;
+  top: 0;
+}
+
+.num-def {
+  background-position: -37px -17px;
+  top: 17px;
+}
+
+.num button {
+  position: absolute;
+  right: 0;
+  display: block;
+  width: 23px;
+  height: 17px;
+  margin-left: 6px;
+  cursor: pointer;
 }
 </style>

@@ -57,6 +57,7 @@
         :class="{ hoverCart: hover_cart }"
         @mouseover="hoverCart"
         @mouseleave="leaveCart"
+        to="/shoppingcart"
       >
         <img class="cart-icon" :src="cart_src" />
         <span class="cart-text" :class="{ hoverCartRed: hover_cart }"

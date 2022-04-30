@@ -2,13 +2,14 @@
   <h3>为您推荐</h3>
   <div class="recommendations">
     <ul>
-      <recommended-item></recommended-item>
-      <recommended-item></recommended-item>
-      <recommended-item></recommended-item>
-      <recommended-item></recommended-item>
-      <recommended-item></recommended-item>
-      <recommended-item></recommended-item>
-      <recommended-item></recommended-item>
+      <recommended-item
+      v-for="item in items"
+      :key="item.id"
+      :id="item.id"
+      :name="item.name"
+      :price="item.price"
+      :pic_url="item.picture"
+      ></recommended-item>
     </ul>
   </div>
 </template>
@@ -19,6 +20,11 @@ import RecommendedItem from "./RecommendedItem.vue";
 export default {
   components: {
     RecommendedItem,
+  },
+  computed: {
+    items() {
+      return this.$store.getters["items/getRecommendedItems"];
+    },
   },
 };
 </script>

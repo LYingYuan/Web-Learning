@@ -1,14 +1,45 @@
 <template>
   <li>
-    <base-link>
-      <img src="../../assets/pic/items/recommendations/1.jpg" alt="" />
+    <base-link :to="`/dangdang/${id}`">
+      <img :src="pic_url" alt="" />
     </base-link>
     <p class="name">
-      <base-link mode="gray-line">长短经（又名《反经》，全注全译全</base-link>
+      <base-link mode="gray-line" :to="`/dangdang/${id}`">{{ name }}</base-link>
     </p>
-    <p class="price">￥<span>58.00</span></p>
+    <p class="price">
+      ￥<span>{{ price }}</span>
+    </p>
   </li>
 </template>
+
+<script>
+export default {
+  props: {
+    name: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: String,
+      required: true,
+    },
+    id: {
+      type: String,
+      required: true,
+    },
+    pic_url: {
+      type: String,
+      required: true,
+    },
+  },
+  // TODO:del
+  // computed: {
+  //   url() {
+  //     return `/dangdang/${this.url}`;
+  //   },
+  // },
+};
+</script>
 
 <style scoped>
 li {

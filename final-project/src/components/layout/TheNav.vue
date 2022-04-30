@@ -10,6 +10,7 @@
             mode="none"
             @mouseover="mouseOver(1)"
             @mouseleave="mouseLeave(1)"
+            to="/shoppingcart"
           >
             <img src="../../assets/icon/购物车2.svg" alt="" />
             <transition name="span">
@@ -155,10 +156,10 @@ export default {
   margin: 0;
   width: 34px;
   height: 100%;
-  z-index:10;
+  z-index: 10;
 }
 
-.nav-top > ul{
+.nav-top > ul {
   position: absolute;
   top: 134px;
 }

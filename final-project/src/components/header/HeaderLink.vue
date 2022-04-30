@@ -32,7 +32,7 @@
         <li>
           <!-- TODO:用户购物车 -->
           <!-- 需要图(已经下载)、需要设置用户当前购物车数量 -->
-          <header-link-url url="#">购物车</header-link-url>
+          <header-link-url url="/shoppingcart">购物车</header-link-url>
         </li>
         <li>
           <header-link-url url="#">我的订单</header-link-url>
@@ -191,7 +191,7 @@ img {
   padding: 10px 0 0 20px;
   width: 300px;
   height: 220px;
-  z-index: 5;
+  z-index: 11;
 }
 
 .bar {
