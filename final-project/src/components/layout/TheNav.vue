@@ -67,8 +67,7 @@
           </base-link>
         </li>
       </ul>
-      <!-- TODO:购物车内数量 -->
-      <span class="cart-num">0</span>
+      <span class="cart-num">{{ cart_items_count }}</span>
     </div>
     <div class="nav-bottom">
       <ul class="foot">
@@ -94,6 +93,7 @@
             mode="none"
             @mouseover="mouseOver(6)"
             @mouseleave="mouseLeave(6)"
+            @click="toTop"
           >
             <img src="../../assets/icon/向上.svg" alt="" />
             <transition name="span">
@@ -142,6 +142,16 @@ export default {
     },
     mouseLeave(num) {
       this.span[`showSpan${num}`] = false;
+    },
+    // 回到顶部
+    toTop() {
+      document.documentElement.scrollTop = 0;
+    },
+  },
+  computed: {
+    // 购物车商品数量
+    cart_items_count() {
+      return this.$store.getters["cart/getItemsCount"];
     },
   },
 };

@@ -3,7 +3,7 @@
   <div class="logo-box"></div>
   <div class="container content">
     <div class="all">
-      <h2>总价：￥</h2>
+      <h2>总价：￥{{ cost }}</h2>
     </div>
     <div class="cart">
       <cart-item></cart-item>
@@ -19,6 +19,11 @@ export default {
   components: {
     HeaderLink,
     CartItem,
+  },
+  computed: {
+    cost() {
+      return this.$store.getters["cart/getCartCost"];
+    },
   },
 };
 </script>

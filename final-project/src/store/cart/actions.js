@@ -28,7 +28,10 @@ export default {
       count: payload.count,
       price: payload.price,
     };
-
+    const all_items_count = +context.getters.getItemsCount;
+    const count = +payload.count + all_items_count;
+    localStorage.setItem("cart_count", count);
+    context.commit("setItemsCount", count);
     context.commit("addCartItems", new_cart_item);
   },
 

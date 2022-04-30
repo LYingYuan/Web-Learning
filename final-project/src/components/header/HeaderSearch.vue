@@ -50,7 +50,6 @@
       </div>
     </div>
     <div class="user">
-      <!-- TODO:购物车 链接 to-->
       <base-link
         class="shopping-cart"
         mode="none"
@@ -63,8 +62,9 @@
         <span class="cart-text" :class="{ hoverCartRed: hover_cart }"
           >购物车</span
         >
-        <!-- TODO:购物车-数量 -->
-        <span :class="{ hoverCartRed: hover_cart }">1</span>
+        <span :class="{ hoverCartRed: hover_cart }">{{
+          cart_items_count
+        }}</span>
       </base-link>
       <base-link class="customer-oder">我的订单</base-link>
     </div>
@@ -98,9 +98,10 @@ export default {
     hot_search_words() {
       return this.$store.getters["nav/getHotSearchWords"];
     },
-  },
-  created() {
-    this.search_text = this.recommend_search_text;
+    // 购物车商品数量
+    cart_items_count() {
+      return this.$store.getters["cart/getItemsCount"];
+    },
   },
   methods: {
     focusInputBpx() {
@@ -119,6 +120,9 @@ export default {
       this.hover_cart = false;
       this.cart_src = require("../../assets/icon/购物车2.svg");
     },
+  },
+  created() {
+    this.search_text = this.recommend_search_text;
   },
 };
 </script>
