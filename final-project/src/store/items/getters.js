@@ -1,4 +1,7 @@
 export default {
+  getFirmPictures(state) {
+    return state.firmPictures;
+  },
   getAllItems(state) {
     return state.all_items;
   },

@@ -124,6 +124,59 @@ export default {
           picture: require("../../assets/pic/items/recommendations/2.jpg"),
         },
       ],
+      // 厂商周图片
+      firmPictures: [
+        {
+          id: 1,
+          pictures: [
+            {
+              id: 1,
+              url: "#",
+              pic_url: require("../../assets/pic/items/panicBuying/firm/1/1.jpeg"),
+            },
+            {
+              id: 2,
+              url: "#",
+              pic_url: require("../../assets/pic/items/panicBuying/firm/1/2.jpeg"),
+            },
+            {
+              id: 3,
+              url: "#",
+              pic_url: require("../../assets/pic/items/panicBuying/firm/1/3.jpg"),
+            },
+            {
+              id: 4,
+              url: "#",
+              pic_url: require("../../assets/pic/items/panicBuying/firm/1/4.jpeg"),
+            },
+          ],
+        },
+        {
+          id: 2,
+          pictures: [
+            {
+              id: 1,
+              url: "#",
+              pic_url: require("../../assets/pic/items/panicBuying/firm/2/1.jpg"),
+            },
+            {
+              id: 2,
+              url: "#",
+              pic_url: require("../../assets/pic/items/panicBuying/firm/2/2.jpeg"),
+            },
+            {
+              id: 3,
+              url: "#",
+              pic_url: require("../../assets/pic/items/panicBuying/firm/2/3.jpeg"),
+            },
+            {
+              id: 4,
+              url: "#",
+              pic_url: require("../../assets/pic/items/panicBuying/firm/2/4.jpeg"),
+            },
+          ],
+        },
+      ],
     };
   },
   actions,

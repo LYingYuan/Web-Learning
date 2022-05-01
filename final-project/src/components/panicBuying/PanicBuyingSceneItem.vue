@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
 li {
-  width: 198px;
+  width: 198.8px;
   height: 227px;
   border-right: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;

@@ -48,10 +48,30 @@
       <div class="right-head">
         <h3>厂商周</h3>
         <ul>
-          <li class="on"></li>
-          <li></li>
+          <li
+            :class="{ on: page_index === 1 }"
+            @mouseover="hoverToChange(1)"
+            @mouseleave="startFirmTimer"
+          ></li>
+          <li
+            :class="{ on: page_index === 2 }"
+            @mouseover="hoverToChange(2)"
+            @mouseleave="startFirmTimer"
+          ></li>
         </ul>
       </div>
+      <ul
+        class="firm-carousel"
+        v-for="page in firm_pictures"
+        :key="page.id"
+        v-show="page.id === page_index"
+      >
+        <li v-for="pic in page.pictures" :key="pic.id">
+          <router-link :to="pic.url"
+            ><img :src="pic.pic_url" alt=""
+          /></router-link>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -71,6 +91,9 @@ export default {
       count_down_sec: 0,
       // 当前的秒杀场次
       now_scene: "0",
+      // 厂商周页面
+      firm_timer: null,
+      page_index: 1,
     };
   },
   watch: {
@@ -114,6 +137,9 @@ export default {
         return "0" + this.count_down_sec;
       }
       return this.count_down_sec;
+    },
+    firm_pictures() {
+      return this.$store.getters["items/getFirmPictures"];
     },
   },
   methods: {
@@ -202,10 +228,27 @@ export default {
           break;
       }
     },
+    // 厂商周 start
+    hoverToChange(which) {
+      clearInterval(this.firm_timer);
+      this.page_index = which;
+    },
+    startFirmTimer() {
+      clearInterval(this.firm_timer);
+      this.firm_timer = setInterval(() => {
+        if (this.page_index === 1) {
+          this.page_index = 2;
+        } else {
+          this.page_index = 1;
+        }
+      }, 5000);
+    },
+    // 厂商周 end
   },
   created() {
     this.calculateTime();
     this.setTimer();
+    this.startFirmTimer();
   },
 };
 </script>
@@ -221,8 +264,6 @@ export default {
 
 .right {
   width: 204px;
-  /* TODO:del */
-  background-color: aquamarine;
 }
 
 .right-head {
@@ -335,5 +376,32 @@ export default {
   text-align: center;
   width: 36px;
   overflow: hidden;
+}
+
+.firm-carousel {
+  border-right: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+}
+
+.firm-carousel li {
+  border-bottom: 1px solid #e5e5e5;
+  height: 114px;
+  width: 203px;
+}
+
+.firm-carousel img {
+  height: 113px;
+  width: 203px;
+}
+
+.firm-carousel a {
+  display: block;
+  height: 113px;
+  position: relative;
+  width: 203px;
+  padding-left: 1px;
+  overflow: hidden;
+  background-color: #fff;
 }
 </style>

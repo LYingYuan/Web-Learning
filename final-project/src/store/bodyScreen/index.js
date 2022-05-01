@@ -1323,6 +1323,7 @@ export default {
           pic_url: require("../../assets/pic/screen/notice/carousel/3.jpg"),
         },
       ],
+      
     };
   },
   actions,
