@@ -10,6 +10,9 @@
       <home-box-book></home-box-book>
     </div>
     <div class="container">
+      <home-box-clothes></home-box-clothes>
+    </div>
+    <div class="container">
       <the-recommendation></the-recommendation>
     </div>
   </div>
@@ -20,6 +23,7 @@ import HomeBodyScreen from "../homeBody/HomeBodyScreen.vue";
 import TheRecommendation from "../recommendation/TheRecommendation.vue";
 import PanicBuying from "../panicBuying/PanicBuying.vue";
 import HomeBoxBook from "../home/HomeBoxBook.vue";
+import HomeBoxClothes from "../home/HomeBoxClothes.vue";
 
 export default {
   components: {
@@ -27,6 +31,7 @@ export default {
     TheRecommendation,
     PanicBuying,
     HomeBoxBook,
+    HomeBoxClothes,
   },
 };
 </script>

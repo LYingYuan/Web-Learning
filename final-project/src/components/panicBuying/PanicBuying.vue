@@ -256,6 +256,7 @@ export default {
 <style scoped>
 .panic-buying {
   display: flex;
+  margin: 0 auto 30px;
 }
 
 .left {
