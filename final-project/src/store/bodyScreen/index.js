@@ -1305,6 +1305,24 @@ export default {
           mode: "red",
         },
       ],
+      // 公告栏轮播图
+      noticeCarousel: [
+        {
+          id: 1,
+          url: "#",
+          pic_url: require("../../assets/pic/screen/notice/carousel/1.jpg"),
+        },
+        {
+          id: 2,
+          url: "#",
+          pic_url: require("../../assets/pic/screen/notice/carousel/2.jpg"),
+        },
+        {
+          id: 3,
+          url: "#",
+          pic_url: require("../../assets/pic/screen/notice/carousel/3.jpg"),
+        },
+      ],
     };
   },
   actions,

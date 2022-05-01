@@ -1,4 +1,7 @@
 export default {
+  getNoticeCarouselPic(state) {
+    return state.noticeCarousel;
+  },
   getNoticeServe(state) {
     return state.noticeServe;
   },

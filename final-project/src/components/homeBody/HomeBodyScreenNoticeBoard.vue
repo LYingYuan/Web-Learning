@@ -44,6 +44,15 @@
       @mouseover="hoverCarousel"
       @mouseleave="leaveCarousel"
     >
+      <ul class="carousel-pic">
+        <li
+          v-for="pic in notice_carousel"
+          :key="pic.id"
+          v-show="pic.id === carousel_index"
+        >
+          <base-link :to="pic.url"><img :src="pic.pic_url" alt="" /></base-link>
+        </li>
+      </ul>
       <div>
         <div
           class="left"
@@ -56,6 +65,13 @@
           @click="clickBtn('next')"
         ></div>
       </div>
+      <ul class="carousel-nav">
+        <li
+          v-for="pic in notice_carousel"
+          :key="pic.id"
+          :class="{ 'carousel-nav-on ': pic.id === carousel_index }"
+        ></li>
+      </ul>
     </div>
   </div>
 </template>
@@ -67,6 +83,8 @@ export default {
       mouse_on_carousel: false,
       show_message: true,
       notice_timer: null,
+      carousel_index: 1,
+      carousel_timer: null,
     };
   },
   computed: {
@@ -79,25 +97,30 @@ export default {
     notice_serve() {
       return this.$store.getters["bodyScreen/getNoticeServe"];
     },
+    notice_carousel() {
+      return this.$store.getters["bodyScreen/getNoticeCarouselPic"];
+    },
   },
   methods: {
     clickBtn(name) {
       if (name === "last") {
-        this.current_index--;
-        if (this.current_index === 0) {
-          this.current_index = this.focus_pictures.length;
+        this.carousel_index--;
+        if (this.carousel_index === 0) {
+          this.carousel_index = this.notice_carousel.length;
         }
       } else {
-        this.current_index++;
-        if (this.current_index > this.focus_pictures.length) {
-          this.current_index = 1;
+        this.carousel_index++;
+        if (this.carousel_index > this.notice_carousel.length) {
+          this.carousel_index = 1;
         }
       }
     },
     hoverCarousel() {
+      clearInterval(this.carousel_timer);
       this.mouse_on_carousel = true;
     },
     leaveCarousel() {
+      this.startCarouselInterval(this.carousel_index);
       this.mouse_on_carousel = false;
     },
     hoverNotice() {
@@ -119,9 +142,20 @@ export default {
         this.show_message = !this.show_message;
       }, 5000);
     },
+    startCarouselInterval(start_index) {
+      clearInterval(this.carousel_timer);
+      this.carousel_timer = setInterval(() => {
+        this.carousel_index++;
+        if (this.carousel_index > this.notice_carousel.length) {
+          this.carousel_index = 1;
+        }
+      }, 5000);
+      this.carousel_index = start_index;
+    },
   },
   mounted() {
     this.startNoticeInterval();
+    this.startCarouselInterval(1);
   },
 };
 </script>
@@ -132,6 +166,8 @@ export default {
   border: 1px solid #e6e6e6;
   border-top: 0;
   z-index: 3;
+  position: relative;
+  left: -1px;
 }
 
 .picture {
@@ -203,6 +239,31 @@ export default {
   width: 100%;
   height: 119px;
   position: relative;
+}
+
+.carousel-nav {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  display: flex;
+}
+
+.carousel-nav li {
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background: #c8c8c8;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 24px;
+  margin: 0 6px 0 0;
+}
+
+li.carousel-nav-on {
+  background-color: #ff2832;
 }
 
 .right,

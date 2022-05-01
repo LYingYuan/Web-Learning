@@ -5,11 +5,13 @@ export default {
   },
   // 获取购物车总数量
   getItemsCount(state) {
-    let count = 0;
-    for (const item of state.cart_items) {
-      count += +item.count;
-    }
-    return count;
+    // let count = 0;
+    // for (const item of state.cart_items) {
+    //   count += +item.count;
+    // }
+    // return count;
+
+    return state.items_count;
   },
   // 获取购物车总价
   getCartCost(state) {

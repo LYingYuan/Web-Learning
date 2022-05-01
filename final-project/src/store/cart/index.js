@@ -7,6 +7,7 @@ export default {
   state() {
     return {
       cart_items: [],
+      items_count: 0,
     };
   },
   actions,

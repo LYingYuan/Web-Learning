@@ -64,6 +64,11 @@ export default {
       }
       new_cart.push(item);
     }
+    let count = 0;
+    for (const item of new_cart) {
+      count += +item.count;
+    }
+    context.commit("setItemsCount", count);
 
     context.commit("setCartItems", new_cart);
   },
