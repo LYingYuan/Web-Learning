@@ -13,6 +13,7 @@ import TheFooter from "../layout/TheFooter.vue";
 import TheNav from "../layout/TheNav.vue";
 import StickyNav from "../stickyNav/StickyNav.vue";
 
+
 export default {
   components: {
     TheHeader,

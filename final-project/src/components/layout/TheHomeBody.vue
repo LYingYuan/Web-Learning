@@ -7,6 +7,9 @@
       <panic-buying></panic-buying>
     </div>
     <div class="container">
+      <home-box-book></home-box-book>
+    </div>
+    <div class="container">
       <the-recommendation></the-recommendation>
     </div>
   </div>
@@ -16,12 +19,14 @@
 import HomeBodyScreen from "../homeBody/HomeBodyScreen.vue";
 import TheRecommendation from "../recommendation/TheRecommendation.vue";
 import PanicBuying from "../panicBuying/PanicBuying.vue";
+import HomeBoxBook from "../home/HomeBoxBook.vue";
 
 export default {
   components: {
     HomeBodyScreen,
     TheRecommendation,
     PanicBuying,
+    HomeBoxBook,
   },
 };
 </script>
