@@ -118,7 +118,6 @@ export default {
       };
       try {
         await this.$store.dispatch("login", data);
-        // TODO:路由重定向
         const redirectUrl = '/' + (this.$route.query.redirect || 'dangdang');
         this.$router.replace(redirectUrl);
       } catch (err) {
@@ -237,7 +236,6 @@ h3 > a {
 }
 
 .btn {
-  /* TODO:设置button不刷新prevent */
   display: block;
   text-align: center;
   background-image: linear-gradient(90deg, #fe5447, #f3344a);

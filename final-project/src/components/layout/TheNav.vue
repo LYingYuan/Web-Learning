@@ -88,7 +88,6 @@
           </base-link>
         </li>
         <li>
-          <!-- TODO:定位到顶部 -->
           <base-link
             mode="none"
             @mouseover="mouseOver(6)"
@@ -145,7 +144,16 @@ export default {
     },
     // 回到顶部
     toTop() {
-      document.documentElement.scrollTop = 0;
+      let timer = setInterval(() => {
+        let distanceY =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        if (distanceY == 0) {
+          clearTimeout(timer);
+          return;
+        }
+        let speed = Math.ceil(distanceY / 16);
+        document.documentElement.scrollTop = distanceY - speed;
+      }, 10);
     },
   },
   computed: {

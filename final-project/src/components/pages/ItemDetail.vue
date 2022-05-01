@@ -34,7 +34,6 @@
             </div>
             <div class="price">
               <div class="pc">
-                <!-- TODO:写到这儿了 -->
                 <div class="current-price">
                   <span class="title-2">
                     <span>当当价</span>

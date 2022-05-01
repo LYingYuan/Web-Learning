@@ -390,6 +390,10 @@ export default {
   width: 203px;
 }
 
+.firm-carousel img:hover {
+  transform: translateX(-3px);
+}
+
 .firm-carousel img {
   height: 113px;
   width: 203px;
