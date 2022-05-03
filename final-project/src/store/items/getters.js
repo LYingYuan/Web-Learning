@@ -1,4 +1,7 @@
 export default {
+  getBooks(state) {
+    return state.books;
+  },
   getFirmPictures(state) {
     return state.firmPictures;
   },

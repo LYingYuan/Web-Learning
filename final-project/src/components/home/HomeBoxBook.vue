@@ -25,7 +25,17 @@
         </ul>
       </div>
       <!-- TODO:store数据 -->
-      <home-box-book-detail></home-box-book-detail>
+      <home-box-book-detail
+        v-for="book_page in book_pages"
+        :key="book_page.index"
+        :left_pic="book_page.left_pic"
+        :left_links="book_page.left_links"
+        :right_first="book_page.right_first"
+        :right_links="book_page.right_links"
+        :has_carousel="book_page.has_carousel"
+
+        v-show="book_page.index === nav_index"
+      ></home-box-book-detail>
     </div>
   </div>
 </template>
@@ -41,6 +51,11 @@ export default {
     return {
       nav_index: 1,
     };
+  },
+  computed: {
+    book_pages() {
+      return this.$store.getters["items/getBooks"];
+    },
   },
   methods: {
     changeIndex(index) {
@@ -90,7 +105,7 @@ export default {
   left: 0;
   width: 910px;
   height: 443px;
-  background-color: aqua;
+  border: 1px solid #e6e6e6;
 }
 
 .nav {
@@ -98,7 +113,7 @@ export default {
   width: 655px;
   border-right: 1px solid #e6e6e6;
   position: absolute;
-  top: -56px;
+  top: -57px;
   right: 0;
   display: flex;
   flex-direction: row-reverse;
