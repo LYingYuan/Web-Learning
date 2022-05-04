@@ -24,7 +24,6 @@
           </li>
         </ul>
       </div>
-      <!-- TODO:store数据 -->
       <home-box-book-detail
         v-for="book_page in book_pages"
         :key="book_page.index"
@@ -33,7 +32,6 @@
         :right_first="book_page.right_first"
         :right_links="book_page.right_links"
         :has_carousel="book_page.has_carousel"
-
         v-show="book_page.index === nav_index"
       ></home-box-book-detail>
     </div>
@@ -83,6 +81,7 @@ export default {
   border-bottom: 2px solid #000;
   color: #323232;
   font: bold 20px/44px "Microsoft YaHei";
+  z-index: 1;
 }
 
 .title a {
@@ -135,6 +134,7 @@ export default {
   color: #646464;
   cursor: default;
   overflow: hidden;
+  z-index: 2;
 }
 
 li.on {

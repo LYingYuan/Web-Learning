@@ -269,7 +269,7 @@ li.carousel-nav-on {
 .right,
 .left {
   width: 33px;
-  height: 70px;
+  height: 43px;
   top: 50%;
   transform: translate(0, -50%);
   position: absolute;
@@ -293,5 +293,30 @@ li.carousel-nav-on {
 .left:hover,
 .right:hover {
   opacity: 0.5;
+}
+
+.content-enter-from {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.content-enter-active {
+  transition: all 1s ease-out;
+}
+
+.content-enter-to,
+.content-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.content-leave-active {
+  transition: all 1s ease-in;
+  position: absolute;
+}
+
+.content-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
 }
 </style>

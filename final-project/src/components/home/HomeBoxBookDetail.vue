@@ -18,8 +18,9 @@
           ><img :src="right_first.src" alt=""
         /></base-link>
       </div>
-      <!-- TODO:v-else -->
-      <li class="item" v-else></li>
+      <div class="item" v-else>
+        <base-carousel :items="right_first"></base-carousel>
+      </div>
       <home-box-book-detail-item
         v-for="item in right_links"
         :key="item.id"
@@ -31,6 +32,7 @@
 
 <script>
 import HomeBoxBookDetailItem from "./HomeBoxBookDetailItem.vue";
+import BaseCarousel from "../ui/BaseCarousel.vue";
 
 export default {
   props: [
@@ -42,6 +44,7 @@ export default {
   ],
   components: {
     HomeBoxBookDetailItem,
+    BaseCarousel,
   },
 };
 </script>
@@ -98,10 +101,13 @@ export default {
   grid-template: repeat(2, 1fr) / repeat(4, 1fr);
   grid-gap: 1px 1px;
   background-color: #e6e6e6;
+  border-left: 1px solid #e6e6e6;
 }
 
 .item:nth-child(1) {
   grid-row: 1/2;
   grid-column: 1/3;
+  /* TODO:修复照片宽度，轮播图组件也需要修改 */
+  background-color: #a9dd8d;
 }
 </style>

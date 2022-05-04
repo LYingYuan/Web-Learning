@@ -41,7 +41,7 @@
                       >降价通知</base-link
                     >
                   </span>
-                  <span><span>￥</span>{{ item.price }}</span>
+                  <span class="discount-price">￥{{ item.price }}</span>
                 </div>
                 <div class="discount">({{ item.discount }})</div>
               </div>
@@ -206,10 +206,9 @@ export default {
 }
 
 .pc {
-  float: left;
   overflow: hidden;
   padding: 9px 5px 0 0;
-  width: 100px;
+  width: 109px;
 }
 
 .information {
@@ -265,4 +264,5 @@ export default {
   margin-left: 6px;
   cursor: pointer;
 }
+
 </style>
