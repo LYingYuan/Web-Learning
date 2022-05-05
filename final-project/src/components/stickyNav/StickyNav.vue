@@ -87,6 +87,10 @@ export default {
   display: flex;
 }
 
+.container {
+  position:relative
+}
+
 .logo {
   padding: 6px 0 0;
   width: 210px;
@@ -103,7 +107,8 @@ export default {
   font: 14px/32px "Microsoft YaHei";
   margin-top: 9px;
   padding-left: 10px;
-  position: relative;
+  position: absolute;
+  left: 210px;
 }
 
 .search input {

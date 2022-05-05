@@ -1,6 +1,8 @@
 export default {
+  getRankingLists(state) {
+    return state.ranking_lists;
+  },
   getBooks(state) {
-    
     return state.books;
   },
   getFirmPictures(state) {

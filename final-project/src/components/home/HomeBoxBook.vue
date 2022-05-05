@@ -35,15 +35,18 @@
         v-show="book_page.index === nav_index"
       ></home-box-book-detail>
     </div>
+    <home-box-book-ranking-list></home-box-book-ranking-list>
   </div>
 </template>
 
 <script>
 import HomeBoxBookDetail from "./HomeBoxBookDetail.vue";
+import HomeBoxBookRankingList from "./HomeBoxBookRankingList.vue";
 
 export default {
   components: {
     HomeBoxBookDetail,
+    HomeBoxBookRankingList,
   },
   data() {
     return {
