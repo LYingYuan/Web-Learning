@@ -59,6 +59,7 @@ export default {
 .left {
   height: 100%;
   width: 238px;
+  z-index: 3;
 }
 
 .left > a {
@@ -81,6 +82,7 @@ export default {
     0 0;
   display: flex;
   flex-wrap: wrap;
+  border-right: 1px solid #e6e6e6;
 }
 
 .left li {
@@ -104,10 +106,18 @@ export default {
   border-left: 1px solid #e6e6e6;
 }
 
+.item {
+  z-index: 3;
+}
+
 .item:nth-child(1) {
+  box-sizing: border-box;
   grid-row: 1/2;
   grid-column: 1/3;
   /* TODO:修复照片宽度，轮播图组件也需要修改 */
   background-color: #a9dd8d;
+  z-index: 2;
+  height: 220px;
+  width: 335px;
 }
 </style>

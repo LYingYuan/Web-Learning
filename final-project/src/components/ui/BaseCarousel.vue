@@ -1,17 +1,16 @@
 <template>
   <!-- 使用该组件需要在父组件中使用一个容器包裹（设置大小） -->
+  <!-- 要使该组件的z-index小于父组件 -->
   <div class="carousel" @mouseover="hoverCarousel" @mouseleave="leaveCarousel">
-    <!-- <ul class="carousel-content"> -->
     <transition-group tag="ul" name="content" class="carousel-content">
       <li
         v-for="item in items"
         :key="item.id"
-        v-show="current_index === item.id"
+        v-show="item.id === current_index"
       >
         <router-link :to="item.url"><img :src="item.src" alt="" /></router-link>
       </li>
     </transition-group>
-    <!-- </ul> -->
     <div class="carousel-button">
       <div
         class="left"
@@ -24,7 +23,7 @@
         @click="clickBtn('next')"
       ></div>
     </div>
-    <ul class="carousel-nav">
+    <ul class="carousel-nav" v-if="nav">
       <li
         v-for="item in items"
         :key="item.id"
@@ -32,12 +31,31 @@
         @click="clickNav(item.id)"
       ></li>
     </ul>
+    <div class="carousel-mask">
+      <div :style="{ 'background-color': mask_color }" class="right-mask"></div>
+      <div :style="{ 'background-color': mask_color }" class="left-mask"></div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["items"],
+  props: {
+    items: {
+      type: Object,
+      required: true,
+    },
+    nav: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    mask_color: {
+      type: String,
+      required: false,
+      default: "#e6e6e6",
+    },
+  },
   data() {
     return {
       mouse_on_carousel: false,
@@ -144,5 +162,51 @@ export default {
 
 li.carousel-nav-on {
   background-color: #5e5e5e;
+}
+
+.carousel-content {
+  position: relative;
+}
+
+.carousel-content > li {
+  height: 100%;
+  position: absolute;
+}
+
+.content-enter-from {
+  left: 100%;
+  z-index: -1;
+}
+
+.content-enter-active {
+  transition: left 0.4s ease;
+}
+
+.content-leave-active {
+  transition: left 0.4s ease;
+}
+
+.content-enter-to,
+.content-leave-from {
+  left: 0;
+}
+
+.content-leave-to {
+  left: -100%;
+}
+
+.right-mask,
+.left-mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.right-mask {
+  right: 100%;
+}
+
+.left-mask {
+  left: 100%;
 }
 </style>
