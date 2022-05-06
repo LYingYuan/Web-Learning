@@ -114,7 +114,6 @@ export default {
   box-sizing: border-box;
   grid-row: 1/2;
   grid-column: 1/3;
-  /* TODO:修复照片宽度，轮播图组件也需要修改 */
   background-color: #a9dd8d;
   z-index: 2;
   height: 220px;

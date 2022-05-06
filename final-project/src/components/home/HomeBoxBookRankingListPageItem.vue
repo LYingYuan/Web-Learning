@@ -1,12 +1,23 @@
 <template>
-  <li @mouseover="changeHoverState(true)" @mouseleave="changeHoverState(false)">
-    <span class="ranking">{{ book.ranking }}</span>
-    <p class="book-detail hover-book" :class="{ 'hover-book': hover }">
-      <router-link :to="`/dangdang/${book.id}`" class="picture" 
+  <li
+    @mouseover="changeHoverState(true)"
+    @mouseleave="changeHoverState(false)"
+    :class="{ 'hover-list': hover }"
+  >
+    <span class="ranking" :class="`${book.ranking_mode}`">{{
+      book.ranking
+    }}</span>
+    <p class="book-detail" :class="{ 'hover-book': hover }">
+      <router-link :to="`/dangdang/${book.id}`" class="picture" v-show="hover"
         ><img :src="book.picture" alt=""
       /></router-link>
-      <router-link :to="`/dangdang/${book.id}`" class="link">
+      <router-link
+        :to="`/dangdang/${book.id}`"
+        class="link"
+        :class="{ 'hover-book-link': hover }"
+      >
         <span class="name">{{ book.name }}</span>
+        <br />
         <span class="introduction">{{ book.introduction }}</span>
       </router-link>
     </p>
@@ -15,16 +26,34 @@
 
 <script>
 export default {
-  props: ["book"],
+  props: ["book", "hover_ranking", "list_index"],
   data() {
     return {
       hover: false,
     };
   },
+  watch: {
+    hover_ranking(newValue) {
+      if (newValue !== this.book.ranking) {
+        this.hover = false;
+      }
+    },
+  },
   methods: {
     changeHoverState(state) {
-      this.hover = state;
+      if (state === true) {
+        this.$store.dispatch("items/setRanking", {
+          index: this.list_index,
+          ranking: this.book.ranking,
+        });
+        this.hover = true;
+      }
     },
+  },
+  created() {
+    if (this.book.ranking === this.hover_ranking) {
+      this.hover = true;
+    }
   },
 };
 </script>
@@ -32,16 +61,25 @@ export default {
 <style scoped>
 li {
   display: flex;
+  margin-left: 40px;
+  border-bottom: 1px solid #e5e5e5;
+  position: relative;
 }
 
-li:hover {
-  border-bottom: 1px solid #e5e5e5;
+li:last-child {
+  border-bottom: 0;
+}
+
+.hover-list {
+  height: 136px;
   width: 278px;
   clear: both;
   vertical-align: top;
 }
 
 .ranking {
+  position: absolute;
+  left: -40px;
   width: 40px;
   height: 33px;
   font: 12px/33px Arial;
@@ -54,23 +92,23 @@ li:hover {
 .book-detail {
   display: flex;
   justify-content: space-between;
-  width: 140px;
   height: 33px;
   font: 12px/33px Arial;
   overflow: hidden;
 }
 
 .hover-book {
-  height: 100px;
-  /* margin: 15px 0 0 5px; */
+  height: 103px;
+  margin-top: 15px;
+}
+
+a.hover-book-link {
+  line-height: 20px;
 }
 
 .picture {
-  /* display: block; */
   width: 90px;
-  height: 90px;
-  /* overflow: hidden; */
-  margin: 15px 0 0;
+  height: 100px;
 }
 
 .picture > img {
@@ -79,13 +117,36 @@ li:hover {
 }
 
 .link {
-  line-height: 20px;
-  /* TODO:del */
-  background-color: black;
+  line-height: 33px;
+  width: 140px;
+  height: 120px;
+  margin-left: 5px;
 }
 
-.link:hover {
+.link:hover .name,
+.link:hover .introduction {
   color: #ff2832;
   text-decoration: underline;
+}
+
+.name {
+  color: #646464;
+}
+
+.introduction {
+  color: #969696;
+}
+
+.gray {
+  color: #666;
+}
+
+.red-bold,
+.red {
+  color: #ff2832;
+}
+
+.red-bold {
+  font-weight: bold;
 }
 </style>

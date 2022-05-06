@@ -12,6 +12,8 @@
       v-for="list in ranking_lists"
       :key="list.index"
       :books="list.books"
+      :hover_ranking="list.hover_ranking"
+      :list_index="list.index"
       v-show="list.index === list_index"
     ></home-box-book-ranking-list-page>
   </div>
@@ -44,8 +46,6 @@ export default {
 
 <style scoped>
 .ranking-list {
-  /* TODO:del */
-  background-color: black;
   position: absolute;
   width: 280px;
   height: 499px;

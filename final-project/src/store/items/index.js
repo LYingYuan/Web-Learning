@@ -554,9 +554,11 @@ export default {
       ranking_lists: [
         {
           index: 1,
+          hover_ranking: "1",
           books: [
             {
               ranking: "1",
+              ranking_mode: "red-bold",
               id: "1",
               name: "长短经（又名《反经》，全注全译全",
               picture: require("../../assets/pic/items/recommendations/1.jpg"),
@@ -565,6 +567,7 @@ export default {
             },
             {
               ranking: "2",
+              ranking_mode: "red",
               name: "活着（余华代表作，精装，易烊千玺推荐阅读。当当专享印签藏书票+限量赠珍藏复刻手稿）",
               id: "2",
               picture: require("../../assets/pic/items/recommendations/2.jpg"),
@@ -573,6 +576,7 @@ export default {
             },
             {
               ranking: "3",
+              ranking_mode: "red",
               name: "儿童观察力贴纸书全6册 贴纸3-4-6岁儿童智力潜能开发手工亲子互动游戏玩具思维益智书观察力+记忆力+数字联想+视觉记忆",
               id: "3",
               picture: require("../../assets/pic/items/panicBuying/20/1.jpg"),
@@ -581,6 +585,7 @@ export default {
             },
             {
               ranking: "4",
+              ranking_mode: "gray",
               name: "中华国学传世经典一山海经（套装全6册）",
               id: "4",
               picture: require("../../assets/pic/items/panicBuying/20/2.jpg"),
@@ -588,6 +593,7 @@ export default {
             },
             {
               ranking: "5",
+              ranking_mode: "gray",
               name: "小学生4年级下册开心同步作文+阅读理解与答题模板 共2册 四年级下册 2022春人教RJ版教材 同步作文写作指导 课内课外阅读理解强化训练 开",
               id: "5",
               picture: require("../../assets/pic/items/panicBuying/20/3.jpg"),
@@ -596,6 +602,7 @@ export default {
             },
             {
               ranking: "6",
+              ranking_mode: "gray",
               id: "6",
               name: "金融模式：深入解析金融巨头兴衰成败的底层逻辑",
               introduction:
@@ -604,6 +611,7 @@ export default {
             },
             {
               ranking: "7",
+              ranking_mode: "gray",
               id: "7",
               name: "空间站全景立体书：繁星作伴好还乡【天宫课堂】送给孩子的礼物！中国航天科学家原创！能变身2.3米长的空间站模型，多学科融合，航天百科",
               introduction:
@@ -612,6 +620,7 @@ export default {
             },
             {
               ranking: "8",
+              ranking_mode: "gray",
               id: "8",
               name: "百年孤独1000万册纪念套装（精美套盒典藏版，赠送3款马尔克斯金句胶带）",
               introduction:
@@ -620,6 +629,7 @@ export default {
             },
             {
               ranking: "9",
+              ranking_mode: "gray",
               id: "9",
               name: "六层楼先生 怀孕呵护指南 第十一诊室",
               introduction:
@@ -628,6 +638,7 @@ export default {
             },
             {
               ranking: "10",
+              ranking_mode: "gray",
               id: "10",
               name: "半小时漫画中国史（春节礼盒限量版）（过年送孩子半小时漫画，看得笑哈哈，来年当学霸！）（中国史1-5完结＋传统节日，共6册）",
               introduction:
@@ -638,9 +649,11 @@ export default {
         },
         {
           index: 2,
+          hover_ranking: "1",
           books: [
             {
               ranking: "1",
+              ranking_mode: "red-bold",
               id: "6",
               name: "金融模式：深入解析金融巨头兴衰成败的底层逻辑",
               introduction:
@@ -649,6 +662,7 @@ export default {
             },
             {
               ranking: "2",
+              ranking_mode: "red",
               id: "7",
               name: "空间站全景立体书：繁星作伴好还乡【天宫课堂】送给孩子的礼物！中国航天科学家原创！能变身2.3米长的空间站模型，多学科融合，航天百科",
               introduction:
@@ -657,6 +671,7 @@ export default {
             },
             {
               ranking: "3",
+              ranking_mode: "red",
               id: "8",
               name: "百年孤独1000万册纪念套装（精美套盒典藏版，赠送3款马尔克斯金句胶带）",
               introduction:
@@ -665,6 +680,7 @@ export default {
             },
             {
               ranking: "4",
+              ranking_mode: "gray",
               id: "9",
               name: "六层楼先生 怀孕呵护指南 第十一诊室",
               introduction:
@@ -673,6 +689,7 @@ export default {
             },
             {
               ranking: "5",
+              ranking_mode: "gray",
               id: "10",
               name: "半小时漫画中国史（春节礼盒限量版）（过年送孩子半小时漫画，看得笑哈哈，来年当学霸！）（中国史1-5完结＋传统节日，共6册）",
               introduction:
@@ -681,6 +698,7 @@ export default {
             },
             {
               ranking: "6",
+              ranking_mode: "gray",
               id: "1",
               name: "长短经（又名《反经》，全注全译全",
               picture: require("../../assets/pic/items/recommendations/1.jpg"),
@@ -689,6 +707,7 @@ export default {
             },
             {
               ranking: "7",
+              ranking_mode: "gray",
               name: "活着（余华代表作，精装，易烊千玺推荐阅读。当当专享印签藏书票+限量赠珍藏复刻手稿）",
               id: "2",
               picture: require("../../assets/pic/items/recommendations/2.jpg"),
@@ -697,6 +716,7 @@ export default {
             },
             {
               ranking: "8",
+              ranking_mode: "gray",
               name: "儿童观察力贴纸书全6册 贴纸3-4-6岁儿童智力潜能开发手工亲子互动游戏玩具思维益智书观察力+记忆力+数字联想+视觉记忆",
               id: "3",
               picture: require("../../assets/pic/items/panicBuying/20/1.jpg"),
@@ -705,6 +725,7 @@ export default {
             },
             {
               ranking: "9",
+              ranking_mode: "gray",
               name: "中华国学传世经典一山海经（套装全6册）",
               id: "4",
               picture: require("../../assets/pic/items/panicBuying/20/2.jpg"),
@@ -712,6 +733,7 @@ export default {
             },
             {
               ranking: "10",
+              ranking_mode: "gray",
               name: "小学生4年级下册开心同步作文+阅读理解与答题模板 共2册 四年级下册 2022春人教RJ版教材 同步作文写作指导 课内课外阅读理解强化训练 开",
               id: "5",
               picture: require("../../assets/pic/items/panicBuying/20/3.jpg"),
