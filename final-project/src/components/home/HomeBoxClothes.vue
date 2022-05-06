@@ -25,17 +25,56 @@
           </li>
         </ul>
       </div>
-      <div class="detail"></div>
+      <div class="classify">
+        <router-link to="#"
+          ><img src="../../assets/pic/clothes/left_pic.png" alt=""
+        /></router-link>
+        <ul class="links">
+          <li v-for="link in nav_links" :key="link.name">
+            <router-link :to="link.url">{{ link.name }}</router-link>
+          </li>
+        </ul>
+      </div>
+      <div class="pages">
+        <home-box-clothes-page
+          v-for="page in clothes_pages"
+          :key="page.index"
+          :carousel="page.carousel"
+          :others="page.others"
+          v-show="nav_index === page.index"
+        ></home-box-clothes-page>
+      </div>
+      <div class="logos">
+        <home-box-clothes-logos :items="logos_pages"></home-box-clothes-logos>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import HomeBoxClothesLogos from "./HomeBoxClothesLogos.vue";
+import HomeBoxClothesPage from "./HomeBoxClothesPage.vue";
+
 export default {
+  components: {
+    HomeBoxClothesLogos,
+    HomeBoxClothesPage,
+  },
   data() {
     return {
       nav_index: 1,
     };
+  },
+  computed: {
+    nav_links() {
+      return this.$store.getters["items/getClothesNav"];
+    },
+    logos_pages() {
+      return this.$store.getters["items/getClothesLogoPages"];
+    },
+    clothes_pages() {
+      return this.$store.getters["items/getClothesPages"];
+    },
   },
   methods: {
     changeIndex(index) {
@@ -46,13 +85,6 @@ export default {
 </script>
 
 <style scoped>
-.clothes {
-  height: 499px;
-  overflow: hidden;
-  position: relative;
-  margin: 0 auto 30px;
-}
-
 .head {
   position: absolute;
   top: 0;
@@ -63,6 +95,7 @@ export default {
   border-bottom: 2px solid #000;
   color: #323232;
   font: bold 20px/44px "Microsoft YaHei";
+  z-index: 1;
 }
 
 .title a {
@@ -79,13 +112,76 @@ export default {
   top: -3px;
 }
 
+.clothes {
+  height: 655px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto 30px;
+}
+
 .content {
   position: absolute;
   top: 56px;
   left: 0;
   width: 100%;
-  height: 443px;
-  background-color: aqua;
+  height: 579px;
+  border: 1px solid #e6e6e6;
+  background-color: #e6e6e6;
+}
+
+.classify {
+  width: 238px;
+  height: 521px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.links {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-left: 1px;
+  background: url(http://img63.ddimg.cn/upload_img/00111/home/home_bg_1509.png)
+    0 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 17px;
+}
+
+.links li {
+  width: 33%;
+  height: 28px;
+  line-height: 28px;
+  overflow: hidden;
+}
+
+.links a {
+  color: #323232;
+  font: 12px/28px "Microsoft YaHei";
+}
+
+.links a:hover {
+  color: #ff2832;
+  text-decoration: underline;
+}
+
+.logos {
+  background-color: white;
+  width: 100%;
+  height: 55px;
+  position: absolute;
+  bottom: 0;
+}
+
+.pages {
+  position: absolute;
+  width: 959px;
+  height: 521px;
+  right: 0;
+  /* TODO:del*/
+  background-color: #f5f5f5;
 }
 
 .nav {
@@ -93,7 +189,7 @@ export default {
   width: 655px;
   border-right: 1px solid #e6e6e6;
   position: absolute;
-  top: -56px;
+  top: -57px;
   right: 0;
   display: flex;
   flex-direction: row-reverse;
@@ -115,6 +211,7 @@ export default {
   color: #646464;
   cursor: default;
   overflow: hidden;
+  z-index: 1;
 }
 
 li.on {

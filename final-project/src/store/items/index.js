@@ -743,6 +743,238 @@ export default {
           ],
         },
       ],
+      // 服装
+      clothes_nav: [
+        { name: "童装", url: "#" },
+        { name: "童鞋", url: "#" },
+        { name: "婴儿服饰", url: "#" },
+        { name: "童装T恤", url: "#" },
+        { name: "童装裤子", url: "#" },
+        { name: "女装", url: "#" },
+        { name: "连衣裙", url: "#" },
+        { name: "衬衫女", url: "#" },
+        { name: "女士裤装", url: "#" },
+        { name: "跑步鞋", url: "#" },
+        { name: "运动服装", url: "#" },
+        { name: "户外服饰", url: "#" },
+        { name: "男士T恤", url: "#" },
+        { name: "男士牛仔裤", url: "#" },
+        { name: "男士外套", url: "#" },
+        { name: "凉鞋", url: "#" },
+        { name: "太阳镜", url: "#" },
+        { name: "手表", url: "#" },
+        { name: "内衣袜品", url: "#" },
+      ],
+      // 服装logos
+      clothes_logo_pages: [
+        {
+          index: 1,
+          logos: [
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/1.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/2.png"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/3.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/4.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/5.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/6.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/7.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/8.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/9.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/10.jpg"),
+            },
+          ],
+        },
+        {
+          index: 2,
+          logos: [
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/3.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/8.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/1.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/2.png"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/9.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/10.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/4.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/5.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/6.jpg"),
+            },
+            {
+              url: "#",
+              src: require("../../assets/pic/clothes/logos/1/7.jpg"),
+            },
+          ],
+        },
+      ],
+      // 服装pages
+      clothes_pages: [
+        {
+          index: 1,
+          carousel: [
+            {
+              id: 1,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/1/1/1.jpg"),
+            },
+            {
+              id: 2,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/1/1/2.jpg"),
+            },
+          ],
+          others: [
+            {
+              id: 1,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/1/2.jpg"),
+            },
+            {
+              id: 2,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/1/3.jpg"),
+            },
+            {
+              id: 3,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/1/4.jpg"),
+            },
+            {
+              id: 4,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/1/5.jpg"),
+            },
+            {
+              id: 5,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/1/6.jpg"),
+            },
+            {
+              id: 6,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/1/7.jpg"),
+            },
+            {
+              id: 7,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/1/8.jpg"),
+            },
+            {
+              id: 8,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/1/9.jpg"),
+            },
+          ],
+        },
+        {
+          index: 2,
+          carousel: [
+            {
+              id: 1,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/2/1/1.jpg"),
+            },
+            {
+              id: 2,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/2/1/2.jpg"),
+            },
+          ],
+          others: [
+            {
+              id: 1,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/2/2.jpg"),
+            },
+            {
+              id: 2,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/2/3.jpg"),
+            },
+            {
+              id: 3,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/2/4.jpg"),
+            },
+            {
+              id: 4,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/2/5.jpg"),
+            },
+            {
+              id: 5,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/2/6.jpg"),
+            },
+            {
+              id: 6,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/2/7.jpg"),
+            },
+            {
+              id: 7,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/2/8.jpg"),
+            },
+            {
+              id: 8,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/2/9.jpg"),
+            },
+          ],
+        },
+      ],
     };
   },
   actions,

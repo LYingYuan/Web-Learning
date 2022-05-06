@@ -1,4 +1,13 @@
 export default {
+  getClothesPages(state) {
+    return state.clothes_pages;
+  },
+  getClothesLogoPages(state) {
+    return state.clothes_logo_pages;
+  },
+  getClothesNav(state) {
+    return state.clothes_nav;
+  },
   getRankingLists(state) {
     return state.ranking_lists;
   },

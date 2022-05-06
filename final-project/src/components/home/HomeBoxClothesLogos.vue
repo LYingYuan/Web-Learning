@@ -1,14 +1,18 @@
 <template>
-  <!-- 使用该组件需要在父组件中使用一个容器包裹（设置大小） -->
-  <!-- 要使该组件的z-index小于父组件 -->
   <div class="carousel" @mouseover="hoverCarousel" @mouseleave="leaveCarousel">
     <transition-group tag="ul" name="content" class="carousel-content">
       <li
         v-for="item in items"
-        :key="item.id"
-        v-show="item.id === current_index"
+        :key="item.index"
+        v-show="item.index === current_index"
       >
-        <router-link :to="item.url"><img :src="item.src" alt="" /></router-link>
+        <ul class="logos">
+          <li v-for="logo in item.logos" :key="logo.src">
+            <router-link :to="logo.url">
+              <img :src="logo.src" alt=""
+            /></router-link>
+          </li>
+        </ul>
       </li>
     </transition-group>
     <div class="carousel-button">
@@ -23,18 +27,6 @@
         @click="clickBtn('next')"
       ></div>
     </div>
-    <ul class="carousel-nav" v-if="nav">
-      <li
-        v-for="item in items"
-        :key="item.id"
-        :class="{ 'carousel-nav-on ': item.id === current_index }"
-        @click="clickNav(item.id)"
-      ></li>
-    </ul>
-    <div class="carousel-mask">
-      <div :style="{ 'background-color': mask_color }" class="right-mask"></div>
-      <div :style="{ 'background-color': mask_color }" class="left-mask"></div>
-    </div>
   </div>
 </template>
 
@@ -44,11 +36,6 @@ export default {
     items: {
       type: Object,
       required: true,
-    },
-    nav: {
-      type: Boolean,
-      required: false,
-      default: true,
     },
     mask_color: {
       type: String,
@@ -95,9 +82,6 @@ export default {
         }
       }
     },
-    clickNav(index) {
-      this.current_index = index;
-    },
   },
   mounted() {
     this.startCarouselInterval(1);
@@ -141,35 +125,17 @@ export default {
   opacity: 0.5;
 }
 
-.carousel-nav {
-  position: absolute;
-  bottom: 6px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 3;
-  display: flex;
-}
-
-.carousel-nav > li {
-  width: 10px;
-  height: 3px;
-  margin-right: 4px;
-  font-size: 0;
-  line-height: 9px;
-  overflow: hidden;
-  background: #fff;
-}
-
-li.carousel-nav-on {
-  background-color: #5e5e5e;
-}
-
 .carousel-content {
+  width: 1190px;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 100%;
   position: relative;
 }
 
 .carousel-content > li {
   height: 100%;
+  width: 100%;
   position: absolute;
 }
 
@@ -195,8 +161,6 @@ li.carousel-nav-on {
   left: -100%;
 }
 
-/* FIXME:致命错误，点击左边切换时动画不对 */
-
 .right-mask,
 .left-mask {
   width: 100%;
@@ -210,5 +174,27 @@ li.carousel-nav-on {
 
 .left-mask {
   left: 100%;
+}
+
+.logos {
+  width: 100%;
+  display: flex;
+  padding-left: 5px;
+}
+
+.logos > li {
+  width: 118px;
+  height: 55px;
+  padding: 3px 4px 2px 5px;
+  float: left;
+  overflow: hidden;
+}
+
+.logos a {
+  display: block;
+  width: 110px;
+  height: 50px;
+  overflow: hidden;
+  text-align: center;
 }
 </style>
