@@ -1,4 +1,7 @@
 export default {
+  getHomeGoods(state) {
+    return state.home_goods;
+  },
   getClothesPages(state) {
     return state.clothes_pages;
   },

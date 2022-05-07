@@ -13,6 +13,15 @@
       <home-box-clothes></home-box-clothes>
     </div>
     <div class="container">
+      <home-box-goods></home-box-goods>
+    </div>
+    <div class="container">
+      <home-box-foods></home-box-foods>
+    </div>
+    <div class="container">
+      <home-box-child></home-box-child>
+    </div>
+    <div class="container">
       <the-recommendation></the-recommendation>
     </div>
   </div>
@@ -24,6 +33,9 @@ import TheRecommendation from "../recommendation/TheRecommendation.vue";
 import PanicBuying from "../panicBuying/PanicBuying.vue";
 import HomeBoxBook from "../home/HomeBoxBook.vue";
 import HomeBoxClothes from "../home/HomeBoxClothes.vue";
+import HomeBoxGoods from "../home/HomeBoxGoods.vue";
+import HomeBoxFoods from "../home/HomeBoxFoods.vue";
+import HomeBoxChild from "../home/HomeBoxChild.vue";
 
 export default {
   components: {
@@ -32,6 +44,9 @@ export default {
     PanicBuying,
     HomeBoxBook,
     HomeBoxClothes,
+    HomeBoxGoods,
+    HomeBoxFoods,
+    HomeBoxChild,
   },
 };
 </script>
