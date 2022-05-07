@@ -25,5 +25,6 @@ export default {
   display: flex;
   background-color: #fff;
   padding-bottom: 20px;
+  overflow: hidden;
 }
 </style>

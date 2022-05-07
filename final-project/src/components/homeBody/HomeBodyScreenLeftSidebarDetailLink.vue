@@ -39,7 +39,6 @@ export default {
 </script>
 
 <style scoped>
-/* TODO：调整（mac显示不对） */
 a {
   font: 12px "Hiragino Sans GB", "Simsun";
   height: 20px;

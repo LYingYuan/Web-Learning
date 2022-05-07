@@ -104,6 +104,131 @@ export default {
               },
             ],
           },
+          {
+            id: 3,
+            pics: [
+              {
+                id: 1,
+                src: require("../../assets/pic/screen/slideshow/3/bottom/1.jpg"),
+                link: "#",
+              },
+              {
+                id: 2,
+                src: require("../../assets/pic/screen/slideshow/3/bottom/2.jpg"),
+                link: "#",
+              },
+              {
+                id: 3,
+                src: require("../../assets/pic/screen/slideshow/3/bottom/3.jpg"),
+                link: "#",
+              },
+              {
+                id: 4,
+                src: require("../../assets/pic/screen/slideshow/3/bottom/4.jpg"),
+                link: "#",
+              },
+            ],
+          },
+          {
+            id: 4,
+            pics: [
+              {
+                id: 1,
+                src: require("../../assets/pic/screen/slideshow/4/bottom/1.jpeg"),
+                link: "#",
+              },
+              {
+                id: 2,
+                src: require("../../assets/pic/screen/slideshow/4/bottom/2.jpg"),
+                link: "#",
+              },
+              {
+                id: 3,
+                src: require("../../assets/pic/screen/slideshow/4/bottom/3.jpeg"),
+                link: "#",
+              },
+              {
+                id: 4,
+                src: require("../../assets/pic/screen/slideshow/4/bottom/4.jpg"),
+                link: "#",
+              },
+            ],
+          },
+          {
+            id: 5,
+            pics: [
+              {
+                id: 1,
+                src: require("../../assets/pic/screen/slideshow/2/bottom/1.jpg"),
+                link: "#",
+              },
+              {
+                id: 2,
+                src: require("../../assets/pic/screen/slideshow/2/bottom/2.jpeg"),
+                link: "#",
+              },
+              {
+                id: 3,
+                src: require("../../assets/pic/screen/slideshow/2/bottom/3.jpg"),
+                link: "#",
+              },
+              {
+                id: 4,
+                src: require("../../assets/pic/screen/slideshow/2/bottom/4.jpg"),
+                link: "#",
+              },
+            ],
+          },
+          {
+            id: 6,
+            pics: [
+              {
+                id: 1,
+                src: require("../../assets/pic/screen/slideshow/6/bottom/1.jpeg"),
+                link: "#",
+              },
+              {
+                id: 2,
+                src: require("../../assets/pic/screen/slideshow/6/bottom/2.jpg"),
+                link: "#",
+              },
+              {
+                id: 3,
+                src: require("../../assets/pic/screen/slideshow/6/bottom/3.jpeg"),
+                link: "#",
+              },
+              {
+                id: 4,
+                src: require("../../assets/pic/screen/slideshow/6/bottom/4.jpeg"),
+                link: "#",
+              },
+            ],
+          },
+          {
+            id: 7,
+            pics: [
+              {
+                id: 1,
+                src: require("../../assets/pic/screen/slideshow/2/bottom/1.jpg"),
+                link: "#",
+              },
+              {
+                id: 2,
+                src: require("../../assets/pic/screen/slideshow/2/bottom/2.jpeg"),
+                link: "#",
+              },
+              {
+                id: 3,
+                src: require("../../assets/pic/screen/slideshow/2/bottom/3.jpg"),
+                link: "#",
+              },
+              {
+                id: 4,
+                src: require("../../assets/pic/screen/slideshow/2/bottom/4.jpg"),
+                link: "#",
+              },
+            ],
+          },
         ],
       },
       leftSidebarItem: {
@@ -1323,7 +1448,6 @@ export default {
           pic_url: require("../../assets/pic/screen/notice/carousel/3.jpg"),
         },
       ],
-      
     };
   },
   actions,

@@ -56,10 +56,6 @@
         :pictures="pictures.pics"
         v-show="pictures.id === current_index"
       ></home-body-screen-carousel-bottom>
-      <!-- <home-body-screen-carousel-bottom
-          v-for="pic in pictures.pics"
-          :key="pic.id"
-        ></home-body-screen-carousel-bottom> -->
       <div>
         <div class="left-div"></div>
         <div class="right-div"></div>

@@ -15,8 +15,6 @@
 
 <style scoped>
 header {
-  /* TODO:del */
-  /* background-color: aqua; */
   width: 1200px;
   margin: 0 auto;
   padding-top: 40px;

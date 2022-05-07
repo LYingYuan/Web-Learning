@@ -32,12 +32,6 @@ export default {
       required: true,
     },
   },
-  // TODO:del
-  // computed: {
-  //   url() {
-  //     return `/dangdang/${this.url}`;
-  //   },
-  // },
 };
 </script>
 

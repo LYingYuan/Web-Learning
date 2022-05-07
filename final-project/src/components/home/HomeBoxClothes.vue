@@ -180,8 +180,6 @@ export default {
   width: 959px;
   height: 521px;
   right: 0;
-  /* TODO:del*/
-  background-color: #f5f5f5;
 }
 
 .nav {

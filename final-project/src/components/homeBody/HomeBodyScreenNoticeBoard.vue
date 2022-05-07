@@ -168,13 +168,13 @@ export default {
   z-index: 3;
   position: relative;
   left: -1px;
+  overflow: hidden;
 }
 
 .picture {
-  /* TODO:delete */
-  background-color: antiquewhite;
   width: 100%;
   height: 195px;
+  overflow: hidden;
 }
 
 .notice {
@@ -234,11 +234,10 @@ export default {
 }
 
 .carousel {
-  /* TODO:delete */
-  background-color: blueviolet;
   width: 100%;
   height: 119px;
   position: relative;
+  overflow: hidden;
 }
 
 .carousel-nav {
