@@ -27,7 +27,10 @@
       <li
         v-for="item in items"
         :key="item.id"
-        :class="{ 'carousel-nav-on ': item.id === current_index }"
+        :class="{
+          'carousel-nav-on ': item.id === current_index,
+          circle: nav_mode === 'circle',
+        }"
         @click="clickNav(item.id)"
       ></li>
     </ul>
@@ -54,6 +57,11 @@ export default {
       type: String,
       required: false,
       default: "#e6e6e6",
+    },
+    nav_mode: {
+      type: String,
+      required: false,
+      default: "square",
     },
   },
   data() {
@@ -162,7 +170,22 @@ export default {
   font-size: 0;
   line-height: 9px;
   overflow: hidden;
-  background: #fff;
+  background-color: #fff;
+}
+
+li.circle {
+  width: 12px;
+  height: 12px;
+  overflow: hidden;
+  background-color: #c8c8c8;
+  border-radius: 10px;
+  margin-right: 8px;
+  line-height: 36px;
+  font-size: 0;
+}
+
+.circle.carousel-nav-on {
+  background-color: #ff2832;
 }
 
 li.carousel-nav-on {

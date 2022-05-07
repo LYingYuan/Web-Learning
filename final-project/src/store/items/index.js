@@ -975,6 +975,7 @@ export default {
           ],
         },
       ],
+      // 日用百货
       home_goods: {
         // 标题
         title: "日用百货",
@@ -1044,7 +1045,190 @@ export default {
             src: require("../../assets/pic/goods/9.jpg"),
             url: "#",
           },
-
+        ],
+        // 日用百货logos
+        logos: [
+          {
+            index: 1,
+            src: require("../../assets/pic/goods/logos/1.jpg"),
+            url: "#",
+          },
+          {
+            index: 2,
+            src: require("../../assets/pic/goods/logos/2.png"),
+            url: "#",
+          },
+          {
+            index: 3,
+            src: require("../../assets/pic/goods/logos/3.png"),
+            url: "#",
+          },
+          {
+            index: 4,
+            src: require("../../assets/pic/goods/logos/4.png"),
+            url: "#",
+          },
+          {
+            index: 5,
+            src: require("../../assets/pic/goods/logos/5.png"),
+            url: "#",
+          },
+          {
+            index: 6,
+            src: require("../../assets/pic/goods/logos/6.jpg"),
+            url: "#",
+          },
+          {
+            index: 7,
+            src: require("../../assets/pic/goods/logos/7.png"),
+            url: "#",
+          },
+          {
+            index: 8,
+            src: require("../../assets/pic/goods/logos/8.png"),
+            url: "#",
+          },
+          {
+            index: 9,
+            src: require("../../assets/pic/goods/logos/9.png"),
+            url: "#",
+          },
+          {
+            index: 10,
+            src: require("../../assets/pic/goods/logos/10.jpg"),
+            url: "#",
+          },
+        ],
+      },
+      // 食品
+      home_foods: {
+        // 标题
+        title: "食品",
+        // nav
+        nav: [
+          {
+            name: "优选食品",
+            url: "#",
+          },
+        ],
+        // 内容
+        first_content: [
+          {
+            id: 1,
+            src: require("../../assets/pic/foods/1/1.jpg"),
+            url: "#",
+          },
+          {
+            id: 2,
+            src: require("../../assets/pic/foods/1/2.jpg"),
+            url: "#",
+          },
+        ],
+        contents: [
+          {
+            src: require("../../assets/pic/foods/2.jpg"),
+            url: "#",
+          },
+          {
+            src: require("../../assets/pic/foods/3.jpg"),
+            url: "#",
+          },
+          {
+            src: require("../../assets/pic/foods/4.jpg"),
+            url: "#",
+          },
+          {
+            src: require("../../assets/pic/foods/5.jpg"),
+            url: "#",
+          },
+          {
+            src: require("../../assets/pic/foods/6.jpg"),
+            url: "#",
+          },
+          {
+            src: require("../../assets/pic/foods/7.jpg"),
+            url: "#",
+          },
+          {
+            src: require("../../assets/pic/goods/8.jpg"),
+            url: "#",
+          },
+          {
+            src: require("../../assets/pic/foods/9.jpg"),
+            url: "#",
+          },
+        ],
+      },
+      // 孕婴童
+      child_items: {
+        // 标题
+        title: "日用百货",
+        // nav
+        nav: [
+          {
+            name: "滴露",
+            subtitle: "旗舰店",
+            url: "#",
+          },
+          {
+            name: "水星家纺",
+            subtitle: "旗舰店",
+            url: "#",
+          },
+          {
+            name: "戴森",
+            subtitle: "旗舰店",
+            url: "#",
+          },
+          {
+            name: "碧然德",
+            subtitle: "旗舰店",
+            url: "#",
+          },
+          {
+            name: "蕉下",
+            subtitle: "旗舰店",
+            url: "#",
+          },
+        ],
+        // 内容
+        first_content: {
+          src: require("../../assets/pic/goods/1.jpg"),
+          url: "#",
+        },
+        contents: [
+          {
+            src: require("../../assets/pic/goods/2.jpg"),
+            url: "#",
+          },
+          {
+            src: require("../../assets/pic/goods/3.jpg"),
+            url: "#",
+          },
+          {
+            src: require("../../assets/pic/goods/4.jpg"),
+            url: "#",
+          },
+          {
+            src: require("../../assets/pic/goods/5.jpg"),
+            url: "#",
+          },
+          {
+            src: require("../../assets/pic/goods/6.jpg"),
+            url: "#",
+          },
+          {
+            src: require("../../assets/pic/goods/7.jpg"),
+            url: "#",
+          },
+          {
+            src: require("../../assets/pic/goods/8.jpg"),
+            url: "#",
+          },
+          {
+            src: require("../../assets/pic/goods/9.jpg"),
+            url: "#",
+          },
         ],
         // 日用百货logos
         logos: [

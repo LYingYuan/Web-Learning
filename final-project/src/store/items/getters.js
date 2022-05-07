@@ -1,4 +1,10 @@
 export default {
+  getChildItems(state) {
+    return state.child_items;
+  },
+  getHomeFoods(state) {
+    return state.home_foods;
+  },
   getHomeGoods(state) {
     return state.home_goods;
   },
