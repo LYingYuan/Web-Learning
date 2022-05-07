@@ -1,6 +1,6 @@
 <template>
   <div class="carousel" @mouseover="hoverCarousel" @mouseleave="leaveCarousel">
-    <transition-group tag="ul" name="content" class="carousel-content">
+    <transition-group tag="ul" :name="transition_name" class="carousel-content">
       <li
         v-for="item in items"
         :key="item.index"
@@ -48,6 +48,7 @@ export default {
       mouse_on_carousel: false,
       current_index: 1,
       carousel_timer: null,
+      transition_name: "content-next",
     };
   },
   methods: {
@@ -71,11 +72,13 @@ export default {
     },
     clickBtn(name) {
       if (name === "last") {
+        this.transition_name = "content-pre";
         this.current_index--;
         if (this.current_index === 0) {
           this.current_index = this.items.length;
         }
       } else {
+        this.transition_name = "content-next";
         this.current_index++;
         if (this.current_index > this.items.length) {
           this.current_index = 1;
@@ -139,25 +142,27 @@ export default {
   position: absolute;
 }
 
-.content-enter-from {
+.content-next-enter-from,
+.content-pre-leave-to {
   left: 100%;
-  z-index: -1;
 }
 
-.content-enter-active {
+.content-next-enter-active,
+.content-next-leave-active,
+.content-pre-enter-active,
+.content-pre-leave-active {
   transition: left 0.4s ease;
 }
 
-.content-leave-active {
-  transition: left 0.4s ease;
-}
-
-.content-enter-to,
-.content-leave-from {
+.content-next-enter-to,
+.content-next-leave-from,
+.content-pre-enter-to,
+.content-pre-leave-from {
   left: 0;
 }
 
-.content-leave-to {
+.content-next-leave-to,
+.content-pre-enter-from {
   left: -100%;
 }
 
