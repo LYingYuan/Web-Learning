@@ -1162,114 +1162,101 @@ export default {
       // 孕婴童
       child_items: {
         // 标题
-        title: "日用百货",
+        title: "孕婴童",
         // nav
         nav: [
           {
-            name: "滴露",
-            subtitle: "旗舰店",
+            name: "童书畅销榜",
             url: "#",
           },
           {
-            name: "水星家纺",
-            subtitle: "旗舰店",
+            name: "童书3-6岁榜",
             url: "#",
           },
           {
-            name: "戴森",
-            subtitle: "旗舰店",
-            url: "#",
-          },
-          {
-            name: "碧然德",
-            subtitle: "旗舰店",
-            url: "#",
-          },
-          {
-            name: "蕉下",
-            subtitle: "旗舰店",
+            name: "童书7-10岁榜",
             url: "#",
           },
         ],
         // 内容
         first_content: {
-          src: require("../../assets/pic/goods/1.jpg"),
+          src: require("../../assets/pic/child/1.jpg"),
           url: "#",
         },
         contents: [
           {
-            src: require("../../assets/pic/goods/2.jpg"),
+            src: require("../../assets/pic/child/2.jpg"),
             url: "#",
           },
           {
-            src: require("../../assets/pic/goods/3.jpg"),
+            src: require("../../assets/pic/child/3.jpg"),
             url: "#",
           },
           {
-            src: require("../../assets/pic/goods/4.jpg"),
+            src: require("../../assets/pic/child/4.jpg"),
             url: "#",
           },
           {
-            src: require("../../assets/pic/goods/5.jpg"),
+            src: require("../../assets/pic/child/5.jpg"),
             url: "#",
           },
           {
-            src: require("../../assets/pic/goods/6.jpg"),
+            src: require("../../assets/pic/child/6.jpg"),
             url: "#",
           },
           {
-            src: require("../../assets/pic/goods/7.jpg"),
+            src: require("../../assets/pic/child/7.jpg"),
             url: "#",
           },
           {
-            src: require("../../assets/pic/goods/8.jpg"),
+            src: require("../../assets/pic/child/8.jpg"),
             url: "#",
           },
           {
-            src: require("../../assets/pic/goods/9.jpg"),
+            src: require("../../assets/pic/child/9.jpg"),
             url: "#",
           },
         ],
-        // 日用百货logos
+        // logos
         logos: [
           {
             index: 1,
-            src: require("../../assets/pic/goods/logos/1.jpg"),
+            src: require("../../assets/pic/child/logos/1.png"),
             url: "#",
           },
           {
             index: 2,
-            src: require("../../assets/pic/goods/logos/2.png"),
+            src: require("../../assets/pic/child/logos/2.jpg"),
             url: "#",
           },
           {
             index: 3,
-            src: require("../../assets/pic/goods/logos/3.png"),
+            src: require("../../assets/pic/child/logos/3.jpg"),
             url: "#",
           },
           {
             index: 4,
-            src: require("../../assets/pic/goods/logos/4.png"),
+            src: require("../../assets/pic/child/logos/4.jpg"),
             url: "#",
           },
           {
             index: 5,
-            src: require("../../assets/pic/goods/logos/5.png"),
+            src: require("../../assets/pic/child/logos/5.jpg"),
             url: "#",
           },
           {
             index: 6,
-            src: require("../../assets/pic/goods/logos/6.jpg"),
+            src: require("../../assets/pic/child/logos/6.png"),
             url: "#",
           },
           {
             index: 7,
-            src: require("../../assets/pic/goods/logos/7.png"),
+            src: require("../../assets/pic/child/logos/7.png"),
             url: "#",
           },
           {
             index: 8,
-            src: require("../../assets/pic/goods/logos/8.png"),
+            src: require("../../assets/pic/child/logos/8.jpg"),
             url: "#",
           },
           {

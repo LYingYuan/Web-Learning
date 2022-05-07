@@ -32,21 +32,32 @@ export default {
 
 <style scoped>
 .content {
-  width: 1199px;
-  height: 343px;
+  width: 1200px;
+  height: 391px;
   background-color: #e6e6e6;
   display: grid;
-  grid-template: repeat(2, 1fr) / repeat(6, 1fr);
+  grid-template: repeat(2, 194px) / 220px 314px repeat(3, 220px);
   gap: 1px;
   border: 1px solid #e6e6e6;
 }
 
 .item {
   overflow: hidden;
+  background-color: white;
+}
+
+.item img {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.item:first-child img {
+  padding: 0;
 }
 
 .item:first-child {
-  grid-column: 3/5;
+  grid-column: 2/3;
   grid-row: 1/3;
+  width: 314px;
 }
 </style>
