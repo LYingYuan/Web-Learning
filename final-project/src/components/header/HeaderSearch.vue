@@ -159,12 +159,13 @@ form {
 #searchText {
   width: 410px;
   outline-style: none;
-  /* height: 14px; */
+  height: 36px;
   padding: 12px 0 9px 10px;
+  overflow: hidden;
 }
 
 .selected-class {
-  /* 计算左边 */
+  height: 36px;
   padding: 7.5px 0 7.5px 14px;
   background-color: #f6f6f6;
 }
