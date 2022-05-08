@@ -56,8 +56,4 @@ a:hover {
   color: #ff2832;
   text-decoration-line: underline;
 }
-
-/* a:first-child {
-  padding-left: 10px;
-} */
 </style>

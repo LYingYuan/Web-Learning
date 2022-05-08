@@ -56,7 +56,8 @@ img {
 }
 
 span {
-  padding: 3px 8px;
+  padding: 0 8px;
+  line-height: 20px;
   background-color: #a3a3a3;
 }
 
