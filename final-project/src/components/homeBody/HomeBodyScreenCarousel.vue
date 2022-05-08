@@ -155,7 +155,7 @@ export default {
 
 <style scoped>
 .carousel {
-  width: 796px;
+  width: 797px;
   border-bottom: 1px solid #e6e6e6;
 }
 

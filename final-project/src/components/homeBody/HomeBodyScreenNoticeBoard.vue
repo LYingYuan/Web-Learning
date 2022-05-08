@@ -162,35 +162,46 @@ export default {
 
 <style scoped>
 .notice-board {
-  width: 203px;
+  width: 204px;
   border: 1px solid #e6e6e6;
+  border-right: 0;
   border-top: 0;
   z-index: 3;
   position: relative;
-  left: -1px;
   overflow: hidden;
 }
 
 .picture {
-  width: 100%;
+  width: 203px;
   height: 195px;
   overflow: hidden;
 }
 
 .notice {
-  width: 100%;
+  width: 204px;
   height: 173px;
   overflow: hidden;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .head {
   display: flex;
-  flex-direction: row;
+  height: 29px;
+  overflow: hidden;
+  width: 204px;
 }
 
 .head li {
-  width: 101px;
+  
+}
+
+.head-list {
+  margin-left: -1px;
+  width: 103px;
+  border: 1px solid #e6e6e6;
+  border-top: 0;
   height: 28px;
+  background-color: #f0f0f0;
   cursor: default;
   font: 14px/29px "Microsoft Yahei";
   text-align: center;
@@ -198,15 +209,10 @@ export default {
   overflow: hidden;
 }
 
-.head-list {
-  background-color: #f0f0f0;
-  border: 1px solid #e6e6e6;
-  border-top: 0;
-}
-
 .hoverHead {
   background-color: #fff;
   border-bottom: 0;
+  padding-bottom: 1px;
 }
 
 .head li:first-child {
@@ -234,7 +240,7 @@ export default {
 }
 
 .carousel {
-  width: 100%;
+  width: 203px;
   height: 119px;
   position: relative;
   overflow: hidden;

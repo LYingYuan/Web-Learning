@@ -24,7 +24,8 @@ export default {
 .home-body-screen {
   display: flex;
   background-color: #fff;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-right: 1px solid #e6e6e6;
   overflow: hidden;
 }
 </style>
