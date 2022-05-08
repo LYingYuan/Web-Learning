@@ -41,15 +41,16 @@ export default {
 
 <style scoped>
 .bottom-pic {
-  display: flex;
   height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background-color: #e6e6e6;
 }
 
 li {
   position: relative;
-  height: 100%;
-  width: 25%;
-  border-right: 1px solid #e6e6e6;
+  overflow: hidden;
 }
 
 .shadow {
