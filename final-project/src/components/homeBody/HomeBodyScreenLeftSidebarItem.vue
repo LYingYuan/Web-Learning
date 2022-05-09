@@ -25,6 +25,7 @@ export default {
 
 <style scoped>
 .sidebar-item {
+  width: 200px;
   color: #323232;
   font: 14px/30px "Microsoft Yahei";
   position: relative;

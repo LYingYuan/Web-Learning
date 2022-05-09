@@ -41,7 +41,8 @@ export default {
 
 <style scoped>
 .bottom-pic {
-  height: 100%;
+  height: 160px;
+  width: 795px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;

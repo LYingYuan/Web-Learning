@@ -35,7 +35,7 @@ export default {
   left: 199px;
   top: 0px;
   z-index: 4;
-  width: 1001px;
+  width: 1000px;
   height: 488px;
   padding-left: 18px;
   font-size: 12px;

@@ -864,7 +864,7 @@ export default {
 .left-sidebar {
   padding: 4px 0;
   height: 488px;
-  width: 200px;
+  width: 201px;
   background-color: #fafafa;
   position: relative;
 }
