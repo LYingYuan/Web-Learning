@@ -5,7 +5,7 @@
       @mouseover="mouseOnFocusPictures"
       @mouseleave="mouseLeaveFocusPictures"
     >
-      <ul class="pic">
+      <transition-group tag="ul" class="pic" name="carousel">
         <home-body-screen-carousel-focus
           v-for="pic in focus_pictures"
           :key="pic.name"
@@ -14,7 +14,7 @@
           v-show="current_index === pic.id"
         >
         </home-body-screen-carousel-focus>
-      </ul>
+      </transition-group>
       <ul class="banner-circle">
         <li
           v-for="pic in focus_pictures"
@@ -50,12 +50,14 @@
       @mouseleave="mouseLeaveFocusDiscount"
     >
       <!-- TODO:插入图片 -->
-      <home-body-screen-carousel-bottom
-        v-for="pictures in bottom_pictures"
-        :key="pictures.id"
-        :pictures="pictures.pics"
-        v-show="pictures.id === current_index"
-      ></home-body-screen-carousel-bottom>
+      <transition-group tag="ul" name="carousel">
+        <home-body-screen-carousel-bottom
+          v-for="pictures in bottom_pictures"
+          :key="pictures.id"
+          :pictures="pictures.pics"
+          v-show="pictures.id === current_index"
+        ></home-body-screen-carousel-bottom>
+      </transition-group>
       <div>
         <div class="left-div"></div>
         <div class="right-div"></div>
@@ -287,5 +289,19 @@ export default {
 
 .banner-circle > .red {
   background-color: #ff2832;
+}
+
+.carousel-enter-from,
+.carousel-leave-to {
+  opacity: 0;
+}
+
+.carousel-enter-active {
+  transition: all 0.2s ease-in;
+}
+
+.carousel-enter-to,
+.carousel-leave-from {
+  opacity: 1;
 }
 </style>
