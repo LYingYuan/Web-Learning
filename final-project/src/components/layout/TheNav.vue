@@ -1,7 +1,7 @@
 <template>
   <div class="nav">
     <div class="nav-top">
-      <base-link class="ad"
+      <base-link class="ad-pic"
         ><img src="../../assets/pic/nav/xintu38-1646722586.jpg"
       /></base-link>
       <ul>
@@ -174,7 +174,7 @@ export default {
   margin: 0;
   width: 34px;
   height: 100%;
-  z-index: 10;
+  z-index: 22;
 }
 
 .nav-top > ul {
@@ -182,7 +182,7 @@ export default {
   top: 134px;
 }
 
-.ad {
+.ad-pic {
   height: 134px;
 }
 
@@ -252,9 +252,9 @@ li img {
   transition: all 0.2s ease-in;
 }
 
-.span-leave-active {
-  transition: all 0.1s ease-out;
-}
+/* .span-leave-active {
+  transition: all 0.1s ease-in;
+} */
 
 .span-enter-to,
 .span-leave-from {

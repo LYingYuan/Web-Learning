@@ -128,9 +128,7 @@ export default {
 </script>
 
 <style scoped>
-/*  TODO:调整搜索栏的搜索按钮 */
 .container {
-  /* background-color: aqua; */
   height: 100px;
   display: flex;
   position: relative;

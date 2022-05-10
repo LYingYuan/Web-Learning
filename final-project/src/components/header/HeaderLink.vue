@@ -19,7 +19,6 @@
         </ul>
         <div class="bar" v-show="hover_city"></div>
       </div>
-      <!-- TODO:用户登录登出 -->
       <ul class="link">
         <li>
           <header-link-url url="/auth" mode="red-all" v-if="!is_authenticated"

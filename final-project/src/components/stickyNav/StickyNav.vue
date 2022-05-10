@@ -19,27 +19,28 @@
       <transition name="nav">
         <div class="nav-box" v-show="show_nav">
           <ul>
-            <li>
+            <li class="book">
               <button>
                 <img src="../../assets/icon/stickyNav/书-gray.svg" alt="" />
               </button>
             </li>
-            <li>
+            <li class="clothes">
               <button>
                 <img src="../../assets/icon/stickyNav/服装-gray.svg" alt="" />
               </button>
             </li>
-            <li>
+            <li class="goods">
               <button>
                 <img src="../../assets/icon/stickyNav/衣架-gray.svg" alt="" />
               </button>
             </li>
-            <li>
+            <li class="child">
               <button>
                 <img src="../../assets/icon/stickyNav/婴儿车-gray.svg" alt="" />
               </button>
             </li>
-            <li>
+            <!-- TODO:设置锚点 -->
+            <li class="recommendation">
               <button>
                 <img src="../../assets/icon/stickyNav/点赞-gray.svg" alt="" />
               </button>
@@ -85,10 +86,11 @@ export default {
   z-index: 20;
   left: 0;
   display: flex;
+  
 }
 
 .container {
-  position:relative
+  position: relative;
 }
 
 .logo {
