@@ -23,7 +23,6 @@ function classifyText(data) {
   // 标题下标：3n 链接下标：3n+2
   const arr = [];
   const index_val = Math.floor(data.length / 3);
-
   for (let i = 0; i < index_val; i++) {
     arr.push(data[3 * i]);
     arr.push(data[3 * i + 2]);
@@ -73,8 +72,9 @@ function disposeUrl(data) {
     .replace(str2, `archives/`)
     .replace(str3, `http`)
     .replace(str4, ` `);
-  const str = /\r\n/;
+  const str = /[\r\n]+/;
   const str_arr = data.split(str);
+  console.log(data);
   return str_arr;
 }
 
