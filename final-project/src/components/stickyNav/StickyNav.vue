@@ -19,29 +19,30 @@
       <transition name="nav">
         <div class="nav-box" v-show="show_nav">
           <ul>
-            <li class="book">
-              <button>
+            <li class="book" @click="skipTo('book')">
+              <button :class="{ book: on_which === 'book' }">
                 <img src="../../assets/icon/stickyNav/书-gray.svg" alt="" />
               </button>
             </li>
-            <li class="clothes">
-              <button>
+            <li @click="skipTo('clothes')">
+              <button :class="{ clothes: on_which === 'clothes' }">
                 <img src="../../assets/icon/stickyNav/服装-gray.svg" alt="" />
               </button>
             </li>
-            <li class="goods">
-              <button>
+            <li @click="skipTo('goods')">
+              <button :class="{ goods: on_which === 'goods' }">
                 <img src="../../assets/icon/stickyNav/衣架-gray.svg" alt="" />
               </button>
             </li>
-            <li class="child">
-              <button>
+            <li @click="skipTo('child')">
+              <button :class="{ child: on_which === 'child' }">
                 <img src="../../assets/icon/stickyNav/婴儿车-gray.svg" alt="" />
               </button>
             </li>
-            <!-- TODO:设置锚点 -->
-            <li class="recommendation">
-              <button>
+            <li @click="skipTo('recommendation')">
+              <button
+                :class="{ recommendation: on_which === 'recommendation' }"
+              >
                 <img src="../../assets/icon/stickyNav/点赞-gray.svg" alt="" />
               </button>
             </li>
@@ -57,6 +58,7 @@ export default {
   data() {
     return {
       show_nav: false,
+      on_which: null,
     };
   },
   methods: {
@@ -67,6 +69,45 @@ export default {
         this.show_nav = true;
       } else {
         this.show_nav = false;
+      }
+      switch (true) {
+        case distance_Y >= 3400:
+          this.on_which = "recommendation";
+          break;
+        case distance_Y >= 3240:
+          this.on_which = "child";
+          break;
+        case distance_Y >= 2370:
+          this.on_which = "goods";
+          break;
+        case distance_Y >= 1680:
+          this.on_which = "clothes";
+          break;
+        case distance_Y >= 1150:
+          this.on_which = "book";
+          break;
+        default:
+          this.on_which = null;
+          break;
+      }
+    },
+    skipTo(where) {
+      switch (where) {
+        case "book":
+          document.documentElement.scrollTop = 1150;
+          break;
+        case "clothes":
+          document.documentElement.scrollTop = 1680;
+          break;
+        case "goods":
+          document.documentElement.scrollTop = 2370;
+          break;
+        case "child":
+          document.documentElement.scrollTop = 3240;
+          break;
+        case "recommendation":
+          document.documentElement.scrollTop = 3400;
+          break;
       }
     },
   },
@@ -86,7 +127,6 @@ export default {
   z-index: 20;
   left: 0;
   display: flex;
-  
 }
 
 .container {
@@ -139,7 +179,6 @@ export default {
   margin-left: -638px;
   position: fixed;
   bottom: 30px;
-  /* TODO:del */
   background-color: #f6f6f6;
 }
 
@@ -159,6 +198,10 @@ export default {
   z-index: 5;
   width: 38px;
   overflow: hidden;
+}
+
+.nav-box span {
+  padding: 0 15px 0 2px;
 }
 
 .nav-box img {
@@ -189,5 +232,25 @@ export default {
 .nav-leave-from {
   transform: scale(1);
   opacity: 1;
+}
+
+button.book {
+  background-color: #93d46f;
+}
+
+button.clothes {
+  background-color: #f97f67;
+}
+
+button.goods {
+  background-color: #72d599;
+}
+
+button.child {
+  background-color: #ff857f;
+}
+
+button.recommendation {
+  background-color: #f97f67;
 }
 </style>
