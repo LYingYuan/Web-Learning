@@ -990,6 +990,63 @@ export default {
             },
           ],
         },
+        {
+          index: 3,
+          carousel: [
+            {
+              id: 1,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/3/1/1.jpg"),
+            },
+            {
+              id: 2,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/3/1/2.jpg"),
+            },
+          ],
+          others: [
+            {
+              id: 1,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/3/2.jpg"),
+            },
+            {
+              id: 2,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/3/3.jpg"),
+            },
+            {
+              id: 3,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/3/4.jpg"),
+            },
+            {
+              id: 4,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/3/5.jpg"),
+            },
+            {
+              id: 5,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/3/6.jpg"),
+            },
+            {
+              id: 6,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/3/7.jpg"),
+            },
+            {
+              id: 7,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/3/8.jpg"),
+            },
+            {
+              id: 8,
+              url: "#",
+              src: require("../../assets/pic/clothes/pages/3/9.jpg"),
+            },
+          ],
+        },
       ],
       // 日用百货
       home_goods: {
