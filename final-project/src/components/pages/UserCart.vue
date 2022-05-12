@@ -22,7 +22,12 @@ export default {
   },
   computed: {
     cost() {
-      return this.$store.getters["cart/getCartCost"];
+      let cost = 0;
+      for (const item of this.$store.getters["cart/getCartItems"]) {
+        cost += +item.count * +item.price;
+      }
+      return cost;
+      // return this.$store.getters["cart/getCartCost"];
     },
   },
 };

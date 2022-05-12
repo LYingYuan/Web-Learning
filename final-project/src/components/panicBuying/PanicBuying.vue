@@ -214,6 +214,7 @@ export default {
       this.timer = setInterval(() => {
         this.changeTime("s");
       }, 1000);
+      // FIXME:宏任务微任务
     },
     changeTime(what) {
       switch (what) {
