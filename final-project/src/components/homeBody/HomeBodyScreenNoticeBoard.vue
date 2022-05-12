@@ -70,6 +70,7 @@
           v-for="pic in notice_carousel"
           :key="pic.id"
           :class="{ 'carousel-nav-on ': pic.id === carousel_index }"
+          @click="clickNav(pic.id)"
         ></li>
       </ul>
     </div>
@@ -114,6 +115,9 @@ export default {
           this.carousel_index = 1;
         }
       }
+    },
+    clickNav(index) {
+      this.carousel_index = index;
     },
     hoverCarousel() {
       clearInterval(this.carousel_timer);
@@ -189,10 +193,6 @@ export default {
   height: 29px;
   overflow: hidden;
   width: 204px;
-}
-
-.head li {
-  
 }
 
 .head-list {
