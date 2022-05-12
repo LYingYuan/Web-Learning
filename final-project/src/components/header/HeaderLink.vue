@@ -29,8 +29,6 @@
           >
         </li>
         <li>
-          <!-- TODO:用户购物车 -->
-          <!-- 需要图(已经下载)、需要设置用户当前购物车数量 -->
           <header-link-url url="/shoppingcart">购物车</header-link-url>
         </li>
         <li>
