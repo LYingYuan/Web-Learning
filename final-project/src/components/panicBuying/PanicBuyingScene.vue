@@ -40,7 +40,8 @@ export default {
   border: 1px solid #e6e6e6;
   border-right: none;
   width: 995px;
-  height: 455px;
+  height: 456px;
+  padding-top: 1px;
   display: flex;
   flex-wrap: wrap;
 }
