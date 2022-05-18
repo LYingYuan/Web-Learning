@@ -74,7 +74,6 @@ function disposeUrl(data) {
     .replace(str4, ` `);
   const str = /[\r\n]+/;
   const str_arr = data.split(str);
-  console.log(data);
   return str_arr;
 }
 
