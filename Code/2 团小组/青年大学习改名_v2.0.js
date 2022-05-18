@@ -3,7 +3,10 @@
 const fs = require("fs");
 const path = require("path");
 
-const data = "2022-05-12";
+let time = new Date().getTime() - 6 * 24 * 60 * 60 * 1000;
+time = new Date(time).toLocaleDateString();
+
+const date_time = time.replace(/\//g, "-");
 
 // 文件目录
 // G:\OneDrive\Luo\工作\团小组\青年大学习
@@ -16,7 +19,7 @@ const main_file_path = path.join(
   "青年大学习"
 );
 
-const final_main_file_path = path.join(main_file_path, data);
+const final_main_file_path = path.join(main_file_path, date_time);
 
 // 图片最终名称
 const final_names = [
