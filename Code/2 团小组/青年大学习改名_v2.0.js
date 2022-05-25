@@ -20,6 +20,10 @@ const main_file_path = path.join(
 );
 
 const final_main_file_path = path.join(main_file_path, date_time);
+// 新建文件夹
+fs.mkdir(final_main_file_path, err => {
+  if (err) console.error(err);
+});
 
 // 图片最终名称
 const final_names = [
@@ -43,7 +47,7 @@ for (let i = 0; i < file_names.length; i++) {
     fs.rename(
       path.join(picture_old_path, picture_file[0]),
       path.join(final_main_file_path, new_name),
-      (err) => {
+      err => {
         if (err) {
           throw err;
         }
