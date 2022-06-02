@@ -6,7 +6,7 @@ const path = require("path");
 let time = new Date().getTime() - 6 * 24 * 60 * 60 * 1000;
 time = new Date(time).toLocaleDateString();
 
-const date_time = time.replace(/\//g, "-");
+const date_time = addZero(time);
 
 // 文件目录
 // G:\OneDrive\Luo\工作\团小组\青年大学习
@@ -64,4 +64,18 @@ function change_file_name(old_name, new_name) {
   const type_name = old_name.slice(cut_index);
   // 组合成新名称并返回
   return new_name + type_name;
+}
+
+// NOTE: 2022/5/4 -> 2022-05-04
+function addZero(date) {
+  const arr = date.split("/");
+  const res_arr = [];
+  for (let num of arr) {
+    num = Number(num);
+    if (num >= 1 && num < 10) {
+      num = "0" + num;
+    }
+    res_arr.push(num);
+  }
+  return res_arr.join("-");
 }
