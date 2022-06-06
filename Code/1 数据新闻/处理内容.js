@@ -65,7 +65,7 @@ function microBlogText(old_data) {
 function disposeUrl(data) {
   const str1 = /&preview=true/g; // 替换为.html
   const str2 = /\?p=/g; // 替换为archives/
-  const str3 = /https/g; // 替换为http
+  const str3 = /[ ]*https/g; // 替换为http
   const str4 = /[ ]+/g; // 将多个空格替换为一个空格
   data = data
     .replace(str1, `.html`)
