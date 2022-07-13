@@ -28,7 +28,7 @@ function classifyText(data) {
     arr.push(data[3 * i + 2]);
   }
   const str = arr.join(`\n`);
-  fs.writeFile(path.join(__dirname, "2 归类文档.txt"), str, (err) => {
+  fs.writeFile(path.join(__dirname, "2 归类文档.txt"), str, err => {
     if (err) {
       console.log("归类文档写入失败" + err.message);
     } else {
@@ -52,7 +52,7 @@ function microBlogText(old_data) {
     );
   }
   const str = arr.join(`\n`);
-  fs.writeFile(path.join(__dirname, "3 微博内容.txt"), str, (err) => {
+  fs.writeFile(path.join(__dirname, "3 微博内容.txt"), str, err => {
     if (err) {
       console.log("微博内容写入失败" + err.message);
     } else {
@@ -97,11 +97,13 @@ function optimizeTitles(data) {
     if (title.includes(":")) {
       // 如果包含的是英文冒号就使用英文冒号分割
       organization = title.split(":")[0];
-      other = title.split(":")[1];
+      // other = title.split(":")[1];
+      other = title.replace(organization + ":", "");
     } else if (title.includes("：")) {
       // 中文冒号的情况
       organization = title.split("：")[0];
-      other = title.split("：")[1];
+      // other = title.split("：")[1];
+      other = title.replace(organization + "：", "");
     } else {
       // 该条推文并无机构
       continue;
